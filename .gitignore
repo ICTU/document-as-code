@@ -1,0 +1,8 @@
+# Ignore PyCharm settings folder:
+.idea
+
+# Ignore python byte-compiled files:
+*.pyc
+
+# Ignore OS specific folders and files
+.DS_Store
