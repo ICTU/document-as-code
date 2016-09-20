@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="pandoc.css" type="text/css" />
+</head>
+<body>
+<div id="TOC">
+<ul>
+<li><a href="#document-as-code-example">Document-as-code example</a><ul>
+<li><a href="#sources">Sources</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#deliverables">Deliverables</a></li>
+<li><a href="#measures">Measures</a></li>
+</ul></li>
+</ul>
+</div>
+<h1 id="document-as-code-example"><a href="#document-as-code-example">Document-as-code example</a></h1>
+<p>This is an example of a document created to illustrate the document-as-code principle. Instead of writing structured documents using a text processor or spreadsheet, the document is generated from a simple program written within a Markdown document. With the help of a generator program the Markdown document is transformed into another valid Markdown document. The domain model and the contents of the domain are written in Markdown and coffeescript. The generator replaces the coffeescript in the Markdown document with it’s corresponding output.</p>
+<h2 id="sources"><a href="#sources">Sources</a></h2>
+<p>This section lists the example sources for the requirements of the Document-as-code project.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">identifier</th>
+<th align="left">title</th>
+<th align="left">version</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a name="S1"></a>S1</td>
+<td align="left">This is source 1</td>
+<td align="left">1.0</td>
+</tr>
+<tr class="even">
+<td align="left"><a name="S2"></a>S2</td>
+<td align="left">This is source 2</td>
+<td align="left">1.1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="requirements"><a href="#requirements">Requirements</a></h2>
+<p>This section lists the example requirements applicable to the Document-as-code project. Each requirement refers back to the source it originates from and refers forward to the measures defined to implement or support the requirement.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">identifier</th>
+<th align="left">description</th>
+<th align="left">sources</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a name="R1"></a>R1</td>
+<td align="left">This is requirement 1</td>
+<td align="left"><a href="#S1">S1</a></td>
+</tr>
+<tr class="even">
+<td align="left"><a name="R2"></a>R2</td>
+<td align="left">This is requirement 2</td>
+<td align="left"><a href="#S1">S1</a>, <a href="#S2">S2</a></td>
+</tr>
+<tr class="odd">
+<td align="left"><a name="R3"></a>R3</td>
+<td align="left">This is requirement 3</td>
+<td align="left"><a href="#S2">S2</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="deliverables"><a href="#deliverables">Deliverables</a></h2>
+<p>This section contains the example deliverables that contain or implement the measures.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">identifier</th>
+<th align="left">title</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a name="D1"></a>D1</td>
+<td align="left">Deliverable 1</td>
+</tr>
+<tr class="even">
+<td align="left"><a name="D2"></a>D2</td>
+<td align="left">Deliverable 2</td>
+</tr>
+<tr class="odd">
+<td align="left"><a name="D3"></a>D3</td>
+<td align="left">Deliverable 3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="measures"><a href="#measures">Measures</a></h2>
+<p>This section contains the example measures defined to implement or support the requirements of the project.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">identifier</th>
+<th align="left">description</th>
+<th align="left">requirements</th>
+<th align="left">deliverables</th>
+<th align="left">done</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a name="M1"></a>M1</td>
+<td align="left">This is measure one, it is marked as done</td>
+<td align="left"><a href="#R1">R1</a>, <a href="#R3">R3</a></td>
+<td align="left"><a href="#D1">D1</a></td>
+<td align="left">true</td>
+</tr>
+<tr class="even">
+<td align="left"><a name="M2"></a>M2</td>
+<td align="left">This measure has no deliverable defined</td>
+<td align="left"><a href="#R1">R1</a></td>
+<td align="left"></td>
+<td align="left">false</td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>

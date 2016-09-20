@@ -6,19 +6,18 @@ coffeescript = require 'coffee-script'
 _ = require 'lodash'
 
 Model = (schema) -> (params...) ->
-  keys = _.keys schema
-  obj = {}
+  obj = {}; keys = _.keys schema
   obj[key] = params[i] for i, key of keys
   obj
 
-
 genTableRow = (keys, header=false) ->
-  keys.map (k) ->
-    val = if _.isArray k
-      k.map (k_) -> ",#{k_[(_.keys k_)[0]]}"
+  keys.map (k, i) ->
+    val = if _.isArray(k) and k.length
+      (k.map (k_) -> k_[(_.keys k_)[0]]).map((i) ->  "<a href=\"##{i}\">#{i}</a>").reduce (prev, cur) -> "#{prev}, #{cur}"
     else
-      [k]
-    type: 'tablecell', content: val, flags: { header: header, align: null }
+      k
+    if not header and i is 0 then val = "<a name=\"#{val}\"></a>#{val}"
+    type: 'tablecell', content: ["#{val}"], flags: { header: header, align: null }
 
 table = (collection) ->
   keys = _.keys collection[0]
@@ -31,7 +30,6 @@ link = (collection, selector) ->
   items = _.filter collection, (item) -> selector[key].call(item)
   (items.map (i) -> i[key]).reduce (prev, curr) -> "#{prev}, #{curr}"
 
-
 evalWithinContext = (context, code) ->
   ((code) -> eval code ).apply context, [code]
 
@@ -39,45 +37,16 @@ context = {}
 renderCode = (code) ->
   output = evalWithinContext context, (coffeescript.compile code, bare:true)
   unless output
-    # console.log 'output', output
-    # console.log 'code', coffeescript.compile code, bare:true
-    # console.log code
-    # "error generating code"
     { type: 'paragraph', text: [ '' ] }
   else
     output
 
-filepath =  process.argv[2]
-contents = fs.readFileSync filepath
-
+contents = fs.readFileSync process.argv[2]
 ast = markedast.parse "#{contents}"
-
 ast = ast.map (item) ->
-  if item.type is 'code'
-    renderCode item.code
-  else
-    item
-
-# console.log ast
-
-console.log markdown ast
+  if item.type is 'code' then renderCode item.code
+  else item
 
 
-#type: 'code',
-# code: '@sources = [\n  id: \'src1\'\n  title: \'some title\'\n,\n  id: \'src2\'\n  title: \'other title\'\n]\n\ntable @sources',
-
-# { type: 'table',
-#   header: [ { type: 'tablerow', content: [Object] } ],
-#   body: [ { type: 'tablerow', content: [Object] } ] }
-
-# { type: 'tablerow', content: [ [Object], [Object], [Object] ]
-
-#[ { type: 'tablecell',
-  #   content: [ 'a' ],
-  #   flags: { header: true, align: null } },
-  # { type: 'tablecell',
-  #   content: [ 'b' ],
-  #   flags: { header: true, align: null } },
-  # { type: 'tablecell',
-  #   content: [ 'c' ],
-  #   flags: { header: true, align: null } } ]
+markdown = markdown ast
+console.log markdown
