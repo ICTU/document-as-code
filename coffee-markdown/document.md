@@ -1,48 +1,47 @@
 
-# Chapter 1
+# Sources
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet vel metus at convallis. Integer elit erat, gravida eget rutrum vel, porttitor in odio.
-Mauris diam dolor, scelerisque eu **ultricies** sit amet, aliquet sed sapien. Nunc sit amet aliquet sapien, eget sodales erat. Sed finibus leo mauris, ac euismod ex elementum eget.
+In this chapter we define the sources.
 
-    @Source = (@id, @title) ->
+    Source = Model
+      identifier: 'Identifier'
+      title: 'Title'
+      version: 'Version'
 
-We have defined the source class. Now we define some sources that are applicable to this project.
+    @S1 = Source 'S1', 'This is source 1', '1.0'
+    @S2 = Source 'S2', 'This is source 2', '1.1'
 
-    source1 = new @Source 'src1', 'some source2'
+    table [@S1, @S2]
 
-    @sources = [
-      source1
-    ,
-      id: 'src2'
-      title: 'other title'
-    ,
-      id: 'src3'
-      title: 'my new source'
-    ,
-      id: 'othersrc'
-      title: 'some title2'
-    ,
-      id: 'somekey'
-      title: 'source bla'
-    ]
+# Deliverables
 
-    table @sources
+In this chapter we define the deliverables.
 
-Mauris diam dolor, scelerisque eu **ultricies** sit amet, aliquet sed sapien. Nunc sit amet aliquet sapien, eget sodales erat. Sed finibus leo mauris, ac euismod ex elementum eget.
+    Deliverable = Model
+      identifier: 'Identifier'
+      title: 'Title'
 
-    customLink = (src, selector) -> "Links: #{link src, selector}"
+    @D1 = Deliverable 'D1', 'Deliverable 1'
+    @D2 = Deliverable 'D2', 'Deliverable 2'
+    @D3 = Deliverable 'D3', 'Deliverable 3'
 
-    @requirements = [
-      name: 'req1'
+    table [@D1, @D2, @D3]
 
-      sources: link @sources, title: -> @id is 'somekey'
-    ,
-      name: 'req2'
-      sources: customLink @sources, title: -> @id in ['src1', 'src2', 'othersrc']
-    ]
+# Requirements
 
-# Show the requirements
+In this chapter we define the requirements
 
-Mauris diam dolor, scelerisque eu **ultricies** sit amet, aliquet sed sapien. Nunc sit amet aliquet sapien, eget sodales erat. Sed finibus leo mauris, ac euismod ex elementum eget.
+    Requirement = Model
+      identifier: 'Identifier'
+      description: 'Description'
+      sources: 'Sources'
 
-    table @requirements
+    @R1 = Requirement 'R1', 'This is requirement 1', [@S1]
+    @R2 = Requirement 'R2', 'This is requirement 2', [@S1, @S2]
+
+    table [@R1, @R2]
+
+
+# Measures
+
+In this chapter we define the measures.

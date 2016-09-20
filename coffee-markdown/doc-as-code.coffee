@@ -3,10 +3,22 @@ marked = require 'marked'
 markedast  = require 'marked-ast'
 markdown = require 'marked-ast-markdown'
 coffeescript = require 'coffee-script'
-_ = require 'underscore'
+_ = require 'lodash'
+
+Model = (schema) -> (params...) ->
+  keys = _.keys schema
+  obj = {}
+  obj[key] = params[i] for i, key of keys
+  obj
+
 
 genTableRow = (keys, header=false) ->
-  keys.map (k) -> type: 'tablecell', content: [k], flags: { header: header, align: null }
+  keys.map (k) ->
+    val = if _.isArray k
+      k.map (k_) -> ",#{k_[(_.keys k_)[0]]}"
+    else
+      [k]
+    type: 'tablecell', content: val, flags: { header: header, align: null }
 
 table = (collection) ->
   keys = _.keys collection[0]
@@ -27,10 +39,11 @@ context = {}
 renderCode = (code) ->
   output = evalWithinContext context, (coffeescript.compile code, bare:true)
   unless output
-    console.log 'output', output
-    console.log 'code', coffeescript.compile code, bare:true
-    console.log code
-    "error generating code"
+    # console.log 'output', output
+    # console.log 'code', coffeescript.compile code, bare:true
+    # console.log code
+    # "error generating code"
+    { type: 'paragraph', text: [ '' ] }
   else
     output
 
@@ -44,6 +57,8 @@ ast = ast.map (item) ->
     renderCode item.code
   else
     item
+
+# console.log ast
 
 console.log markdown ast
 

@@ -1,27 +1,33 @@
-# Chapter 1
+# Sources
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi laoreet vel metus at convallis. Integer elit erat, gravida eget rutrum vel, porttitor in odio.
-Mauris diam dolor, scelerisque eu **ultricies** sit amet, aliquet sed sapien. Nunc sit amet aliquet sapien, eget sodales erat. Sed finibus leo mauris, ac euismod ex elementum eget.
+In this chapter we define the sources.
 
-We have defined the source class. Now we define some sources that are applicable to this project.
+| identifier | title | version |
+| ---------- | ----- | ------- |
+| S1 | This is source 1 | 1.0 |
+| S2 | This is source 2 | 1.1 |
 
-| id | title |
-| -- | ----- |
-| src1 | some source2 |
-| src2 | other title |
-| src3 | my new source |
-| othersrc | some title2 |
-| somekey | source bla |
+# Deliverables
 
-Mauris diam dolor, scelerisque eu **ultricies** sit amet, aliquet sed sapien. Nunc sit amet aliquet sapien, eget sodales erat. Sed finibus leo mauris, ac euismod ex elementum eget.
+In this chapter we define the deliverables.
 
-# Show the requirements
+| identifier | title |
+| ---------- | ----- |
+| D1 | Deliverable 1 |
+| D2 | Deliverable 2 |
+| D3 | Deliverable 3 |
 
-Mauris diam dolor, scelerisque eu **ultricies** sit amet, aliquet sed sapien. Nunc sit amet aliquet sapien, eget sodales erat. Sed finibus leo mauris, ac euismod ex elementum eget.
+# Requirements
 
-| name | sources |
-| ---- | ------- |
-| req1 | source bla |
-| req2 | Links: some source2, other title, some title2 |
+In this chapter we define the requirements
+
+| identifier | description | sources |
+| ---------- | ----------- | ------- |
+| R1 | This is requirement 1 | ,S1 |
+| R2 | This is requirement 2 | ,S1,S2 |
+
+# Measures
+
+In this chapter we define the measures.
 
 
