@@ -1,13 +1,22 @@
+"""
+    bootstrap - a HTML document with Bootstrap CSS and some helper methods
+"""
+
+from __future__ import absolute_import
+from __future__ import print_function
+
+
 from yattag import Doc
 
 
 class BootstrapDoc(Doc):
     """ A HTML document with Bootstrap CSS and some helper methods. """
 
-    def tagtext(self):
+    def tagtext(self,with_doctype=True):
         """ Override to set the doctype. """
         doc, tag, text = super(BootstrapDoc, self).tagtext()
-        doc.asis('<!DOCTYPE html>')
+        if with_doctype:
+            doc.asis('<!DOCTYPE html>')
         return doc, tag, text
 
     def head(self, title):
@@ -26,6 +35,14 @@ class BootstrapDoc(Doc):
     def h2(self, h2_text, h2_subtext=None):
         """ Add a h2 with an optional sub text. """
         self.__header('h2', h2_text, h2_subtext)
+
+    def h3(self, h3_text, h3_subtext=None):
+        """ Add a h3 with an optional sub text. """
+        self.__header('h3', h3_text, h3_subtext)
+
+    def h4(self, h4_text, h4_subtext=None):
+        """ Add a h4 with an optional sub text. """
+        self.__header('h4', h4_text, h4_subtext)
 
     def __header(self, header_tag, header_text, header_subtext=None):
         """ Add a header with text and optional sub text. """
@@ -82,7 +99,7 @@ class BootstrapDoc(Doc):
 
     def __tag_with_text(self, tag_name, tag_text, **kwargs):
         """ Return a tag with the specified tag name and text. The optional kwargs are applied to the tag. """
-        doc, tag, text = self.__class__().tagtext()
+        doc, tag, text = self.__class__().tagtext(False)
         with tag(tag_name, **kwargs):
             text(tag_text)
         return doc.getvalue()

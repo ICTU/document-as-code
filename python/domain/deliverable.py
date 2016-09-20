@@ -1,8 +1,19 @@
-class Deliverable(object):
-    all = set()
+"""
+    deliverable - defines and describes a deliverable
+"""
+
+from __future__ import absolute_import
+from __future__ import print_function
+
+
+from .base import Base
+
+
+class Deliverable(Base):
 
     def __init__(self, identifier, title, version=None):
-        self.identifier = identifier
+
+        super(Deliverable, self).__init__( identifier )
+
         self.title = title
         self.version = version
-        self.all.add(self)

@@ -1,6 +1,14 @@
+"""
+    measures - define measures in the document
+"""
+
+from __future__ import absolute_import
+from __future__ import print_function
+
+
 from domain import Measure
-from requirements import *
-from deliverables import *
+from .requirements import R1, R2, R3, R4
+from .deliverables import D1, D2, D3
 
 
 M1 = Measure(
@@ -8,25 +16,28 @@ M1 = Measure(
     description="This is measure 1. It is marked as done. ",
     requirements=[R1, R3],
     deliverables=[D1],
-    done=True)
+    done=True,
+)
 
 M2 = Measure(
     identifier="M2",
     description="This is measure 2. It has no deliverable defined.",
-    requirements=[R1]
+    requirements=[R1],
 )
 
 M3 = Measure(
     identifier="M3",
     description="This is measure 3",
     requirements=[R2],
-    deliverables=[D2])
+    deliverables=[D2],
+)
 
 M4 = Measure(
     identifier="M4",
     description="This is measure 4. It helps implement two requirements and affects two deliverables.",
     requirements=[R1, R2],
-    deliverables=[D1, D2])
+    deliverables=[D1, D2],
+)
 
 M5 = Measure(
     identifier="M5",
@@ -35,4 +46,5 @@ M5 = Measure(
                 "that deliverable as well.",
     requirements=[R3],
     deliverables=[D3],
-    done=True)
+    done=True,
+)
