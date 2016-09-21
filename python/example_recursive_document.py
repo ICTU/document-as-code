@@ -15,42 +15,37 @@ from format.bootstrap import BootstrapDoc
 
 doc, tag, text = BootstrapDoc().tagtext()
 
-headings = ( doc.h1, doc.h2 )
+headings = ( doc.h1, doc.h1, doc.h2, doc.h3, doc.h4 )
 
-def show_fragments( headings, *fragments ):
+def show_recursive_fragments( headings, *fragments ):
+
     if headings:
         heading = headings[0]
         remaining_headings = headings[1:]
     else:
         heading = doc.p
         remaining_headings = []
+
     for fragment in fragments:
         heading( fragment.get_title() )
+        if fragment.lead:
+            doc.p( fragment.lead, klass='lead' )
         if fragment.text:
             doc.p( fragment.text )
-        show_fragments( remaining_headings, *(fragment.fragments) )
+        show_recursive_fragments( remaining_headings, *(fragment.fragments) )
 
 
-fragments = ( content.F1, content.F2 )
-
-for nr, fragment in enumerate( fragments, 1 ):
-    fragment.renumber( nr, start=1 )
+content.F0.renumber( '', start=1 )
 
 
 with tag('html'):
 
-    doc.head(content.title)
+    doc.head(content.F0.title)
 
     with tag('body'):
 
         with tag('div', klass='container'):
 
-            doc.h1(content.title, content.version + ', ' + content.date)
-            doc.p(content.intro, klass='lead')
-            doc.p(content.reading_guide)
-
-            doc.h2('Fragments', doc.badge(domain.RecursiveFragment.all))
-
-            show_fragments( headings, content.F1, content.F2 )
+            show_recursive_fragments( headings, content.F0 )
 
 file('example_recursive_document.html', 'w').write(indent(doc.getvalue()))

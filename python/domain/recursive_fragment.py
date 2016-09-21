@@ -13,15 +13,18 @@ class RecursiveFragment(Base):
 
 
     number    = None
+    title     = None
+    lead      = None
     text      = None
     fragments = None
 
 
-    def __init__( self, identifier, title, text=None, fragments=[] ):
+    def __init__( self, identifier, title, lead=None, text=None, fragments=[] ):
 
         super(RecursiveFragment, self).__init__( identifier )
 
         self.title = title
+        self.lead  = lead
         self.text  = text
         self.fragments = []
         
@@ -34,9 +37,16 @@ class RecursiveFragment(Base):
 
 
     def renumber( self, number, sep='.', start=1 ):
-        self.number = str(number)
+        number = str(number)
+
+        if not number:
+            subnr = lambda n: str(n)
+        else:
+            self.number = number
+            subnr = lambda n: sep.join( (number,str(n)) )
+
         for nr, fragment in enumerate( self.fragments, start ):
-            fragment.renumber( sep.join( (self.number,str(nr)) ), sep, start )
+            fragment.renumber( subnr(nr), sep, start )
 
 
     def get_title( self ):

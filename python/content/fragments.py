@@ -8,6 +8,8 @@ from __future__ import print_function
 
 from domain import RecursiveFragment
 
+import content
+
 
 F1 = RecursiveFragment(
     identifier="F1",
@@ -47,4 +49,12 @@ F2 = RecursiveFragment(
             title="How Many Subfragments?",
         ),
     ]
+)
+
+F0 = RecursiveFragment(
+    identifier="F0",
+    title=content.title,
+    lead=content.intro,
+    text=content.reading_guide,
+    fragments=[F1,F2],
 )
