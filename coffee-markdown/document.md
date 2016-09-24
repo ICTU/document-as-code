@@ -39,7 +39,7 @@
 
 This is an example of a document created to illustrate the document-as-code principle. Instead of writing structured documents using a text processor or spreadsheet, the document is generated from a simple program written within a Markdown document. With the help of a generator program the Markdown document is transformed into another valid Markdown document.
 The domain model and the contents of the domain are written in Markdown and coffeescript.
-The generator replaces the coffeescript in the Markdown document with it's corresponding
+The generator replaces the coffeescript in the Markdown document with its corresponding
 output.
 
 
