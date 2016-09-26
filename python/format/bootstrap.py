@@ -28,30 +28,58 @@ class BootstrapDoc(Doc):
             with self.tag('title'):
                 self.text(title)
 
+    # --- H1 ---
+
     def h1(self, h1_text, h1_subtext=None):
         """ Add a h1 with an optional sub text. """
-        self.__header('h1', h1_text, h1_subtext)
+        self.asis( self.h1_raw( h1_text, h1_subtext ) )
+
+    def h1_raw(self, h1_text, h1_subtext=None):
+        """ A h1 with an optional sub text. """
+        return self.__header('h1', h1_text, h1_subtext)
+
+    # --- H2 ---
 
     def h2(self, h2_text, h2_subtext=None):
         """ Add a h2 with an optional sub text. """
-        self.__header('h2', h2_text, h2_subtext)
+        self.asis( self.h2_raw( h2_text, h2_subtext ) )
+
+    def h2_raw(self, h2_text, h2_subtext=None):
+        """ A h2 with an optional sub text. """
+        return self.__header('h2', h2_text, h2_subtext)
+
+    # --- H3 ---
 
     def h3(self, h3_text, h3_subtext=None):
         """ Add a h3 with an optional sub text. """
-        self.__header('h3', h3_text, h3_subtext)
+        self.asis( self.h3_raw( h3_text, h3_subtext ) )
+
+    def h3_raw(self, h3_text, h3_subtext=None):
+        """ A h3 with an optional sub text. """
+        return self.__header('h3', h3_text, h3_subtext)
+
+    # --- H4 ---
 
     def h4(self, h4_text, h4_subtext=None):
         """ Add a h4 with an optional sub text. """
-        self.__header('h4', h4_text, h4_subtext)
+        self.asis( self.h4_raw( h4_text, h4_subtext ) )
+
+    def h4_raw(self, h4_text, h4_subtext=None):
+        """ A h4 with an optional sub text. """
+        return self.__header('h4', h4_text, h4_subtext)
+
 
     def __header(self, header_tag, header_text, header_subtext=None):
         """ Add a header with text and optional sub text. """
-        with self.tag(header_tag):
-            self.asis(header_text)
+        doc, tag, text = self.__class__().tagtext(False)
+        with tag(header_tag):
+            doc.asis(header_text)
             if header_subtext:
-                self.text(' ')
-                with self.tag('small'):
-                    self.asis(header_subtext)
+                text(' ')
+                with tag('small'):
+                    doc.asis(header_subtext)
+        return doc.getvalue()
+
 
     def table(self, headers, rows, caption=None):
         """ Add a table with the headers and rows and an optional caption. The rows are sorted. If any cell contains
@@ -92,10 +120,11 @@ class BootstrapDoc(Doc):
         number = list_or_number if isinstance(list_or_number, int) else len(list_or_number)
         return self.__tag_with_text('span', "{0!s}".format(number), klass="badge")
 
-    def label(self, label_text, modifier='default'):
+    def label(self, label_text, modifier='default', **kwargs):
         """ Return a label with the specified text and an optional modifier (color). """
         assert modifier in ('default', 'primary', 'success', 'info', 'warning', 'danger')
-        return self.__tag_with_text('span', label_text, klass="label label-{0}".format(modifier))
+        kwargs['klass'] = "label label-{0}".format(modifier)
+        return self.__tag_with_text('span', label_text, **kwargs )
 
     def __tag_with_text(self, tag_name, tag_text, **kwargs):
         """ Return a tag with the specified tag name and text. The optional kwargs are applied to the tag. """

@@ -6,9 +6,9 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 
-from domain import RecursiveFragment
+from domain.document.recursive_fragment import RecursiveFragment
 
-import content
+from . import text
 
 
 F1 = RecursiveFragment(
@@ -53,8 +53,8 @@ F2 = RecursiveFragment(
 
 F0 = RecursiveFragment(
     identifier="F0",
-    title=content.title,
-    lead=content.intro,
-    text=content.reading_guide,
+    title=text.title,
+    lead=text.intro,
+    text=text.reading_guide,
     fragments=[F1,F2],
 )

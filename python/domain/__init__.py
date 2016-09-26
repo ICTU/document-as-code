@@ -11,4 +11,3 @@ from .requirement import Requirement
 from .measure     import Measure
 from .deliverable import Deliverable
 
-from .recursive_fragment import RecursiveFragment

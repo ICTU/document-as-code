@@ -6,13 +6,11 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 
-from .base import Base
+from ..base import Base
 
 
 class RecursiveFragment(Base):
 
-
-    number    = None
     title     = None
     lead      = None
     text      = None
@@ -36,22 +34,5 @@ class RecursiveFragment(Base):
         return self
 
 
-    def renumber( self, number, sep='.', start=1 ):
-        number = str(number)
-
-        if not number:
-            subnr = lambda n: str(n)
-        else:
-            self.number = number
-            subnr = lambda n: sep.join( (number,str(n)) )
-
-        for nr, fragment in enumerate( self.fragments, start ):
-            fragment.renumber( subnr(nr), sep, start )
-
-
     def get_title( self ):
-        if self.number:
-            title = "{} - {}".format( self.number, self.title )
-        else:
-            title = self.title
-        return title
+        return u"{} - {}".format( self.identifier, self.title )
