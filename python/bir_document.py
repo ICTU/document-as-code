@@ -6,6 +6,8 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 
+import datetime
+
 from format.bootstrap import BootstrapDoc
 from yattag import indent
 
@@ -239,6 +241,8 @@ with tag('html'):
     doc.head(BIR.title)
 
     with tag('body'):
+
+        doc.p( 'gegenereerd op ', datetime.datetime.now().isoformat(), style="font-size:11px" )
 
         with tag('div', klass='container'):
 
