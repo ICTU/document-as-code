@@ -9,7 +9,6 @@ from __future__ import print_function
 from yattag import indent
 
 import content
-import domain
 from format.bootstrap import BootstrapDoc
 
 
@@ -33,9 +32,6 @@ def show_recursive_fragments( headings, *fragments ):
         if fragment.text:
             doc.p( fragment.text )
         show_recursive_fragments( remaining_headings, *(fragment.fragments) )
-
-
-content.F0.renumber( '', start=1 )
 
 
 with tag('html'):
