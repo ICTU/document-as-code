@@ -27,19 +27,20 @@ class ExcelTable( object ):
     cell_range  = None
 
 
-    def __init__( self, filepath, sheet_name=None, cell_range=None ):
+    def __init__( self, filepath, sheet_name=None, cell_range=None, show_values=True ):
         """
         turn an Excel file into a table data source
 
         @param filepath: path to the Excel file
         @param sheet_name: name of the sheet within the Excel file that holds the table data
         @param cell_range: range of the cells within the sheet that hold the table data
+        @param show_values: show values (i.e. computation results)[True,default] or formulae [False]
         """
         if not os.path.isfile( filepath ):
             raise ExcelTableError( 'no file {}'.format(filepath) )
 
         self.source_file = filepath
-        self.work_book   = openpyxl.load_workbook( filepath, read_only=True )
+        self.work_book   = openpyxl.load_workbook( filepath, read_only=True, data_only=show_values )
         self.set_sheet_as_source( sheet_name, cell_range )
 
 
@@ -82,14 +83,48 @@ class ExcelTable( object ):
         self.cell_range = self.components2cell_range( min_col, min_row, max_col, max_row )
 
 
+    # --- array interface ---
+
+    def __getitem__( self, index ):
+        """
+        return cell values within the given index
+
+        @param index: e.g. "A2" or "F7:K51"
+        """
+        return [ [ cell.value for cell in row ] for row in self.work_sheet[index] ]
+
+
     # --- iteration interface ---
 
     def __iter__( self ):
         """
-        produce rows of data
+        produce cell values by row within the set limits
         """
         min_col, min_row, max_col, max_row = self.cell_range2components( self.cell_range )
 
+        return self.iterate_by_row( min_col, min_row, max_col, max_row )
+
+
+    def iter_rows( self, index ):
+        """
+        produce cell values by row within the given index
+
+        @param index: e.g. "A2" or "F7:K51"
+        """
+        min_col, min_row, max_col, max_row = range_boundaries( index )
+
+        return self.iterate_by_row( min_col, min_row, max_col, max_row )
+
+
+    def iterate_by_row( self, min_col, min_row, max_col, max_row ):
+        """
+        produce cell values by row within the given bounds
+
+        @param min_col: lowest  column number
+        @param min_row: lowest  row    number
+        @param max_col: highest column number
+        @param max_row: highest row    number
+        """
         for row in self.work_sheet.iter_rows( min_col=min_col, min_row=min_row, max_col=max_col, max_row=max_row ):
             yield [ cell.value for cell in row ]
 
