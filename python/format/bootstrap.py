@@ -81,7 +81,7 @@ class BootstrapDoc(Doc):
         return doc.getvalue()
 
 
-    def table(self, headers, rows, caption=None):
+    def table(self, headers, rows, caption=None, sort_rows=True, sort_cells=True):
         """ Add a table with the headers and rows and an optional caption. The rows are sorted. If any cell contains
             a list it is joined with comma as separator. """
         with self.tag('table', klass='table table-striped'):
@@ -94,12 +94,12 @@ class BootstrapDoc(Doc):
                         with self.tag('th'):
                             self.text(header)
             with self.tag('tbody'):
-                for row in sorted(rows):
+                for row in sorted(rows) if sort_rows else rows:
                     with self.tag('tr'):
                         for cell in row:
                             with self.tag('td'):
                                 if isinstance(cell, list):
-                                    cell = ', '.join(sorted(cell))
+                                    cell = ', '.join( sorted(cell) if sort_cells else cell )
                                 self.asis(cell)
 
     def p(self, *p_text, **kwargs):
