@@ -1,9 +1,26 @@
+"""
+    deliverables - define deliverables in the document
+"""
+
+from __future__ import absolute_import
+from __future__ import print_function
+
+
 from domain import Deliverable
 
 
-D1 = Deliverable(identifier="D1", title="Deliverable 1")
+D1 = Deliverable(
+    identifier="D1",
+    title="Deliverable 1",
+)
 
-D2 = Deliverable(identifier="D2", title="Deliverable 2")
+D2 = Deliverable(
+    identifier="D2",
+    title="Deliverable 2",
+)
 
-D3 = Deliverable(identifier="D3", title="Deliverable 3. This deliverable is completed because the only measure that "
-                                        "affects it - measure 5 - has been marked completed.")
+D3 = Deliverable(
+    identifier="D3",
+    title="Deliverable 3. This deliverable is completed because the only measure that "
+        "affects it - measure 5 - has been marked completed.",
+)
