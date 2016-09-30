@@ -5,15 +5,14 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-
 import datetime
 
-from format.bootstrap import BootstrapDoc
 from yattag import indent
 
-
-from content.bir import BIR, NotApplicable, Explained
-from domain.bir_measure import BirMeasure
+from domain.bir.content.bir import BIR
+from domain.bir.content.bir_measures import NotApplicable, Explained
+from domain.bir.model.bir_measure import BirMeasure
+from format.bootstrap import BootstrapDoc
 
 doc, tag, text = BootstrapDoc().tagtext()
 
@@ -101,7 +100,7 @@ def render_fragment( fragment, h, render_sub_level=None ):
     h( fragment.get_title(), ''.join(labels) )
 
     if fragment.lead:
-        doc.p( fragment.lead, klass='lead' )        
+        doc.p( fragment.lead, klass='lead' )
     if fragment.text:
         doc.p( fragment.text )
     if render_sub_level:
@@ -142,12 +141,12 @@ def render_chapter( chapter ):
 
 def render_document( document ):
     render_fragment( document, doc.h1, render_chapter )
-    
+
 
 
 def render_verifiers_with_state( label, verifiers ):
     doc.h2( label, doc.badge(len(verifiers)) )
-    
+
     if verifiers:
         doc.table(
             ( 'Ref', 'Verifier', '' ),
@@ -225,7 +224,7 @@ def render_verifiers_by_state( document ):
 
     for label, state in labels_states:
         render_verifiers_with_state( label, grouped_by_state[state] )
-        
+
 
 # --- PROCESSING STARTS HERE ---
 
@@ -249,7 +248,7 @@ with tag('html'):
             render_document( BIR )
 
         with tag('div', klass='container'):
-            
+
             render_verifiers_by_state( BIR )
 
 

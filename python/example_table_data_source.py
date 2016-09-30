@@ -4,12 +4,10 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-
-from format.bootstrap import BootstrapDoc
 from yattag import indent
 
-
-from domain.data_source.table import ExcelTable
+from data_source.table import ExcelTable
+from format.bootstrap import BootstrapDoc
 
 doc, tag, text = BootstrapDoc().tagtext()
 
