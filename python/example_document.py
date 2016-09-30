@@ -1,3 +1,11 @@
+"""
+    example document - demonstrate how 'Document as Code' works
+"""
+
+from __future__ import absolute_import
+from __future__ import print_function
+
+
 from yattag import indent
 
 import content
@@ -9,9 +17,13 @@ doc, tag, text = BootstrapDoc().tagtext()
 
 
 with tag('html'):
+
     doc.head(content.title)
+
     with tag('body'):
+
         with tag('div', klass='container'):
+
             doc.h1(content.title, content.version + ', ' + content.date)
             doc.p(content.intro, klass='lead')
             doc.p(content.reading_guide)

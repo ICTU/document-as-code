@@ -1,11 +1,22 @@
-class Requirement(object):
-    all = set()
+"""
+    requirement - defines and describes a requirement
+"""
+
+from __future__ import absolute_import
+from __future__ import print_function
+
+
+from .base import Base
+
+
+class Requirement(Base):
 
     def __init__(self, identifier, description, sources):
-        self.identifier = identifier
+
+        super(Requirement, self).__init__( identifier )
+
         self.description = description
         self.sources = sources
-        self.all.add(self)
 
     @classmethod
     def from_source(cls, source):

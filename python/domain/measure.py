@@ -1,18 +1,28 @@
-from util import all_true
+"""
+    measure - defines and describes a measure
+"""
+
+from __future__ import absolute_import
+from __future__ import print_function
 
 
-class Measure(object):
+from .util import all_true
+
+
+from .base import Base
+
+
+class Measure(Base):
     """ Measures that help to fulfill requirements. """
 
-    all = set()
-
     def __init__(self, identifier, description, requirements, deliverables=None, done=False):
-        self.identifier = identifier
+
+        super(Measure, self).__init__( identifier )
+
         self.description = description
         self.requirements = requirements
         self.deliverables = deliverables or []
         self.done = done
-        self.all.add(self)
 
     @classmethod
     def for_requirement(cls, requirement):
