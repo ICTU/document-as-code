@@ -2,19 +2,19 @@
 <html>
   <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" rel="stylesheet" />
-    <title>Document-as-code - BIR compliance example</title>
+    <title>Document-as-code example</title>
   </head>
   <body>
     <div class="container">
-      <h1>Document-as-code - BIR compliance example <small>v0.1, 20 September 2016</small></h1>
+      <h1>Document-as-code example <small>v0.1, 30 September 2016</small></h1>
       <p class="lead">This is an example of a document created to illustrate the document-as-code principle. Instead of writing
 structured documents using a text processor or spreadsheet, the document is generated from a simple program consisting
 of a domain model, the contents of the domain model, and a document generator.</p>
       <p>In this example document, we have requirements for a project. The requirements come from sources.
 For each requirement, measures have been defined to ensure the requirements are actually achieved by the project.
 The measures are captured in deliverables.</p>
-      <h2>Sources <small><!DOCTYPE html><span class="badge">2</span></small></h2>
-      <p>This section lists the example sources for the requirements of the Document-as-code - BIR compliance project.</p>
+      <h2>Sources <small><span class="badge">2</span></small></h2>
+      <p>This section lists the example sources for the requirements of the Document-as-code project.</p>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -27,26 +27,24 @@ The measures are captured in deliverables.</p>
         <tbody>
           <tr>
             <td>
-              <!DOCTYPE html>
               <span id="S1">S1</span>
             </td>
             <td>This is source 1</td>
             <td>1.0</td>
-            <td><!DOCTYPE html><a href="#R1">R1</a>, <!DOCTYPE html><a href="#R2">R2</a></td>
+            <td><a href="#R1">R1</a>, <a href="#R2">R2</a></td>
           </tr>
           <tr>
             <td>
-              <!DOCTYPE html>
               <span id="S2">S2</span>
             </td>
             <td>This is source 2</td>
             <td>1.1</td>
-            <td><!DOCTYPE html><a href="#R2">R2</a>, <!DOCTYPE html><a href="#R3">R3</a>, <!DOCTYPE html><a href="#R4">R4</a></td>
+            <td><a href="#R2">R2</a>, <a href="#R3">R3</a>, <a href="#R4">R4</a></td>
           </tr>
         </tbody>
       </table>
-      <h2>Requirements <small><!DOCTYPE html><span class="badge">4</span></small></h2>
-      <p>This section lists the example requirements applicable to the Document-as-code - BIR compliance project.
+      <h2>Requirements <small><span class="badge">4</span></small></h2>
+      <p>This section lists the example requirements applicable to the Document-as-code project.
 Each requirement refer back to the source it originates from and refers forward to the measures defined to
 implement or support the requirement.</p>
       <table class="table table-striped">
@@ -62,62 +60,53 @@ implement or support the requirement.</p>
         <tbody>
           <tr>
             <td>
-              <!DOCTYPE html>
               <span id="R1">R1</span>
             </td>
             <td>This is requirement 1</td>
             <td>
-              <!DOCTYPE html>
               <a href="#S1">S1</a>
             </td>
-            <td><!DOCTYPE html><a href="#M1">M1</a>, <!DOCTYPE html><a href="#M2">M2</a>, <!DOCTYPE html><a href="#M4">M4</a></td>
+            <td><a href="#M1">M1</a>, <a href="#M2">M2</a>, <a href="#M4">M4</a></td>
             <td></td>
           </tr>
           <tr>
             <td>
-              <!DOCTYPE html>
               <span id="R2">R2</span>
             </td>
             <td>This is requirement 2</td>
-            <td><!DOCTYPE html><a href="#S1">S1</a>, <!DOCTYPE html><a href="#S2">S2</a></td>
-            <td><!DOCTYPE html><a href="#M3">M3</a>, <!DOCTYPE html><a href="#M4">M4</a></td>
+            <td><a href="#S1">S1</a>, <a href="#S2">S2</a></td>
+            <td><a href="#M3">M3</a>, <a href="#M4">M4</a></td>
             <td></td>
           </tr>
           <tr>
             <td>
-              <!DOCTYPE html>
               <span id="R3">R3</span>
             </td>
             <td>This is requirement 3. This requirement is completed because all of its measures have been completed.</td>
             <td>
-              <!DOCTYPE html>
               <a href="#S2">S2</a>
             </td>
-            <td><!DOCTYPE html><a href="#M1">M1</a>, <!DOCTYPE html><a href="#M5">M5</a></td>
+            <td><a href="#M1">M1</a>, <a href="#M5">M5</a></td>
             <td>
-              <!DOCTYPE html>
               <span class="label label-success">Completed</span>
             </td>
           </tr>
           <tr>
             <td>
-              <!DOCTYPE html>
               <span id="R4">R4</span>
             </td>
             <td>This is requirement 4. It has no measures defined.</td>
             <td>
-              <!DOCTYPE html>
               <a href="#S2">S2</a>
             </td>
             <td></td>
             <td>
-              <!DOCTYPE html>
               <span class="label label-warning">No measures</span>
             </td>
           </tr>
         </tbody>
       </table>
-      <h2>Measures <small><!DOCTYPE html><span class="badge">5</span></small></h2>
+      <h2>Measures <small><span class="badge">5</span></small></h2>
       <p>This section contains the example measures defined to implement or support the requirements of the
 project.</p>
       <table class="table table-striped">
@@ -133,28 +122,23 @@ project.</p>
         <tbody>
           <tr>
             <td>
-              <!DOCTYPE html>
               <span id="M1">M1</span>
             </td>
             <td>This is measure 1. It is marked as done. </td>
-            <td><!DOCTYPE html><a href="#R1">R1</a>, <!DOCTYPE html><a href="#R3">R3</a></td>
+            <td><a href="#R1">R1</a>, <a href="#R3">R3</a></td>
             <td>
-              <!DOCTYPE html>
               <a href="#D1">D1</a>
             </td>
             <td>
-              <!DOCTYPE html>
               <span class="label label-success">Completed</span>
             </td>
           </tr>
           <tr>
             <td>
-              <!DOCTYPE html>
               <span id="M2">M2</span>
             </td>
             <td>This is measure 2. It has no deliverable defined.</td>
             <td>
-              <!DOCTYPE html>
               <a href="#R1">R1</a>
             </td>
             <td></td>
@@ -162,52 +146,44 @@ project.</p>
           </tr>
           <tr>
             <td>
-              <!DOCTYPE html>
               <span id="M3">M3</span>
             </td>
             <td>This is measure 3</td>
             <td>
-              <!DOCTYPE html>
               <a href="#R2">R2</a>
             </td>
             <td>
-              <!DOCTYPE html>
               <a href="#D2">D2</a>
             </td>
             <td></td>
           </tr>
           <tr>
             <td>
-              <!DOCTYPE html>
               <span id="M4">M4</span>
             </td>
             <td>This is measure 4. It helps implement two requirements and affects two deliverables.</td>
-            <td><!DOCTYPE html><a href="#R1">R1</a>, <!DOCTYPE html><a href="#R2">R2</a></td>
-            <td><!DOCTYPE html><a href="#D1">D1</a>, <!DOCTYPE html><a href="#D2">D2</a></td>
+            <td><a href="#R1">R1</a>, <a href="#R2">R2</a></td>
+            <td><a href="#D1">D1</a>, <a href="#D2">D2</a></td>
             <td></td>
           </tr>
           <tr>
             <td>
-              <!DOCTYPE html>
               <span id="M5">M5</span>
             </td>
             <td>This is measure 4. It is marked completed. It is the only measure for requirement 3. Therefor making requirement 3 completed. It is also the only measure that affects deliverable 3, thereby completing that deliverable as well.</td>
             <td>
-              <!DOCTYPE html>
               <a href="#R3">R3</a>
             </td>
             <td>
-              <!DOCTYPE html>
               <a href="#D3">D3</a>
             </td>
             <td>
-              <!DOCTYPE html>
               <span class="label label-success">Completed</span>
             </td>
           </tr>
         </tbody>
       </table>
-      <h2>Deliverables <small><!DOCTYPE html><span class="badge">3</span></small></h2>
+      <h2>Deliverables <small><span class="badge">3</span></small></h2>
       <p>This section contains the example deliverables that contain or implement the measures.</p>
       <table class="table table-striped">
         <thead>
@@ -221,34 +197,29 @@ project.</p>
         <tbody>
           <tr>
             <td>
-              <!DOCTYPE html>
               <span id="D1">D1</span>
             </td>
             <td>Deliverable 1</td>
-            <td><!DOCTYPE html><a href="#M1">M1</a>, <!DOCTYPE html><a href="#M4">M4</a></td>
+            <td><a href="#M1">M1</a>, <a href="#M4">M4</a></td>
             <td></td>
           </tr>
           <tr>
             <td>
-              <!DOCTYPE html>
               <span id="D2">D2</span>
             </td>
             <td>Deliverable 2</td>
-            <td><!DOCTYPE html><a href="#M3">M3</a>, <!DOCTYPE html><a href="#M4">M4</a></td>
+            <td><a href="#M3">M3</a>, <a href="#M4">M4</a></td>
             <td></td>
           </tr>
           <tr>
             <td>
-              <!DOCTYPE html>
               <span id="D3">D3</span>
             </td>
             <td>Deliverable 3. This deliverable is completed because the only measure that affects it - measure 5 - has been marked completed.</td>
             <td>
-              <!DOCTYPE html>
               <a href="#M5">M5</a>
             </td>
             <td>
-              <!DOCTYPE html>
               <span class="label label-success">Completed</span>
             </td>
           </tr>

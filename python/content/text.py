@@ -8,7 +8,7 @@ from __future__ import print_function
 
 import datetime
 
-project = "Document-as-code - BIR compliance"
+project = "Document-as-code"
 title = "{0} example".format(project)
 version = "v0.1"
 date = datetime.datetime.now().strftime("%d %B %Y")
