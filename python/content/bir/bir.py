@@ -6,7 +6,7 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 
-from domain.document import Document, Chapter
+from domain.document import Document
 
 from .ch05 import CH05
 from .ch06 import CH06
