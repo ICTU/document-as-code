@@ -12,12 +12,13 @@ from domain.base import Base
 class BirMeasure(Base):
     """ Measures that help to in BIR compliance. """
 
-    def __init__(self, identifier, description, identifiers, done=False):
+    def __init__(self, identifier, description, identifiers, url=None, done=False):
 
         super(BirMeasure, self).__init__( identifier )
 
         self.description = description
         self.identifiers = identifiers
+        self.url  = url
         self.done = done
 
     # ---

@@ -111,9 +111,13 @@ class BootstrapDoc(Doc):
         """ Return a bookmark that can be used to link to. """
         return self.__tag_with_text('span', bookmark_text, id=bookmark_text)
 
-    def link(self, link_text):
+    def link(self, link_text, anchor=None, url=None):
         """ Return a link to a bookmark. """
-        return self.__tag_with_text('a', link_text, href="#{0}".format(link_text))
+        if anchor is None:
+            anchor = link_text
+        if url is None:
+            url = "#{0}".format(anchor)
+        return self.__tag_with_text('a', link_text, href=url)
 
     def badge(self, list_or_number):
         """ Return a badge. If the argument is a list, use the length of the list as number. """
