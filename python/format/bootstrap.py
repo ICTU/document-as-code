@@ -30,54 +30,62 @@ class BootstrapDoc(Doc):
 
     # --- H1 ---
 
-    def h1(self, h1_text, h1_subtext=None):
+    def h1(self, h1_text, h1_subtext=None, h1_bookmark=None):
         """ Add a h1 with an optional sub text. """
-        self.asis( self.h1_raw( h1_text, h1_subtext ) )
+        self.asis( self.h1_raw( h1_text, h1_subtext, h1_bookmark ) )
 
-    def h1_raw(self, h1_text, h1_subtext=None):
+    def h1_raw(self, h1_text, h1_subtext=None, h1_bookmark=None):
         """ A h1 with an optional sub text. """
-        return self.__header('h1', h1_text, h1_subtext)
+        return self.__header('h1', h1_text, h1_subtext, h1_bookmark)
 
     # --- H2 ---
 
-    def h2(self, h2_text, h2_subtext=None):
+    def h2(self, h2_text, h2_subtext=None, h2_bookmark=None):
         """ Add a h2 with an optional sub text. """
-        self.asis( self.h2_raw( h2_text, h2_subtext ) )
+        self.asis( self.h2_raw( h2_text, h2_subtext, h2_bookmark ) )
 
-    def h2_raw(self, h2_text, h2_subtext=None):
+    def h2_raw(self, h2_text, h2_subtext=None, h2_bookmark=None):
         """ A h2 with an optional sub text. """
-        return self.__header('h2', h2_text, h2_subtext)
+        return self.__header('h2', h2_text, h2_subtext, h2_bookmark)
 
     # --- H3 ---
 
-    def h3(self, h3_text, h3_subtext=None):
+    def h3(self, h3_text, h3_subtext=None, h3_bookmark=None):
         """ Add a h3 with an optional sub text. """
-        self.asis( self.h3_raw( h3_text, h3_subtext ) )
+        self.asis( self.h3_raw( h3_text, h3_subtext, h3_bookmark ) )
 
-    def h3_raw(self, h3_text, h3_subtext=None):
+    def h3_raw(self, h3_text, h3_subtext=None, h3_bookmark=None):
         """ A h3 with an optional sub text. """
-        return self.__header('h3', h3_text, h3_subtext)
+        return self.__header('h3', h3_text, h3_subtext, h3_bookmark)
 
     # --- H4 ---
 
-    def h4(self, h4_text, h4_subtext=None):
+    def h4(self, h4_text, h4_subtext=None, h4_bookmark=None):
         """ Add a h4 with an optional sub text. """
-        self.asis( self.h4_raw( h4_text, h4_subtext ) )
+        self.asis( self.h4_raw( h4_text, h4_subtext, h4_bookmark ) )
 
-    def h4_raw(self, h4_text, h4_subtext=None):
+    def h4_raw(self, h4_text, h4_subtext=None, h4_bookmark=None):
         """ A h4 with an optional sub text. """
-        return self.__header('h4', h4_text, h4_subtext)
+        return self.__header('h4', h4_text, h4_subtext, h4_bookmark)
 
 
-    def __header(self, header_tag, header_text, header_subtext=None):
+    def __header(self, header_tag, header_text, header_subtext=None, header_bookmark=None):
         """ Add a header with text and optional sub text. """
+        # create canonical bookmark for header: UPPERCASE, spaces replaced by '-', multiple '-' compressed to one
+        tmp = (header_bookmark if header_bookmark else header_text).replace(' ', '-').upper()
+        bookmark = None
+        while tmp != bookmark:
+            bookmark = tmp
+            tmp = tmp.replace('--', '-')
+
         doc, tag, text = self.__class__().tagtext(False)
-        with tag(header_tag):
-            doc.asis(header_text)
-            if header_subtext:
-                text(' ')
-                with tag('small'):
-                    doc.asis(header_subtext)
+        with tag('span', id=bookmark):
+            with tag(header_tag):
+                doc.asis(header_text)
+                if header_subtext:
+                    text(' ')
+                    with tag('small'):
+                        doc.asis(header_subtext)
         return doc.getvalue()
 
 
