@@ -159,9 +159,11 @@ S1002 = Section(
                     identifier="10.02.03/01",
                     title=u"",
                     text=u"""In de procedure voor wijzigingenbeheer is minimaal aandacht besteed aan:
-* het administreren van significante wijzigingen
-* impactanalyse van mogelijke gevolgen van de wijzigingen
-* goedkeuringsprocedure voor wijzigingen""",
+<ul>
+<li>het administreren van significante wijzigingen
+<li>impactanalyse van mogelijke gevolgen van de wijzigingen
+<li>goedkeuringsprocedure voor wijzigingen
+<ul>""",
                 ),
                 Verifier(
                     identifier="10.02.03/02",
@@ -516,11 +518,13 @@ S1008 = Section(
                     identifier="10.08.03/01",
                     title=u"",
                     text=u"""Om vertrouwelijke informatie te beschermen worden maatregelen genomen, zoals:
-* versleuteling
-* bescherming door fysieke maatregelen, zoals afgesloten containers
-* gebruik van verpakkingsmateriaal waaraan te zien is of getracht is het te openen
-* persoonlijke aflevering
-* opsplitsing van zendingen in meerdere delen en eventueel verzending via verschillende routes""",
+<ul>
+<li>versleuteling
+<li>bescherming door fysieke maatregelen, zoals afgesloten containers
+<li>gebruik van verpakkingsmateriaal waaraan te zien is of getracht is het te openen
+<li>persoonlijke aflevering
+<li>opsplitsing van zendingen in meerdere delen en eventueel verzending via verschillende routes
+</ul>""",
                 ),
                 Verifier(
                     identifier="10.08.03/02",
@@ -629,12 +633,14 @@ S1010 = Section(
                     identifier="10.10.01/02",
                     title=u"",
                     text=u"""Een logregel bevat minimaal:
-* een tot een natuurlijk persoon herleidbare gebruikersnaam of ID
-* de gebeurtenis (zie [[#10.10.02/1]])
-* waar mogelijk de identiteit van het werkstation of de locatie
-* het object waarop de handeling werd uitgevoerd
-* het resultaat van de handeling
-* de datum en het tijdstip van de gebeurtenis""",
+<ul>
+<li>een tot een natuurlijk persoon herleidbare gebruikersnaam of ID
+<li>de gebeurtenis (zie [[#10.10.02/1]])
+<li>waar mogelijk de identiteit van het werkstation of de locatie
+<li>het object waarop de handeling werd uitgevoerd
+<li>het resultaat van de handeling
+<li>de datum en het tijdstip van de gebeurtenis
+</ul>""",
                 ),
                 Verifier(
                     identifier="10.10.01/03",

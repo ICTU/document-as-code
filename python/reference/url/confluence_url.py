@@ -65,6 +65,24 @@ class ConfluenceUrl( object ):
 
 
     @property
+    def confluence_page_name( self ):
+        """
+        page name conforming Confluence standard
+        """
+        return quote_plus( self._page_title )
+
+
+    @property
+    def confluence_anchor_name( self ):
+        """
+        anchor name conforming Confluence standard
+        """
+        page_in_anchor = self._page_title.replace( ' ', '' )
+        anchor_name_in_anchor = self._anchor_name.replace( ' ', '' )
+        return '-'.join( ( page_in_anchor, anchor_name_in_anchor ) )
+
+
+    @property
     def url( self ):
         """
         compose the actual URL from its parts
@@ -72,14 +90,10 @@ class ConfluenceUrl( object ):
         url = self._base_url
 
         if self._page_title:
-            page_in_url = quote_plus( self._page_title )
-            url = '/'.join( ( url, page_in_url ) )
+            url = '/'.join( ( url, self.confluence_page_name ) )
 
             if self._anchor_name:
-                page_in_anchor = self._page_title.replace( ' ', '' )
-                anchor_name_in_anchor = self._anchor_name.replace( ' ', '' )
-                anchor = '-'.join( ( page_in_anchor, anchor_name_in_anchor ) )
-                url = '#'.join( ( url, anchor ) )
+                url = '#'.join( ( url, self.confluence_anchor_name ) )
 
         return url
 
