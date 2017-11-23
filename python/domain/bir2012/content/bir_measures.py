@@ -5,7 +5,7 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-from domain.bir.model.bir_measure import BirMeasure
+from domain.bir20122012.model.bir_measure import BirMeasure
 
 # --- specific measures ---
 

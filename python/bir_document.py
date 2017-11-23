@@ -9,9 +9,9 @@ import datetime
 
 from yattag import indent
 
-from domain.bir.content.bir import BIR
-from domain.bir.content.bir_measures import NotApplicable, Explained
-from domain.bir.model.bir_measure import BirMeasure
+from domain.bir2012.content.bir import BIR
+from domain.bir2012.content.bir_measures import NotApplicable, Explained
+from domain.bir2012.model.bir_measure import BirMeasure
 from format.bootstrap import BootstrapDoc
 
 doc, tag, text = BootstrapDoc().tagtext()
