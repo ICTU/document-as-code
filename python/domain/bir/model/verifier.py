@@ -6,9 +6,9 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 
-from domain.document.model.recursive_fragment import RecursiveFragment
+from domain.document.model import recursive_fragment
 
 
-class Verifier(RecursiveFragment):
+class Verifier(recursive_fragment.RecursiveFragment):
 
     pass

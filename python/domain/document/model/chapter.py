@@ -5,9 +5,10 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-from domain.document.model.recursive_fragment import RecursiveFragment
+
+from . import recursive_fragment
 
 
-class Chapter(RecursiveFragment):
+class Chapter(recursive_fragment.RecursiveFragment):
 
     pass

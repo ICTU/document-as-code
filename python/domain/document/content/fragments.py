@@ -5,27 +5,28 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-from domain.document.model.recursive_fragment import RecursiveFragment
+
+from domain.document.model import recursive_fragment
 from domain.quality_plan.content import text
 
 
-F1 = RecursiveFragment(
+F1 = recursive_fragment.RecursiveFragment(
     identifier="F1",
     title="Fragment",
     text="Say something smart about this recursive fragments example",
     fragments=[
-        RecursiveFragment(
+        recursive_fragment.RecursiveFragment(
             identifier="",
             title="Subfragment",
             text="Something catchy",
             fragments=[
-                RecursiveFragment(
+                recursive_fragment.RecursiveFragment(
                     identifier="",
                     title="Subsubfragment",
                 ),
             ]
         ),
-        RecursiveFragment(
+        recursive_fragment.RecursiveFragment(
             identifier="",
             title="Another Subfragment",
             text="or something foolish",
@@ -34,22 +35,22 @@ F1 = RecursiveFragment(
 )
 
 
-F2 = RecursiveFragment(
+F2 = recursive_fragment.RecursiveFragment(
     identifier="F1",
     title="Another Fragment",
     fragments=[
-        RecursiveFragment(
+        recursive_fragment.RecursiveFragment(
             identifier="",
             title="Yet Another Subfragment",
         ),
-        RecursiveFragment(
+        recursive_fragment.RecursiveFragment(
             identifier="",
             title="How Many Subfragments?",
         ),
     ]
 )
 
-F0 = RecursiveFragment(
+F0 = recursive_fragment.RecursiveFragment(
     identifier="F0",
     title=text.title,
     lead=text.intro,

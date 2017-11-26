@@ -6,9 +6,9 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 
-from .recursive_fragment import RecursiveFragment
+from . import recursive_fragment
 
 
-class Paragraph(RecursiveFragment):
+class Paragraph(recursive_fragment.RecursiveFragment):
 
     pass

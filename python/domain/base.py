@@ -16,7 +16,7 @@ class Base(object):
     identifier = None
 
 
-    def __init__( self, identifier ):
+    def __init__(self, identifier):
         """
         create domain object and self-register it
         """

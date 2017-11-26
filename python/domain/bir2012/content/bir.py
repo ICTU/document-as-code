@@ -5,33 +5,36 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-from domain.bir2012.content.ch05 import CH05
-from domain.bir2012.content.ch06 import CH06
-from domain.bir2012.content.ch07 import CH07
-from domain.bir2012.content.ch08 import CH08
-from domain.bir2012.content.ch09 import CH09
-from domain.bir2012.content.ch10 import CH10
-from domain.bir2012.content.ch11 import CH11
-from domain.bir2012.content.ch12 import CH12
-from domain.bir2012.content.ch13 import CH13
-from domain.bir2012.content.ch14 import CH14
-from domain.bir2012.content.ch15 import CH15
-from domain.document import Document
 
-BIR = Document(
-    identifier="BIR",
-    title=u"Baseline Informatiebeveiliging Rijksdienst",
+from . import ch05
+from . import ch06
+from . import ch07
+from . import ch08
+from . import ch09
+from . import ch10
+from . import ch11
+from . import ch12
+from . import ch13
+from . import ch14
+from . import ch15
+
+from domain import document
+
+
+BIR = document.Document(
+    identifier="BIR2012",
+    title=u"Baseline Informatiebeveiliging Rijksdienst - 2012",
     fragments=[
-        CH05,
-        CH06,
-        CH07,
-        CH08,
-        CH09,
-        CH10,
-        CH11,
-        CH12,
-        CH13,
-        CH14,
-        CH15,
+        ch05.CH05,
+        ch06.CH06,
+        ch07.CH07,
+        ch08.CH08,
+        ch09.CH09,
+        ch10.CH10,
+        ch11.CH11,
+        ch12.CH12,
+        ch13.CH13,
+        ch14.CH14,
+        ch15.CH15,
     ]
 )
