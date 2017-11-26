@@ -5,15 +5,18 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-import sys
 import datetime
+import sys
 
 from yattag import indent
 
-from domain.bir2012.content.bir import BIR
-from domain.bir2012.content.bir_measures import NotApplicable, Explained
 from domain.bir.model.bir_measure import BirMeasure
+from domain.bir.content.bir_measures import NotApplicable, Explained
+
+from domain.bir2012.content.bir import BIR
+
 from format.bootstrap import BootstrapDoc
+
 
 doc, tag, text = BootstrapDoc().tagtext()
 
@@ -26,19 +29,19 @@ TODO = BirMeasure("TODO", "Things left todo", identifiers=[])
 
 def assign_measures_to_fragments(fragment):
 
-    fragment._bir_measures = set()
+    fragment.bir_measures = set()
 
     # depth first with post visit processing
     for subfragment in fragment.fragments:
-        fragment._bir_measures.update(assign_measures_to_fragments(subfragment))
+        fragment.bir_measures.update(assign_measures_to_fragments(subfragment))
 
-    fragment._bir_measures.update(BirMeasure.all_applicable_to_fragment(fragment.identifier))
-    if not fragment._bir_measures:
-        fragment._bir_measures.add(TODO)
+    fragment.bir_measures.update(BirMeasure.all_applicable_to_fragment(fragment.identifier))
+    if not fragment.bir_measures:
+        fragment.bir_measures.add(TODO)
         # provide identification for missing stuff
         print('        "{}",'.format(fragment.identifier))
 
-    return fragment._bir_measures
+    return fragment.bir_measures
 
 
 # --- label rendering ---
@@ -97,7 +100,7 @@ def turn_measures_into_labels(measures):
 
 def render_fragment(fragment, h, render_sub_level=None):
 
-    labels = turn_measures_into_labels(fragment._bir_measures)
+    labels = turn_measures_into_labels(fragment.bir_measures)
 
     h(fragment.get_title(), ''.join(labels))
 
@@ -126,7 +129,7 @@ def render_norm(norm):
             (
                 doc.bookmark(verifier.identifier),
                 verifier.text,
-                render_measures(verifier._bir_measures)
+                render_measures(verifier.bir_measures)
             )
             for verifier in norm.fragments
         ]
@@ -158,7 +161,7 @@ def render_verifiers_with_state(label, verifiers):
                     render_measures(
                         [
                             measure
-                            for measure in verifier._bir_measures if measure not in [TODO, Explained, NotApplicable]
+                            for measure in verifier.bir_measures if measure not in [TODO, Explained, NotApplicable]
                         ]
                     )
                 )
@@ -191,7 +194,7 @@ def group_verifiers_by_state(document):
             for norm in section.fragments:
                 for verifier in norm.fragments:
 
-                    for measure in verifier._bir_measures:
+                    for measure in verifier.bir_measures:
 
                         if measure is NotApplicable:
                             state = STATE_NA
