@@ -7,4 +7,4 @@ from __future__ import print_function
 
 
 from .person import Person
-from .team   import Team
+from .team import Team
