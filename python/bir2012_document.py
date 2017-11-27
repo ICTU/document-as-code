@@ -13,7 +13,7 @@ from yattag import indent
 from domain.bir.model.bir_measure import BirMeasure
 from domain.bir.content.bir_measures import NotApplicable, Explained
 
-from domain.bir2012.content.bir import BIR
+from domain.bir2012 import BIR2012 as BIR
 
 from format.bootstrap import BootstrapDoc
 
