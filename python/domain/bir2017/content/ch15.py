@@ -160,7 +160,7 @@ S1502 = Section(
 
 CH15 = Chapter(
     identifier="15",
-    title=u"",
+    title=u"Supplier relationships",
     fragments=[
         S1501,
         S1502,

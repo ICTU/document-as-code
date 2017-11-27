@@ -196,7 +196,7 @@ S0803 = Section(
 
 CH08 = Chapter(
     identifier="08",
-    title=u"",
+    title=u"Asset management",
     fragments=[
         S0801,
         S0802,

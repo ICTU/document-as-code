@@ -196,7 +196,7 @@ S1102 = Section(
 
 CH11 = Chapter(
     identifier="11",
-    title=u"",
+    title=u"Physical and environmental security",
     fragments=[
         S1101,
         S1102,

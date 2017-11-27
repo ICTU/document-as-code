@@ -2,7 +2,7 @@ Document-as-code: BIR2017
 =========================
 
 De baseline informatiebeveiliging rijksdienst (BIR) van 2017 bestaat uit
-veertien hoofdstukken (05-18), met in totaal ?? punten waaraan invulling gegeven moet worden.
+veertien hoofdstukken (05-18), met in totaal 114(?) punten waaraan invulling gegeven moet worden.
 Dit kan een knap lastige administratie worden.
 
 Door in 'bir_measures.py' de getroffen maatregelen te creeren en aan te geven aan welke

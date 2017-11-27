@@ -162,7 +162,7 @@ S1601 = Section(
 
 CH16 = Chapter(
     identifier="16",
-    title=u"",
+    title=u"Information security incident management",
     fragments=[
         S1601,
     ]

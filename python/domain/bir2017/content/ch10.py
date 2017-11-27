@@ -58,7 +58,7 @@ S1001 = Section(
 
 CH10 = Chapter(
     identifier="10",
-    title=u"",
+    title=u"Cryptography",
     fragments=[
         S1001,
     ]

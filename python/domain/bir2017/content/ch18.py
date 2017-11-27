@@ -164,7 +164,7 @@ S1802 = Section(
 
 CH18 = Chapter(
     identifier="18",
-    title=u"",
+    title=u"Compliance; with internal requirements, such as policies, and with external requirements, such as laws",
     fragments=[
         S1801,
         S1802,

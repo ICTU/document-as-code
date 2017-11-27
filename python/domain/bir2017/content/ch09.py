@@ -319,7 +319,7 @@ S0904 = Section(
 
 CH09 = Chapter(
     identifier="09",
-    title=u"",
+    title=u"Access control",
     fragments=[
         S0901,
         S0902,

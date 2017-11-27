@@ -378,7 +378,7 @@ S1207 = Section(
 
 CH12 = Chapter(
     identifier="12",
-    title=u"",
+    title=u"Operations security",
     fragments=[
         S1201,
         S1202,

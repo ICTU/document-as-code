@@ -143,7 +143,7 @@ S0703 = Section(
 
 CH07 = Chapter(
     identifier="07",
-    title=u"",
+    title=u"Human resource security",
     fragments=[
         S0701,
         S0702,
