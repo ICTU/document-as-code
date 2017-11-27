@@ -14,10 +14,10 @@ from format.bootstrap import BootstrapDoc
 
 doc, tag, text = BootstrapDoc().tagtext()
 
-headings = ( doc.h1, doc.h1, doc.h2, doc.h3, doc.h4 )
+headings = (doc.h1, doc.h1, doc.h2, doc.h3, doc.h4)
 
 
-def show_recursive_fragments( headings, *fragments ):
+def show_recursive_fragments(headings, *fragments):
 
     if headings:
         heading = headings[0]
@@ -27,12 +27,12 @@ def show_recursive_fragments( headings, *fragments ):
         remaining_headings = []
 
     for fragment in fragments:
-        heading( fragment.get_title() )
+        heading(fragment.get_title())
         if fragment.lead:
-            doc.p( fragment.lead, klass='lead' )
+            doc.p(fragment.lead, klass='lead')
         if fragment.text:
-            doc.p( fragment.text )
-        show_recursive_fragments( remaining_headings, *(fragment.fragments) )
+            doc.p(fragment.text)
+        show_recursive_fragments(remaining_headings, *(fragment.fragments))
 
 
 with tag('html'):
@@ -43,6 +43,7 @@ with tag('html'):
 
         with tag('div', klass='container'):
 
-            show_recursive_fragments( headings, fragments.F0 )
+            show_recursive_fragments(headings, fragments.F0)
 
-file('example_recursive_document.html', 'w').write(indent(doc.getvalue()))
+with open('example_recursive_document.html', 'w') as fout:
+    fout.write(indent(doc.getvalue()))
