@@ -23,6 +23,11 @@ S1701 = Section(
                  u"informatiebeveiliging en voor de continuïteit van het informatiebeveiligingsbeheer in ongunstige "
                  u"situaties, bijv. een crisis of een ramp, vast te stellen.",
             fragments=[
+                Verifier(
+                    identifier="17.01.01/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -34,6 +39,11 @@ S1701 = Section(
                  u"vereiste niveau van continuïteit voor informatiebeveiliging tijdens een ongunstige situatie te "
                  u"waarborgen.",
             fragments=[
+                Verifier(
+                    identifier="17.01.02/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -80,6 +90,11 @@ S1702 = Section(
             text=u"Beschikbaarheid van informatieverwerkende faciliteiten: Informatieverwerkende faciliteiten behoren "
                  u"met voldoende redundantie te worden geïmplementeerd om aan beschikbaarheidseisen te voldoen.",
             fragments=[
+                Verifier(
+                    identifier="17.02.01/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 

@@ -22,6 +22,11 @@ S1201 = Section(
             text=u"Gedocumenteerde bedieningsprocedures: Bedieningsprocedures behoren te worden gedocumenteerd en "
                  u"beschikbaar te worden gesteld aan alle gebruikers die ze nodig hebben.",
             fragments=[
+                Verifier(
+                    identifier="12.01.01/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -280,6 +285,11 @@ S1204 = Section(
                  u"behoren te worden vastgelegd en de logbestanden behoren te worden beschermd en regelmatig "
                  u"te worden beoordeeld.",
             fragments=[
+                Verifier(
+                    identifier="12.04.03/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -289,6 +299,11 @@ S1204 = Section(
             text=u"Kloksynchronisatie: De klokken van alle relevante informatieverwerkende systemen binnen een "
                  u"organisatie of beveiligingsdomein behoren te worden gesynchroniseerd met één referentietijdbron.",
             fragments=[
+                Verifier(
+                    identifier="12.04.04/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -307,6 +322,11 @@ S1205 = Section(
             text=u"Software installeren op operationele systemen: Om het op operationele systemen installeren van "
                  u"software te beheersen behoren procedures te worden geïmplementeerd.",
             fragments=[
+                Verifier(
+                    identifier="12.05.01/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -369,6 +389,11 @@ S1207 = Section(
                  u"verificatie van uitvoeringssystemen met zich meebrengen, behoren zorgvuldig te worden gepland "
                  u"en afgestemd om bedrijfsprocessen zo min mogelijk te verstoren.",
             fragments=[
+                Verifier(
+                    identifier="12.07.01/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 

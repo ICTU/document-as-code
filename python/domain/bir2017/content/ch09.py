@@ -61,21 +61,21 @@ S0902 = Section(
             text=u"Registratie en afmelden van gebruikers: Een formele registratie- en afmeldingsprocedure behoort "
                  u"te worden geïmplementeerd om toewijzing van toegangsrechten mogelijk te maken.",
             fragments=[
+
+                Verifier(
+                    identifier="09.02.01/01",
+                    title=u"",
+                    text=u"Er is een sluitende formele registratie- en afmeldprocedure voor het beheren van "
+                         u"gebruikersidentificaties.",
+                ),
+
+                Verifier(
+                    identifier="09.02.01/02",
+                    title=u"",
+                    text=u"Het gebruiken van groepsaccounts is niet toegestaan tenzij dit wordt gemotiveerd en "
+                         u"vastgelegd door de proceseigenaar.",
+                ),
             ],
-        ),
-
-        Verifier(
-            identifier="09.02.01/01",
-            title=u"",
-            text=u"Er is een sluitende formele registratie- en afmeldprocedure voor het beheren van "
-                 u"gebruikersidentificaties.",
-        ),
-
-        Verifier(
-            identifier="09.02.01/02",
-            title=u"",
-            text=u"Het gebruiken van groepsaccounts is niet toegestaan tenzij dit wordt gemotiveerd en vastgelegd "
-                 u"door de proceseigenaar.",
         ),
 
         Norm(
@@ -112,6 +112,11 @@ S0902 = Section(
             text=u"Beheren van speciale toegangsrechten: Het toewijzen en gebruik van speciale toegangsrechten "
                  u"behoren te worden beperkt en beheerst.",
             fragments=[
+                Verifier(
+                    identifier="09.02.03/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -127,6 +132,11 @@ S0902 = Section(
             text=u"Beheer van geheime authenticatie-informatie van gebruikers: Het toewijzen van geheime "
                  u"authenticatie-informatie behoort te worden beheerst via een formeel beheersproces.",
             fragments=[
+                Verifier(
+                    identifier="09.02.04/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -162,6 +172,11 @@ S0902 = Section(
                  u"hun dienstverband, contract of overeenkomst te worden verwijderd, en bij wijzigingen behoren ze "
                  u"te worden aangepast.",
             fragments=[
+                Verifier(
+                    identifier="09.02.06/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -310,6 +325,11 @@ S0904 = Section(
             text=u"Toegangsbeveiliging op programmabroncode: Toegang tot de programmabroncode behoort "
                  u"te worden beperkt.",
             fragments=[
+                Verifier(
+                    identifier="09.04.05/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 

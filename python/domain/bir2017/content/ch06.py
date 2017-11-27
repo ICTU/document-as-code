@@ -101,6 +101,11 @@ S0601 = Section(
             text=u"Informatiebeveiliging in projectbeheer: Informatiebeveiliging behoort aan de orde te komen in "
                  u"projectbeheer, ongeacht het soort project.",
             fragments=[
+                Verifier(
+                    identifier="06.01.05/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -151,6 +156,11 @@ S0602 = Section(
             text=u"Telewerken: Beleid en ondersteunende beveiligingsmaatregelen behoren te worden geïmplementeerd ter "
                  u"beveiliging van informatie die vanaf telewerklocaties wordt benaderd, verwerkt of opgeslagen.",
             fragments=[
+                Verifier(
+                    identifier="06.02.02/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 

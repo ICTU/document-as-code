@@ -19,12 +19,17 @@ S1401 = Section(
         Norm(
             identifier="14.01.01",
             title=u"",
-            text=u"Analyse en specificatie van informatiebeveiligingseisen: De eisen die verband houden met informatiebeveiliging behoren te worden opgenomen in de eisen voor nieuwe informatiesystemen of voor uitbreidingen van bestaande informatiesystemen.",
+            text=u"Analyse en specificatie van informatiebeveiligingseisen: De eisen die verband houden met "
+                 u"informatiebeveiliging behoren te worden opgenomen in de eisen voor nieuwe informatiesystemen of "
+                 u"voor uitbreidingen van bestaande informatiesystemen.",
             fragments=[
                 Verifier(
                     identifier="14.01.01/01",
                     title=u"",
-                    text=u"Bij nieuwe informatiesystemen en bij wijzigingen op bestaande informatiesystemen moet conform het Voorschrift Informatiebeveiliging Rijksdienst artikel 4 een expliciete risicoafweging worden uitgevoerd ten behoeve van het vaststellen van de beveiligingseisen, uitgaande van de BIR.",
+                    text=u"Bij nieuwe informatiesystemen en bij wijzigingen op bestaande informatiesystemen moet "
+                         u"conform het Voorschrift Informatiebeveiliging Rijksdienst artikel 4 een expliciete "
+                         u"risicoafweging worden uitgevoerd ten behoeve van het vaststellen van de beveiligingseisen, "
+                         u"uitgaande van de BIR.",
                 ),
             ],
         ),
@@ -32,16 +37,31 @@ S1401 = Section(
         Norm(
             identifier="14.01.02",
             title=u"",
-            text=u"Toepassingen op openbare netwerken beveiligen: Informatie die deel uitmaakt van uitvoeringsdiensten en die via openbare netwerken wordt uitgewisseld, behoort te worden beschermd tegen frauduleuze activiteiten, geschillen over contracten en onbevoegde openbaarmaking en wijziging.",
+            text=u"Toepassingen op openbare netwerken beveiligen: Informatie die deel uitmaakt van uitvoeringsdiensten "
+                 u"en die via openbare netwerken wordt uitgewisseld, behoort te worden beschermd tegen frauduleuze "
+                 u"activiteiten, geschillen over contracten en onbevoegde openbaarmaking en wijziging.",
             fragments=[
+                Verifier(
+                    identifier="14.01.02/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
         Norm(
             identifier="14.01.03",
             title=u"",
-            text=u"Transacties van toepassingen beschermen: Informatie die deel uitmaakt van transacties van toepassingen behoort te worden beschermd ter voorkoming van onvolledige overdracht, foutieve routering, onbevoegd wijzigen van berichten, onbevoegd openbaar maken, onbevoegd vermenigvuldigen of afspelen.",
+            text=u"Transacties van toepassingen beschermen: Informatie die deel uitmaakt van transacties van "
+                 u"toepassingen behoort te worden beschermd ter voorkoming van onvolledige overdracht, "
+                 u"foutieve routering, onbevoegd wijzigen van berichten, onbevoegd openbaar maken, "
+                 u"onbevoegd vermenigvuldigen of afspelen.",
             fragments=[
+                Verifier(
+                    identifier="14.01.03/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -156,6 +176,11 @@ S1402 = Section(
             text=u"Testen van systeembeveiliging: Tijdens ontwikkelactiviteiten behoort de beveiligingsfunctionaliteit "
                  u"te worden getest.",
             fragments=[
+                Verifier(
+                    identifier="14.02.08/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -194,6 +219,11 @@ S1403 = Section(
             text=u"Bescherming van testgegevens: Testgegevens behoren zorgvuldig te worden gekozen, beschermd "
                  u"en gecontroleerd.",
             fragments=[
+                Verifier(
+                    identifier="14.03.01/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 

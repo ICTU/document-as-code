@@ -24,6 +24,11 @@ S1801 = Section(
                  u"te voldoen behoren voor elk informatiesysteem en de organisatie expliciet te worden vastgesteld, "
                  u"gedocumenteerd en actueel gehouden.",
             fragments=[
+                Verifier(
+                    identifier="18.01.01/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -34,6 +39,11 @@ S1801 = Section(
                  u"in verband met intellectueleeigendomsrechten en het gebruik van eigendomssoftwareproducten te "
                  u"waarborgen behoren passende procedures te worden geïmplementeerd.",
             fragments=[
+                Verifier(
+                    identifier="18.01.02/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 

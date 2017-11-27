@@ -151,6 +151,11 @@ S1502 = Section(
                  u"houdend met de kritikaliteit van bedrijfsinformatie, betrokken systemen en processen en "
                  u"herbeoordeling van risico?s.",
             fragments=[
+                Verifier(
+                    identifier="15.02.02/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 

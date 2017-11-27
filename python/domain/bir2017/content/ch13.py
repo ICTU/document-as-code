@@ -22,6 +22,11 @@ S1301 = Section(
             text=u"Beheersmaatregelen voor netwerken: Netwerken behoren te worden beheerd en beheerst om informatie "
                  u"in systemen en toepassingen te beschermen.",
             fragments=[
+                Verifier(
+                    identifier="13.01.01/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -89,6 +94,11 @@ S1302 = Section(
                  u"dat via alle soorten communicatiefaciliteiten verloopt, behoren formele beleidsregels, "
                  u"procedures en beheersmaatregelen voor transport van kracht te zijn.",
             fragments=[
+                Verifier(
+                    identifier="13.02.01/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -98,6 +108,11 @@ S1302 = Section(
             text=u"Overeenkomsten over informatietransport: Overeenkomsten behoren betrekking te hebben op "
                  u"het beveiligd transporteren van bedrijfsinformatie tussen de organisatie en externe partijen.",
             fragments=[
+                Verifier(
+                    identifier="13.02.02/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -143,6 +158,11 @@ S1302 = Section(
                  u"van informatie weerspiegelen, behoren te worden vastgesteld, regelmatig te worden beoordeeld "
                  u"en gedocumenteerd.",
             fragments=[
+                Verifier(
+                    identifier="13.02.04/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 

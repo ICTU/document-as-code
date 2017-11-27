@@ -23,6 +23,11 @@ S1601 = Section(
                  u"vastgesteld om een snelle, doeltreffende en ordelijke respons op informatiebeveiligingsincidenten "
                  u"te bewerkstelligen.",
             fragments=[
+                Verifier(
+                    identifier="16.01.01/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -116,6 +121,11 @@ S1601 = Section(
             text=u"Respons op informatiebeveiligingsincidenten: Op informatiebeveiligingsincidenten behoort te worden "
                  u"gereageerd in overeenstemming met de gedocumenteerde procedures.",
             fragments=[
+                Verifier(
+                    identifier="16.01.05/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 

@@ -114,6 +114,11 @@ S0702 = Section(
                  u"zijn om actie te ondernemen tegen medewerkers die een inbreuk hebben gepleegd op de "
                  u"informatiebeveiliging.",
             fragments=[
+                Verifier(
+                    identifier="07.02.03/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -134,6 +139,11 @@ S0703 = Section(
                  u"van het dienstverband behoren te worden gedefinieerd, gecommuniceerd aan de medewerker of "
                  u"contractant, en ten uitvoer gebracht.",
             fragments=[
+                Verifier(
+                    identifier="07.03.01/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 

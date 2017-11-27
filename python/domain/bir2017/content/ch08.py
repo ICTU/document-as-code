@@ -23,6 +23,11 @@ S0801 = Section(
                  u"informatie en informatieverwerkende faciliteiten behoren te worden geïdentificeerd, en van deze "
                  u"bedrijfsmiddelen behoort een inventaris te worden opgesteld en onderhouden.",
             fragments=[
+                Verifier(
+                    identifier="08.01.01/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -32,6 +37,11 @@ S0801 = Section(
             text=u"Eigendom van bedrijfsmiddelen: Bedrijfsmiddelen die in het inventarisoverzicht worden bijgehouden, "
                  u"behoren een eigenaar te hebben.",
             fragments=[
+                Verifier(
+                    identifier="08.01.02/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -64,6 +74,11 @@ S0801 = Section(
                  u"bedrijfsmiddelen van de organisatie die ze in hun bezit hebben bij beëindiging van hun "
                  u"dienstverband, contract of overeenkomst terug te geven.",
             fragments=[
+                Verifier(
+                    identifier="08.01.04/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -98,6 +113,11 @@ S0802 = Section(
                  u"ontwikkeld en geïmplementeerd in overeenstemming met het informatieclassificatieschema dat is "
                  u"vastgesteld door de organisatie.",
             fragments=[
+                Verifier(
+                    identifier="08.02.02/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -108,6 +128,11 @@ S0802 = Section(
                  u"worden ontwikkeld en geïmplementeerd in overeenstemming met het informatieclassificatieschema dat "
                  u"is vastgesteld door de organisatie.",
             fragments=[
+                Verifier(
+                    identifier="08.02.03/01",
+                    title=u"",
+                    text=u"- conform norm -",
+                ),
             ],
         ),
 
@@ -174,20 +199,20 @@ S0803 = Section(
             text=u"Media fysiek overdragen: Media die informatie bevatten, behoren te worden beschermd tegen "
                  u"onbevoegde toegang, misbruik of corruptie tijdens transport.",
             fragments=[
+
+                Verifier(
+                    identifier="08.03.03/01",
+                    title=u"",
+                    text=u"Er is voor de gehele organisatie beleid voor het fysiek transport van media vastgesteld.",
+                ),
+
+                Verifier(
+                    identifier="08.03.03/02",
+                    title=u"",
+                    text=u"Het gebruik van koeriers of transporteurs voor DepV of hoger geclassificeerde informatie "
+                         u"voldoet aan het gestelde in het VIR-BI.",
+                ),
             ],
-        ),
-
-        Verifier(
-            identifier="08.03.03/01",
-            title=u"",
-            text=u"Er is voor de gehele organisatie beleid voor het fysiek transport van media vastgesteld.",
-        ),
-
-        Verifier(
-            identifier="08.03.03/02",
-            title=u"",
-            text=u"Het gebruik van koeriers of transporteurs voor DepV of hoger geclassificeerde informatie voldoet "
-                 u"aan het gestelde in het VIR-BI.",
         ),
 
     ],
