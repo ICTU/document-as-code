@@ -40,3 +40,11 @@ class Iso25010MainCharacteristic(cb.Iso25010CharacteristicBase):
         if sub_characteristic not in self._sub_characteristics:
             self._sub_characteristics.append(sub_characteristic)
             sub_characteristic.part_of(self)
+
+
+    def all_sub_characteristics(self):
+        """
+        all known subcharacteristics
+        :return: subcharacteristics
+        """
+        return list(self._sub_characteristics)
