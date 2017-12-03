@@ -11,4 +11,13 @@ from domain.document.model import recursive_fragment
 
 class Verifier(recursive_fragment.RecursiveFragment):
 
-    pass
+    bbn = None
+
+    def __init__(self, identifier, title, bbn=None, lead=None, text=None, fragments=[]):
+        """
+        create a verifier
+        BIR 2017 introduced a security level (basisbeschermingsniveau, BBN)
+        """
+        super(Verifier, self).__init__(identifier, title, lead=lead, text=text, fragments=fragments)
+
+        self.bbn = bbn
