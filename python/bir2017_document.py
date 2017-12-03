@@ -130,6 +130,32 @@ def turn_measures_into_labels(measures):
     return turn_label_data_into_labels(labels_data)
 
 
+# --- protection level label ---
+
+BBN_LABELS = [
+    (('?', 'danger'), ('?', 'danger'), ('?', 'danger')),
+    (('1', 'primary'), ('2', 'primary'), ('3', 'primary')),
+    (('-', 'default'), ('2', 'primary'), ('3', 'primary')),
+    (('-', 'default'), ('-', 'default'), ('3', 'primary')),
+]
+
+
+def turn_bbn_into_label(bbn):
+    """
+    turns a basic protection level (BBN) into a formatted label
+    :param bbn: basic protection level
+    :return: formatted label
+    """
+    if bbn:
+        label_style = "font-size:11px"
+
+        bbn_labels = BBN_LABELS[bbn if 1 <= bbn <= 3 else 0]
+
+        return [doc.label(x, lvl, style=label_style) for x, lvl in bbn_labels]
+    else:
+        return None
+
+
 # --- generic fragment rendering ---
 
 def render_fragment(fragment, h, render_sub_level=None):
@@ -139,8 +165,11 @@ def render_fragment(fragment, h, render_sub_level=None):
     :param h: heading renderer
     :param render_sub_level: optional renderer for next fragment level
     """
-
+    bbn = turn_bbn_into_label(fragment.bbn) if hasattr(fragment, 'bbn') else None
     labels = turn_measures_into_labels(fragment.bir_measures)
+
+    if bbn:
+        labels = bbn + [" &nbsp; "] + labels
 
     h(fragment.get_title(), ''.join(labels))
 
@@ -177,15 +206,17 @@ def render_norm(norm):
     render_fragment(norm, doc.h3)
     if norm.fragments:
         doc.table(
-            ('Ref', 'Verifier', 'Status'),
+            ('Ref', 'Verifier', 'BBN', 'Status'),
             [
                 (
                     doc.bookmark(verifier.identifier),
                     verifier.text,
+                    ''.join(turn_bbn_into_label(verifier.bbn)),
                     render_measures(verifier.bir_measures)
                 )
                 for verifier in norm.fragments
-            ]
+            ],
+            widths=("80px", "*", "84px", "40px"),
         )
 
 
@@ -228,11 +259,12 @@ def render_verifiers_with_state(label, verifiers):
 
     if verifiers:
         doc.table(
-            ('Ref', 'Verifier', ''),
+            ('Ref', 'Verifier', 'BBN', ''),
             [
                 (
                     doc.bookmark(verifier.identifier),
                     verifier.text,
+                    ''.join(turn_bbn_into_label(verifier.bbn)),
                     render_measures(
                         [
                             measure
@@ -245,7 +277,8 @@ def render_verifiers_with_state(label, verifiers):
                     )
                 )
                 for verifier in verifiers
-            ]
+            ],
+            widths=("80px", "*", "84px", "40px"),
         )
     else:
         doc.p("-- geen --")
@@ -365,4 +398,3 @@ if sys.version_info < (3, 0):
 else:
     with open('bir2017_document.html', mode='w', encoding='ascii', errors='xmlcharrefreplace') as fout:
         print(bir_content, file=fout)
-
