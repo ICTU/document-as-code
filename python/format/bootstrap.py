@@ -89,18 +89,27 @@ class BootstrapDoc(Doc):
         return doc.getvalue()
 
 
-    def table(self, headers, rows, caption=None, sort_rows=True, sort_cells=True):
+    def table(self, headers, rows, caption=None, sort_rows=True, sort_cells=True, widths=None):
         """ Add a table with the headers and rows and an optional caption. The rows are sorted. If any cell contains
-            a list it is joined with comma as separator. """
+            a list it is joined with comma as separator. Widths can be given in an attempt to force column widths. """
+        if widths is None:
+            widths = [None] * len(headers)
+        else:
+            widths = (list(widths) + ([None] * len(headers)))[:len(headers)]
+
         with self.tag('table', klass='table table-striped'):
             if caption:
                 with self.tag('caption'):
                     self.text(caption)
             with self.tag('thead'):
                 with self.tag('tr'):
-                    for header in headers:
-                        with self.tag('th'):
-                            self.text(header)
+                    for header, width in zip(headers, widths):
+                        if width:
+                            with self.tag('th', ('width', width)):
+                                self.text(header)
+                        else:
+                            with self.tag('th'):
+                                self.text(header)
             with self.tag('tbody'):
                 for row in sorted(rows) if sort_rows else rows:
                     with self.tag('tr'):
