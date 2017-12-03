@@ -12,7 +12,7 @@ from yattag import Doc
 class BootstrapDoc(Doc):
     """ A HTML document with Bootstrap CSS and some helper methods. """
 
-    def tagtext(self,with_doctype=True):
+    def tagtext(self, with_doctype=True):
         """ Override to set the doctype. """
         doc, tag, text = super(BootstrapDoc, self).tagtext()
         if with_doctype:
@@ -32,7 +32,7 @@ class BootstrapDoc(Doc):
 
     def h1(self, h1_text, h1_subtext=None, h1_bookmark=None):
         """ Add a h1 with an optional sub text. """
-        self.asis( self.h1_raw( h1_text, h1_subtext, h1_bookmark ) )
+        self.asis(self.h1_raw(h1_text, h1_subtext, h1_bookmark))
 
     def h1_raw(self, h1_text, h1_subtext=None, h1_bookmark=None):
         """ A h1 with an optional sub text. """
@@ -42,7 +42,7 @@ class BootstrapDoc(Doc):
 
     def h2(self, h2_text, h2_subtext=None, h2_bookmark=None):
         """ Add a h2 with an optional sub text. """
-        self.asis( self.h2_raw( h2_text, h2_subtext, h2_bookmark ) )
+        self.asis(self.h2_raw(h2_text, h2_subtext, h2_bookmark))
 
     def h2_raw(self, h2_text, h2_subtext=None, h2_bookmark=None):
         """ A h2 with an optional sub text. """
@@ -52,7 +52,7 @@ class BootstrapDoc(Doc):
 
     def h3(self, h3_text, h3_subtext=None, h3_bookmark=None):
         """ Add a h3 with an optional sub text. """
-        self.asis( self.h3_raw( h3_text, h3_subtext, h3_bookmark ) )
+        self.asis(self.h3_raw(h3_text, h3_subtext, h3_bookmark))
 
     def h3_raw(self, h3_text, h3_subtext=None, h3_bookmark=None):
         """ A h3 with an optional sub text. """
@@ -62,7 +62,7 @@ class BootstrapDoc(Doc):
 
     def h4(self, h4_text, h4_subtext=None, h4_bookmark=None):
         """ Add a h4 with an optional sub text. """
-        self.asis( self.h4_raw( h4_text, h4_subtext, h4_bookmark ) )
+        self.asis(self.h4_raw(h4_text, h4_subtext, h4_bookmark))
 
     def h4_raw(self, h4_text, h4_subtext=None, h4_bookmark=None):
         """ A h4 with an optional sub text. """
@@ -107,7 +107,7 @@ class BootstrapDoc(Doc):
                         for cell in row:
                             with self.tag('td'):
                                 if isinstance(cell, list):
-                                    cell = ', '.join( sorted(cell) if sort_cells else cell )
+                                    cell = ', '.join(sorted(cell) if sort_cells else cell)
                                 self.asis(cell)
 
     def p(self, *p_text, **kwargs):
@@ -136,7 +136,7 @@ class BootstrapDoc(Doc):
         """ Return a label with the specified text and an optional modifier (color). """
         assert modifier in ('default', 'primary', 'success', 'info', 'warning', 'danger')
         kwargs['klass'] = "label label-{0}".format(modifier)
-        return self.__tag_with_text('span', label_text, **kwargs )
+        return self.__tag_with_text('span', label_text, **kwargs)
 
     def __tag_with_text(self, tag_name, tag_text, **kwargs):
         """ Return a tag with the specified tag name and text. The optional kwargs are applied to the tag. """
