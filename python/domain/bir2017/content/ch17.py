@@ -115,7 +115,7 @@ S1702 = Section(
 
 CH17 = Chapter(
     identifier="17",
-    title=u"Informatie beveiligings aspecten van bedrijfscontinuïteitsbeheer",
+    title=u"Informatiebeveiligingsaspecten van bedrijfscontinuïteitsbeheer",
     fragments=[
         S1701,
         S1702,
