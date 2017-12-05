@@ -307,7 +307,7 @@ S0904 = Section(
                     identifier="09.04.03/02",
                     title=u"",
                     text=u"In situaties waar geen two-factor authenticatie mogelijk is, wordt minimaal halfjaarlijks "
-                         u"het wachtwoord vernieuwd (zie ook 9.04.02/01.).",
+                         u"het wachtwoord vernieuwd (zie ook 09.04.02/01.).",
                     bbn=2,
                 ),
                 Verifier(

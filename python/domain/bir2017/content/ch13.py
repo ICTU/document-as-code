@@ -170,8 +170,8 @@ S1302 = Section(
 
         Norm(
             identifier="13.02.04",
-            title=u"ertrouwelijkheids- of geheimhoudingsovereenkomst",
-            text=u"VEisen voor vertrouwelijkheids- of geheimhoudingsovereenkomsten die de behoeften van de organisatie "
+            title=u"Vertrouwelijkheids- of geheimhoudingsovereenkomst",
+            text=u"Eisen voor vertrouwelijkheids- of geheimhoudingsovereenkomsten die de behoeften van de organisatie "
                  u"betreffende het beschermen van informatie weerspiegelen, behoren te worden vastgesteld, regelmatig "
                  u"te worden beoordeeld en gedocumenteerd.",
             bbn=1,

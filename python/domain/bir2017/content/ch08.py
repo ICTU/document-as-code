@@ -99,7 +99,7 @@ S0801 = Section(
 
 S0802 = Section(
     identifier="08.02",
-    title=u"Informatieclassifcatie",
+    title=u"Informatieclassificatie",
     text=u"Doelstelling: Bewerkstelligen dat informatie een passend  beschermingsniveau krijgt dat in overeenstemming "
          u"is met het belang ervan voor de organisatie.",
     fragments=[
