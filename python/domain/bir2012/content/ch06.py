@@ -142,7 +142,7 @@ S0601 = Section(
                 Verifier(
                     identifier="06.01.08/03",
                     title=u"",
-                    text=u"Over het functioneren van de informatiebeveiliging wordt, conform de P&C cyclus, "
+                    text=u"Over het functioneren van de informatiebeveiliging wordt, conform de P&amp;C cyclus, "
                          u"jaarlijks gerapporteerd aan het lijnmanagement."
                 ),
             ],

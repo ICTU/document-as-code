@@ -29,9 +29,9 @@ S0801 = Section(
                     functiebeschrijving (zie ook de Ambtenarenwet) en worden onderhouden. In de functiebeschrijving 
                     wordt minimaal aandacht besteed aan:
 <ul>
-<li> uitvoering van het informatiebeveiligingsbeleid
-<li> bescherming van bedrijfsmiddelen
-<li> rapportage van beveiligingsincidenten
+<li>uitvoering van het informatiebeveiligingsbeleid</li>
+<li>bescherming van bedrijfsmiddelen</li>
+<li>rapportage van beveiligingsincidenten</li>
 </ul>""",
                 ),
                 Verifier(

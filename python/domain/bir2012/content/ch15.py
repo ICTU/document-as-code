@@ -128,7 +128,7 @@ S1502 = Section(
                 Verifier(
                     identifier="15.02.01/02",
                     title=u"",
-                    text=u"In de P&C cyclus wordt gerapporteerd over informatiebeveiliging aan de hand van het in "
+                    text=u"In de P&amp;C cyclus wordt gerapporteerd over informatiebeveiliging aan de hand van het in "
                          u"control statement.",
                 ),
             ],

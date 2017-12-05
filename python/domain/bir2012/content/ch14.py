@@ -59,11 +59,11 @@ S1401 = Section(
                     title=u"",
                     text=u"""In de continuïteitsplannen wordt minimaal aandacht besteed aan:
 <ul>
-<li>Identificatie van essentiële procedures voor bedrijfscontinuïteit.
-<li>Veilig te stellen informatie (aanvaardbaarheid van verlies van informatie).
-<li>Prioriteiten en volgorde van herstel en reconstructie.
-<li>Documentatie van systemen en processen.
-<li>Kennis en kundigheid van personeel om de processen weer op te starten.
+<li>Identificatie van essentiële procedures voor bedrijfscontinuïteit.</li>
+<li>Veilig te stellen informatie (aanvaardbaarheid van verlies van informatie).</li>
+<li>Prioriteiten en volgorde van herstel en reconstructie.</li>
+<li>Documentatie van systemen en processen.</li>
+<li>Kennis en kundigheid van personeel om de processen weer op te starten.</li>
 </ul>""",
                 ),
             ],

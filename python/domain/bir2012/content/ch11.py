@@ -103,10 +103,10 @@ S1102 = Section(
                     title=u"",
                     text=u"""Ten aanzien van wachtwoorden geldt:
 <ul>
-<li>Wachtwoorden worden op een veilige manier uitgegeven (controle identiteit van de gebruiker).
+<li>Wachtwoorden worden op een veilige manier uitgegeven (controle identiteit van de gebruiker).</li>
 <li>Tijdelijke wachtwoorden of wachtwoorden die standaard in software worden meegegeven worden bij 
-    eerste gebruik vervangen door een persoonlijk wachtwoord.
-<li>Gebruikers bevestigen de ontvangst van een wachtwoord.
+    eerste gebruik vervangen door een persoonlijk wachtwoord.</li>
+<li>Gebruikers bevestigen de ontvangst van een wachtwoord.</li>
 </ul>""",
                 ),
             ],
@@ -144,11 +144,12 @@ S1103 = Section(
                     title=u"",
                     text=u"""Aan de gebruikers is een set gedragsregels aangereikt met daarin minimaal het volgende:
 <ul>
-<li>Wachtwoorden worden niet opgeschreven.
-<li>Gebruikers delen hun wachtwoord nooit met anderen.
-<li>Een wachtwoord wordt onmiddellijk gewijzigd indien het vermoeden bestaat dat het bekend is geworden aan een derde.
+<li>Wachtwoorden worden niet opgeschreven.</li>
+<li>Gebruikers delen hun wachtwoord nooit met anderen.</li>
+<li>Een wachtwoord wordt onmiddellijk gewijzigd indien het vermoeden bestaat dat het bekend is geworden aan
+    een derde.</li>
 <li>Wachtwoorden worden niet gebruikt in automatische inlogprocedures
-    (bijv. opgeslagen onder een functietoets of in een macro).
+    (bijv. opgeslagen onder een functietoets of in een macro).</li>
 </ul>""",
                 ),
             ],
@@ -444,8 +445,8 @@ S1105 = Section(
                     text=u"""De gebruikers hebben de mogelijkheid hun eigen wachtwoord te kiezen en te wijzigen. 
 Hierbij geldt het volgende:
 <ul>
-<li>Voordat een gebruiker zijn wachtwoord kan wijzigen, wordt de gebruiker opnieuw geauthenticeerd.
-<li>Ter voorkoming van typefouten in het nieuw gekozen wachtwoord is er een bevestigingsprocedure.
+<li>Voordat een gebruiker zijn wachtwoord kan wijzigen, wordt de gebruiker opnieuw geauthenticeerd.</li>
+<li>Ter voorkoming van typefouten in het nieuw gekozen wachtwoord is er een bevestigingsprocedure.</li>
 </ul>""",
                 ),
             ],

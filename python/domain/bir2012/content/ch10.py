@@ -46,9 +46,9 @@ S1001 = Section(
                     title=u"",
                     text=u"""In de procedure voor wijzigingenbeheer is minimaal aandacht besteed aan:
 <ul>
-<li>het administreren van significante wijzigingen
-<li>impactanalyse van mogelijke gevolgen van de wijzigingen
-<li>goedkeuringsprocedure voor wijzigingen
+<li>het administreren van significante wijzigingen</li>
+<li>impactanalyse van mogelijke gevolgen van de wijzigingen</li>
+<li>goedkeuringsprocedure voor wijzigingen</li>
 </ul>""",
                 ),
                 Verifier(
@@ -192,10 +192,10 @@ S1002 = Section(
                     title=u"",
                     text=u"""In de procedure voor wijzigingenbeheer is minimaal aandacht besteed aan:
 <ul>
-<li>het administreren van significante wijzigingen
-<li>impactanalyse van mogelijke gevolgen van de wijzigingen
-<li>goedkeuringsprocedure voor wijzigingen
-<ul>""",
+<li>het administreren van significante wijzigingen</li>
+<li>impactanalyse van mogelijke gevolgen van de wijzigingen</li>
+<li>goedkeuringsprocedure voor wijzigingen</li>
+</ul>""",
                 ),
                 Verifier(
                     identifier="10.02.03/02",
@@ -636,11 +636,11 @@ S1008 = Section(
                     title=u"",
                     text=u"""Om vertrouwelijke informatie te beschermen worden maatregelen genomen, zoals:
 <ul>
-<li>versleuteling
-<li>bescherming door fysieke maatregelen, zoals afgesloten containers
-<li>gebruik van verpakkingsmateriaal waaraan te zien is of getracht is het te openen
-<li>persoonlijke aflevering
-<li>opsplitsing van zendingen in meerdere delen en eventueel verzending via verschillende routes
+<li>versleuteling</li>
+<li>bescherming door fysieke maatregelen, zoals afgesloten containers</li>
+<li>gebruik van verpakkingsmateriaal waaraan te zien is of getracht is het te openen</li>
+<li>persoonlijke aflevering</li>
+<li>opsplitsing van zendingen in meerdere delen en eventueel verzending via verschillende routes</li>
 </ul>""",
                 ),
                 Verifier(
@@ -771,12 +771,12 @@ S1010 = Section(
                     title=u"",
                     text=u"""Een logregel bevat minimaal:
 <ul>
-<li>een tot een natuurlijk persoon herleidbare gebruikersnaam of ID
-<li>de gebeurtenis (zie [[#10.10.02/1]])
-<li>waar mogelijk de identiteit van het werkstation of de locatie
-<li>het object waarop de handeling werd uitgevoerd
-<li>het resultaat van de handeling
-<li>de datum en het tijdstip van de gebeurtenis
+<li>een tot een natuurlijk persoon herleidbare gebruikersnaam of ID</li>
+<li>de gebeurtenis (zie [[#10.10.02/1]])</li>
+<li>waar mogelijk de identiteit van het werkstation of de locatie</li>
+<li>het object waarop de handeling werd uitgevoerd</li>
+<li>het resultaat van de handeling</li>
+<li>de datum en het tijdstip van de gebeurtenis</li>
 </ul>""",
                 ),
                 Verifier(
