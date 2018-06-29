@@ -351,7 +351,7 @@ def render_verifiers_by_state(document):
         ('Gereed', STATE_COMPLETED),
         ('Explain', STATE_EXPLAINED),
         ('Niet van toepassing', STATE_NA),
-   )
+    )
 
     grouped_by_state = group_verifiers_by_state(document)
 
@@ -359,6 +359,29 @@ def render_verifiers_by_state(document):
 
     for label, state in labels_states:
         render_verifiers_with_state(label, grouped_by_state[state])
+
+
+def render_measure(measure):
+    """
+    render a single measure
+    :param measure: the measure
+    """
+    label = turn_measures_into_labels([measure])[0]
+    doc.h3(measure.identifier, label)
+    doc.p(measure.description)
+
+
+def render_all_measures():
+    """
+    render measures, their description and state
+    """
+    specials = (Explained, NotApplicable, TODO)
+    measures_to_report = set(BirMeasure.all) - set(specials)
+
+    doc.h2("Maatregelen", doc.badge(len(measures_to_report)))
+
+    for measure in sorted(measures_to_report, key=lambda m: m.identifier):
+        render_measure(measure)
 
 
 # --- PROCESSING STARTS HERE ---
@@ -385,6 +408,10 @@ with tag('html'):
         with tag('div', klass='container'):
 
             render_verifiers_by_state(BIR)
+
+        with tag('div', klass='container'):
+
+            render_all_measures()
 
 
 # --- produce the BIR document ---
