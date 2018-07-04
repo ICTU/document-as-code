@@ -59,11 +59,13 @@ class BirDocumentRenderer(object):
 
     # --- document rendering ---
 
-    def render_main_document_as_one(self, document, filepath):
+    def render_main_document_as_one(self, document, filepath, measures_annex=True):
         """
         render a document as a single file
         a document is a fragment that contains chapters
         :param document: the document
+        :param filepath: where to save the rendered document
+        :param measures_annex: whether to include the measures annex
         """
         with DocumentRenderingContext(filepath) as ctx:
             doc, tag, text = ctx.doc_tag_text
@@ -83,8 +85,9 @@ class BirDocumentRenderer(object):
                     with tag('div', klass='container'):
                         self.render_verifier_annex(document)
 
-                    with tag('div', klass='container'):
-                        self.render_measures_annex()
+                    if measures_annex:
+                        with tag('div', klass='container'):
+                            self.render_measures_annex()
 
             self.doc = None
             self.labeler = None
@@ -263,8 +266,6 @@ class BirDocumentRenderer(object):
         # no measures implicates we still have work to do
         if not fragment.bir_measures:
             fragment.bir_measures.add(self.todo)
-            # provide identification for missing stuff
-            print('        "{}",'.format(fragment.identifier))
 
         return fragment.bir_measures
 

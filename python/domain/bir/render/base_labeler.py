@@ -110,7 +110,7 @@ class BaseLabeler(object):
         :param measure: the measures
         :return: list of labels (label text, visual level)
         """
-        return self._make_label(*self._measure_to_label_data(measure))
+        return self._make_label(*self._measure_to_label_data(measure), measure.url)
 
     def measures_to_labels(self, measures):
         """
@@ -128,12 +128,11 @@ class BaseLabeler(object):
         :param bbn: basic protection level
         :return: formatted label
         """
-        if bbn:
-            bbn_labels = self._bbn_label_data[bbn if 1 <= bbn <= 3 else 0]
+        if not bbn:
+            return []
 
-            return [self._make_label(x, lvl) for x, lvl in bbn_labels]
-        else:
-            return None
+        bbn_labels = self._bbn_label_data[bbn if 1 <= bbn <= 3 else 0]
+        return [self._make_label(x, lvl) for x, lvl in bbn_labels]
 
     # --- fragment ---
 
@@ -153,11 +152,15 @@ class BaseLabeler(object):
 
     # --- basic label creation ---
 
-    def _make_label(self, text, level):
+    def _make_label(self, text, level, url=None):
         """
         make a text label with a level indication
         :param text: text to put on the label
         :param level: level to indicate through the label
+        :param url: reference to a (part of a) web page
         :return: a label
         """
-        return self.doc.label(text, level, style=self.STYLE_LABEL)
+        label = self.doc.label(text, level, style=self.STYLE_LABEL)
+        if url is None:
+            return label
+        return self.doc.link("{label}", url=url).format(label=label)
