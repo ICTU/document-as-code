@@ -49,3 +49,4 @@ BirMeasure(
 renderer = BirDocumentRenderer(BoostrapLabeler)
 renderer.link_measures_to_fragments(BIR)
 renderer.render_main_document_as_one(BIR, 'bir2017_document.html')
+renderer.render_main_document_as_parts(BIR, 'bir2017_pages')

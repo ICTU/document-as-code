@@ -3,14 +3,13 @@
 """
 
 import datetime
+import pathlib
+import re
 
 from yattag import indent
 
 from format.bootstrap import BootstrapDoc
-
-
 from domain.bir.model.bir_measure import BirMeasure
-
 
 from .base_labeler import BaseLabeler
 
@@ -92,14 +91,109 @@ class BirDocumentRenderer(object):
             self.doc = None
             self.labeler = None
 
-    def render_main_document_as_parts(self, document):
+    def render_main_document_as_parts(self, document, dirpath, measures_annex=True):
         """
-        render a document as a group of files - one for each chapter
+        render a document as a group of files - one for each chapter and annex
         a document is a fragment that contains chapters
         :param document: the document
+        :param dirpath: where to save the rendered document parts
+        :param measures_annex: whether to include the measures annex
         """
+        dirpath = pathlib.Path(dirpath).resolve()
+        if not dirpath.exists():
+            dirpath.mkdir(parents=True)
+
+        index = []
+
+        # chapters
+
         for chapter in document.fragments:
-            self._render_chapter(chapter)
+
+            filename = self._title_to_filename(chapter.title, prefix=chapter.identifier)
+            filepath = dirpath / filename
+
+            self._write_document_file(filepath, chapter.title, self._render_chapter, chapter)
+
+            index.append((f"{chapter.identifier} {chapter.title}", filename))
+
+        # annex A
+
+        title = "Verifier status"
+        filename = self._title_to_filename(title, prefix="A")
+        filepath = dirpath / filename
+
+        self._write_document_file(filepath, title, self.render_verifier_annex, document)
+
+        index.append((f"A {title}", filename))
+
+        # annex B - optional
+
+        if measures_annex:
+            title = "Maatregelen"
+            filename = self._title_to_filename(title, prefix="B")
+            filepath = dirpath / filename
+
+            self._write_document_file(filepath, title, self.render_measures_annex)
+
+            index.append((f"B {title}", filename))
+
+        # table of content
+
+        filename = self._title_to_filename("index")
+        filepath = dirpath / filename
+
+        self._write_document_file(filepath, "inhoud", self._toc_maker, index)
+
+    @staticmethod
+    def _title_to_filename(title, prefix=None):
+        """
+        determine a file name for a document with a title
+        :param title: the document title
+        :param prefix: title prefix - e.g. chapter number (optional)
+        :return: string
+        """
+        title_part = "-".join(re.sub("[^0-9a-z]", " ", title.lower()).split())
+        if prefix:
+            prefix_part = "-".join(re.sub("[^0-9a-zA-Z]", " ", prefix).split())
+            return f"{prefix_part}-{title_part}.html"
+        return f"{title_part}.html"
+
+    def _write_document_file(self, filepath, title, content_maker, *args, **kwargs):
+        """
+        write content to a document file
+        :param filepath: path to the file to write to
+        :param title: title of the document
+        :param content_maker: creates the actual content
+        :param *args: arguments to pass to content_maker
+        :param *kwargs: keyword arguments to pass to content_maker
+        """
+        with DocumentRenderingContext(filepath) as ctx:
+            doc, tag, text = ctx.doc_tag_text
+
+            self.labeler = self.create_labeler(doc)
+            self.doc = doc
+
+            with tag('html'):
+                doc.head(title)
+
+                with tag('body'):
+                    doc.p('gegenereerd op ', datetime.datetime.now().isoformat(), style="font-size:11px")
+
+                    with tag('div', klass='container'):
+                        content_maker(*args, **kwargs)
+
+            self.doc = None
+            self.labeler = None
+
+    def _toc_maker(self, index):
+        """
+        create a table of contents
+        :param index: collect of (title, filename) pairs
+        """
+        self.doc.h1("Inhoud")
+        for title, filename in index:
+            with self.doc.tag('p'):
+                self.doc.asis(self.doc.link(f"{title}", url=f"{filename}"))
 
     # --- parts of the main document ---
 
