@@ -1,9 +1,11 @@
 """
     example document - demonstrate how 'Document as Code' works
 """
+import pathlib
+
 from domain.bir.model.bir_measure import BirMeasure
 from domain.bir.render.bir_document_renderer import BirDocumentRenderer
-from domain.bir.render.bootstrap_labeler import BoostrapLabeler
+from domain.bir.render.bootstrap_labeler import BootstrapLabeler
 
 from domain.bir2017 import BIR2017 as BIR
 
@@ -46,7 +48,15 @@ BirMeasure(
 
 
 # --- PROCESSING STARTS HERE ---
-renderer = BirDocumentRenderer(BoostrapLabeler)
-renderer.link_measures_to_fragments(BIR)
-renderer.render_main_document_as_one(BIR, 'bir2017_document.html')
-renderer.render_main_document_as_parts(BIR, 'bir2017_pages')
+
+if __name__ == "__main__":
+
+    file_path = pathlib.Path(__file__)
+    report_base_name = file_path.stem
+    project_dir = file_path.resolve().parent.parent
+    report_dir = project_dir / "report"
+
+    renderer = BirDocumentRenderer(BootstrapLabeler)
+    renderer.link_measures_to_fragments(BIR)
+    renderer.render_main_document_as_one(BIR, report_dir / f"{report_base_name}_document.html")
+    renderer.render_main_document_as_parts(BIR, report_dir / f"{report_base_name}_pages")

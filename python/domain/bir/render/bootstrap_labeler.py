@@ -4,7 +4,7 @@
 from .base_labeler import BaseLabeler
 
 
-class BoostrapLabeler(BaseLabeler):
+class BootstrapLabeler(BaseLabeler):
     """
     create decorative labels for BirMeasures based on their status
     """
