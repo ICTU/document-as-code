@@ -18,6 +18,7 @@ class DocumentRenderingContext(object):
 
     def __init__(self, filepath):
         self.filepath = filepath
+        filepath.parent.mkdir(parents=True, exist_ok=True)
 
     def __enter__(self):
         self.doc_tag_text = BootstrapDoc().tagtext()
