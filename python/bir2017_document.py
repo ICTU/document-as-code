@@ -8,6 +8,7 @@ from domain.bir.render.bir_document_renderer import BirDocumentRenderer
 from domain.bir.render.bootstrap_labeler import BootstrapLabeler
 
 from domain.bir2017 import BIR2017 as BIR
+from domain.audit.model.evidence import Evidence, EvidenceElement
 
 
 # --- specific measures ---
@@ -27,6 +28,19 @@ occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
     done=True,
 )
 
+Evidence(
+    identifier="MOI",
+    subject="Lorem ipsum dolor sit amet",
+    set_up=(
+        ("consectetur", "labore et dolore magna"),
+    ),
+    existence=(
+        ("adipiscing", "culpa qui officia"),
+    ),
+    operation=(
+        ("exercitation", "irure dolor in reprehenderit"),
+    )
+)
 
 # --- explained and accepted exceptions ---
 

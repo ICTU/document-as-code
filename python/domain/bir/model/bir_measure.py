@@ -48,7 +48,7 @@ class BirMeasure(Base):
     @classmethod
     def register_explain(cls, explain):
         if not isinstance(explain, cls):
-            raise TypeError(f"explain should be {cls.__name__}, nor {explain.__class__.__name__}")
+            raise TypeError(f"explain should be {cls.__name__}, not {explain.__class__.__name__}")
         cls._explain = explain
 
     @classmethod
@@ -60,7 +60,7 @@ class BirMeasure(Base):
     @classmethod
     def register_not_applicable(cls, not_applicable):
         if not isinstance(not_applicable, cls):
-            raise TypeError(f"explain should be {cls.__name__}, nor {not_applicable.__class__.__name__}")
+            raise TypeError(f"not_applicable should be {cls.__name__}, not {not_applicable.__class__.__name__}")
         cls._not_applicable = not_applicable
 
     @classmethod

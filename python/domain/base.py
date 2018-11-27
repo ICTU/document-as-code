@@ -15,7 +15,6 @@ class Base(object):
 
     identifier = None
 
-
     def __init__(self, identifier):
         """
         create domain object and self-register it
@@ -26,3 +25,15 @@ class Base(object):
         self.__class__.all.add(self)
 
         self.identifier = identifier
+
+    @classmethod
+    def find_instance(cls, identifier):
+        """
+        find instance with given identifier
+        :param identifier: instance to look for
+        :return: instance or None
+        """
+        for instance in cls.all:
+            if instance.identifier == identifier:
+                return instance
+        return None
