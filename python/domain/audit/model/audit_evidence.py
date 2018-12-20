@@ -58,8 +58,12 @@ class AuditEvidence(base.Base):
     set_up = None
     existence = None
     operation = None
+    set_up_required = None
+    existence_required = None
+    operation_required = None
 
-    def __init__(self, identifier, subject, *, set_up=None, existence=None, operation=None):
+    def __init__(self, identifier, subject, *, set_up=None, existence=None, operation=None,
+                 set_up_required=True, existence_required=True, operation_required=True):
         """
         register a piece of evidence
         :param identifier: unique identifier for this piece of evidence
@@ -73,6 +77,10 @@ class AuditEvidence(base.Base):
         self.set_up = []
         self.existence = []
         self.operation = []
+        self.set_up_required = set_up_required
+        self.existence_required = existence_required
+        self.operation_required = operation_required
+
         if set_up:
             self.add_setup(*set_up)
         if existence:

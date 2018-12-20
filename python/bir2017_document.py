@@ -8,7 +8,6 @@ from domain.bir.render.bir_document_renderer import BirDocumentRenderer
 from domain.bir.render.bootstrap_labeler import BootstrapLabeler
 
 from domain.bir2017 import BIR2017 as BIR
-from domain.audit.model.evidence import Evidence, EvidenceElement
 
 
 # --- specific measures ---
@@ -26,20 +25,6 @@ occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim 
     ],
     url="lorem-impsum",
     done=True,
-)
-
-Evidence(
-    identifier="MOI",
-    subject="Lorem ipsum dolor sit amet",
-    set_up=(
-        ("consectetur", "labore et dolore magna"),
-    ),
-    existence=(
-        ("adipiscing", "culpa qui officia"),
-    ),
-    operation=(
-        ("exercitation", "irure dolor in reprehenderit"),
-    )
 )
 
 # --- explained and accepted exceptions ---
@@ -74,3 +59,5 @@ if __name__ == "__main__":
     renderer.link_measures_to_fragments(BIR)
     renderer.render_main_document_as_one(BIR, report_dir / f"{report_base_name}_document.html")
     renderer.render_main_document_as_parts(BIR, report_dir / f"{report_base_name}_pages")
+
+    print(f"Output in '{report_dir}'")

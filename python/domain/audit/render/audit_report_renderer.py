@@ -1,156 +1,156 @@
-import pathlib
-import contextlib
+import datetime
 
-from domain.audit.model import audit_programme
-from domain.audit.model import audit_evidence
+from yattag import indent
+from format.bootstrap import BootstrapDoc
+
 from domain.audit.model import audit_report
 
-
-def render_audit_item(audit_item):
-    print(f'  - {audit_item.title}')
-    print(f'    {audit_item.summary}')
+from . import base_labeler
 
 
-def render_audit_evidence(evidence):
-    def check_mark(item):
-        return "V" if item else "X"
-    set_up = check_mark(evidence.set_up)
-    existence = check_mark(evidence.existence)
-    operation = check_mark(evidence.operation)
-    print(f'  - {evidence.subject}: {set_up}/{existence}/{operation}')
+class HtmlRenderer(object):
+
+    doc = None
+    tag = None
+    txt = None
+
+    def __init__(self):
+        super().__init__()
+        self.doc, self.tag, self.txt = BootstrapDoc().tagtext()
+
+    def __getattr__(self, item):
+        for src in (self.doc, self.tag, self.txt):
+            if hasattr(src, item):
+                return getattr(src, item)
+        raise AttributeError(f"{self.__class__.__name__} has no attribute '{item}'")
+
+    def getvalue(self):
+        return indent(self.doc.getvalue())
 
 
-def render_finding(finding):
-    print(f'+ title')
-    print(f'    {finding.title}')
-    print(f'  description')
-    print(f'    {finding.description}')
-    print(f'  audit item(s)')
-    for audit_item in finding.audit_items:
-        render_audit_item(audit_item)
-    print(f'  evidence')
-    for evidence in finding.evidence:
-        render_audit_evidence(evidence)
-    print(f'  risk')
-    print(f'    {finding.risk}')
-    print(f'  recommendation')
-    print(f'    {finding.recommendation}')
+class AuditReportRenderer(object):
 
+    renderer = None
+    labeler = None
+    doc = None
 
-def render_audit_report(ar):
-    print(f'# audit report {ar.title}, identifier: {ar.identifier}')
-    print(f'{ar.title}')
-    print(f'')
-    print(f'summary')
-    print(f'  {ar.summary}')
-    print(f'')
-    print(f'description')
-    print(f'  {ar.description}')
-    print(f'')
-    print(f'findings')
-    for finding in ar.findings:
-        render_finding(finding)
+    def __init__(self, renderer, labeler_class=None):
+        super().__init__()
+        self.renderer = renderer
+        self.labeler_class = labeler_class if labeler_class is not None else base_labeler.BaseLabeler
 
+    def create_labeler(self, doc):
+        if not issubclass(self.labeler_class, base_labeler.BaseLabeler):
+            raise TypeError(f"labeler should be a BaseLabeler, not {self.labeler_class.__name__}")
+        return self.labeler_class(doc)
 
-def render_all_audit_reports():
-    """
-    output for the current audit report(s)
-    """
-    for current_audit_report in audit_report.AuditReport.all:
-        print("")
-        print("")
-        render_audit_report(current_audit_report)
+    # --- document rendering ---
 
+    def render_audit_items(self, audit_items):
+        with self.renderer.tag('table', klass="table"):
+            for audit_item in audit_items:
+                with self.renderer.tag('tr'):
+                    with self.renderer.tag('td'):
+                        self.renderer.p(audit_item.title)
+                    with self.renderer.tag('td'):
+                        self.renderer.p(audit_item.summary)
 
-def render_audit_report_to_file(output, exists_ok=False):
-    """
-    create an output file for the audit report(s)
-    :param output: path to the file
-    :param exists_ok: allow to overwrite existing file
-    """
-    path = pathlib.Path(output)
-    if path.exists() and not exists_ok:
-        raise IOError(f"{path} already exists")
+    def render_audit_evidence_items(self, evidence_items):
+        def check_mark(item, required):
+            return "V" if item else ("X" if required else "-")
 
-    with path.open("w",) as fout:
-        with contextlib.redirect_stdout(fout):
-            render_all_audit_reports()
+        with self.renderer.tag('table', klass="table"):
+            for evidence in evidence_items:
+                with self.renderer.tag('tr'):
+                    with self.renderer.tag('td'):
+                        self.renderer.p(evidence.subject)
+                    with self.renderer.tag('td'):
+                        self.renderer.p(check_mark(evidence.set_up, evidence.set_up_required))
+                    with self.renderer.tag('td'):
+                        self.renderer.p(check_mark(evidence.existence, evidence.existence_required))
+                    with self.renderer.tag('td'):
+                        self.renderer.p(check_mark(evidence.operation, evidence.operation_required))
 
+    def render_finding(self, finding):
+        self.renderer.h3("title")
+        self.renderer.p(finding.title)
+        self.renderer.h3("description")
+        self.renderer.p(finding.description)
+        self.renderer.h3("audit item(s)")
+        self.render_audit_items(finding.audit_items)
+        self.renderer.h3("evidence")
+        self.render_audit_evidence_items(finding.evidence)
+        self.renderer.h3("risk")
+        self.renderer.p(finding.risk)
+        self.renderer.h3("recommendation")
+        self.renderer.p(finding.recommendation)
 
-if __name__ == "__main__":
-    # audit programme
-    ai = audit_programme.AuditItem(
-        "By Object",
-        "Title by object",
-        "Summary by object",
-        "Description by object",
-    )
-    audit_programme.AuditItem(
-        "By ID",
-        "Title #2 by id",
-        "Summary #2 by id",
-        "Description #2 by id",
-    )
-    ap = audit_programme.AuditProgramme(
-        "AuditProgrammeID",
-        "TITLE of AuditProgramme",
-        "TOPIC of AuditProgramme",
-        "SUMMARY of AuditProgramme",
-        "DESCRIPTION of AuditProgramme",
-        ("Title in-line", "Summary in-line", "Description in-line"),
-        ai,
-        "By ID",
-    )
-    # audit evidence
-    audit_evidence.AuditEvidenceElement(
-        "SharedAuditEvidenceElementID",
-        "DETAIL of AuditEvidenceElement",
-        "REFERENCE of AuditEvidenceElement"
-    )
-    audit_evidence.AuditEvidence(
-        "EvidenceID",
-        "SUBJECT of evidence",
-        set_up=(
-            "SharedAuditEvidenceElementID",
-            ("SET-UP detail", "SET-UP reference"),
-        ),
-        existence=(
-            "SharedAuditEvidenceElementID",
-            ("EXISTENCE detail", "EXISTENCE reference"),
-        ),
-        operation=(
-            ("OPERATION detail", "OPERATION reference"),
-            "SharedAuditEvidenceElementID",
-        )
-    )
-    audit_evidence.AuditEvidence(
-        "AnotherPieceOfEvidence",
-        "Total absence of traces",
-    )
-    # audit report
-    audit_report.AuditFinding(
-        "FINDING 0001",
-        "TITLE FINDING 0001",
-        "DESCRIPTION FINDING 0001",
-        risk="RISK FINDING 0001",
-        recommendation="RECOMMENDATION FINDING 0001",
-        audit_items=(
-            ai,
-            "By ID",
-        ),
-        evidence=(
-            "EvidenceID",
-            "AnotherPieceOfEvidence",
-        )
-    )
-    audit_report.AuditReport(
-        "AUDIT REPORT",
-        "TITLE of the AUDIT REPORT",
-        "SUMMARY of the AUDIT REPORT",
-        "DESCRIPTION of the AUDIT REPORT",
-        findings=(
-            "FINDING 0001",
-        )
-    )
-    # create it
-    render_all_audit_reports()
+    def render_audit_items_full(self, findings):
+        all_audit_items_in_report = set()
+        for finding in findings:
+            all_audit_items_in_report.update(finding.audit_items)
+
+        for audit_item in sorted(all_audit_items_in_report, key=lambda i: i.title.lower()):
+            self.renderer.h2(audit_item.title)
+            with self.renderer.tag('table', klass="table"):
+                with self.renderer.tag('tr'):
+                    with self.renderer.tag('td'):
+                        self.renderer.p(audit_item.summary)
+                    with self.renderer.tag('td'):
+                        self.renderer.p(audit_item.description)
+
+    def _render_evidence_elements(self, label, evidence_elements, required):
+        self.renderer.h3(label)
+        if not required:
+            self.renderer.p("no evidence required")
+        elif not evidence_elements:
+            self.renderer.p("no evidence registered")
+
+        if not evidence_elements:
+            return
+
+        with self.renderer.tag('table', klass="table"):
+            for element in evidence_elements:
+                with self.renderer.tag('tr'):
+                    with self.renderer.tag('td'):
+                        self.renderer.p(element.detail)
+                    with self.renderer.tag('td'):
+                        self.renderer.p(element.reference)
+
+    def render_audit_evidence_full(self, findings):
+        all_audit_evidence_in_report = set()
+        for finding in findings:
+            all_audit_evidence_in_report.update(finding.evidence)
+
+        for evidence in sorted(all_audit_evidence_in_report, key=lambda i: i.subject.lower()):
+            self.renderer.h2(evidence.subject)
+            self._render_evidence_elements("set-up", evidence.set_up, evidence.set_up_required)
+            self._render_evidence_elements("existence", evidence.existence, evidence.existence_required)
+            self._render_evidence_elements("operation", evidence.operation, evidence.operation_required)
+
+    def render_audit_report(self, ar):
+        """
+        output for a single audit report
+        :param ar: audit report
+        """
+        with self.renderer.tag('html'):
+            self.renderer.head("Audit Report")
+
+            with self.renderer.tag('body'):
+                self.renderer.p(f"# audit report {ar.title}, identifier: {ar.identifier}")
+                with self.renderer.tag('div', klass='container'):
+                    self.renderer.h1(f"{ar.title}")
+                    self.renderer.h2(f"summary")
+                    self.renderer.p(f"{ar.summary}")
+                    self.renderer.h2(f"description")
+                    self.renderer.p(f"{ar.description}")
+                    self.renderer.h2(f"findings")
+                    for finding in ar.findings:
+                        self.render_finding(finding)
+                with self.renderer.tag('div', klass='container'):
+                    self.renderer.h1("Appendix A - Audit Items")
+                    self.render_audit_items_full(ar.findings)
+                with self.renderer.tag('div', klass='container'):
+                    self.renderer.h1("Appendix B - Findings")
+                    self.render_audit_evidence_full(ar.findings)
+                self.renderer.p(f"# rendered on {datetime.datetime.now().strftime('%Y/%m/%d %H:%M:%S')}")

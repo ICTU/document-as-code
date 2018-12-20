@@ -10,7 +10,6 @@ from yattag import indent
 
 from format.bootstrap import BootstrapDoc
 from domain.bir.model.bir_measure import BirMeasure
-from domain.audit.model.evidence import Evidence
 
 from .base_labeler import BaseLabeler
 
