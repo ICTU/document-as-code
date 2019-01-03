@@ -28,10 +28,10 @@ with tag('html'):
     with tag('body'):
 
         doc.table(
-            map(str, table_source["A1:F1"][0]),
-            map(lambda r: map(str, r), table_source.iter_rows("A2:F7")),
+            list(map(str, table_source["A1:F1"][0])),
+            list(map(lambda r: map(str, r), table_source.iter_rows("A2:F7"))),
             sort_rows=False
-       )
+        )
 
 # --- produce the document ---
 
