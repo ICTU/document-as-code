@@ -6,10 +6,11 @@
 from __future__ import absolute_import
 from __future__ import print_function
 
-from domain.bir.model.norm import Norm
-from domain.bir.model.verifier import Verifier
 from domain.document.model.chapter import Chapter
 from domain.document.model.section import Section
+from domain.norm_specification.model.norm import Norm
+from domain.norm_specification.model.verifier import Verifier
+
 
 S1801 = Section(
     identifier="18.01",

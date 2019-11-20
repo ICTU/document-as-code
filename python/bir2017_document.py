@@ -38,12 +38,7 @@ BirMeasure(
 
 # --- declared and accepted as not applicable ---
 
-BirMeasure(
-    identifier="Not Applicable",
-    description="Niet van toepassing",
-    identifiers=[
-    ],
-).set_not_applicable()
+import bir2017_measures
 
 
 # --- PROCESSING STARTS HERE ---

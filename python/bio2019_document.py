@@ -12,7 +12,7 @@ from domain.bio2019 import BIO2019 as BIO
 
 # --- specific measures ---
 
-from bio2019_measures import *
+import bio2019_measures
 
 # --- explained and accepted exceptions ---
 
