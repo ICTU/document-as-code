@@ -9,7 +9,7 @@ from __future__ import print_function
 from domain.base import Base
 
 
-class BioMeasure(Base):
+class Measure(Base):
     """ Measures that help to in BIO compliance. """
 
     _explain = None
@@ -17,7 +17,7 @@ class BioMeasure(Base):
 
     def __init__(self, identifier, description, identifiers, url=None, done=False):
 
-        super(BioMeasure, self).__init__(identifier)
+        super(Measure, self).__init__(identifier)
 
         self.description = description
         self.identifiers = identifiers

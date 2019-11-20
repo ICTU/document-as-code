@@ -1,12 +1,12 @@
 """
     example document - demonstrate how 'Document as Code' works
 """
-from domain.bir.model.bir_measure import BirMeasure
+from domain.compliance.model.measure import Measure
 
 
 # --- specific measures ---
 
-BirMeasure(
+Measure(
     identifier="M01",
     description="""
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna

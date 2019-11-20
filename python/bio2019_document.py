@@ -3,9 +3,9 @@
 """
 import pathlib
 
-from domain.bio.model.bio_measure import BioMeasure
-from domain.bio.render.bio_document_renderer import BioDocumentRenderer
-from domain.bio.render.bootstrap_labeler import BootstrapLabeler
+from domain.compliance.model.measure import Measure
+from domain.compliance.render.document_renderer import DocumentRenderer
+from domain.compliance.render.bootstrap_labeler import BootstrapLabeler
 
 from domain.bio2019 import BIO2019 as BIO
 
@@ -16,8 +16,8 @@ import bio2019_measures
 
 # --- explained and accepted exceptions ---
 
-BioMeasure(
-    identifier="BM Explained",
+Measure(
+    identifier="Explained",
     description="Geaccepteerde afwijking",
     identifiers=[
     ],
@@ -25,7 +25,7 @@ BioMeasure(
 
 # --- declared and accepted as not applicable ---
 
-BioMeasure(
+Measure(
     identifier="Not Applicable",
     description="Niet van toepassing",
     identifiers=[
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     project_dir = file_path.resolve().parent.parent
     report_dir = project_dir / "report"
 
-    renderer = BioDocumentRenderer(BootstrapLabeler)
+    renderer = DocumentRenderer(BootstrapLabeler)
     renderer.link_measures_to_fragments(BIO)
     renderer.render_main_document_as_one(BIO, report_dir / f"{report_base_name}_document.html")
     renderer.render_main_document_as_parts(BIO, report_dir / f"{report_base_name}_pages")

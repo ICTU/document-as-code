@@ -1,11 +1,11 @@
 """
     example document - demonstrate how 'Document as Code' works
 """
-from domain.bio.model.bio_measure import BioMeasure
+from domain.compliance.model.measure import Measure
 
 # --- specific measures ---
 
-BioMeasure(
+Measure(
     identifier="M01",
     description="""
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
