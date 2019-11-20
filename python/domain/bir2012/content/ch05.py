@@ -9,8 +9,8 @@ from __future__ import print_function
 
 from domain.document.model.chapter import Chapter
 from domain.document.model.section import Section
-from domain.norm_specification.model.norm import Norm
-from domain.norm_specification.model.verifier import Verifier
+from domain.norm_document.model.norm import Norm
+from domain.norm_document.model.verifier import Verifier
 
 
 S0501 = Section(

@@ -1,22 +1,13 @@
-# -*- coding: latin-1 -*-
 """
     fragments - define text fragments in the document
 """
-
-from __future__ import absolute_import
-from __future__ import print_function
-
-
-from domain.document.model.chapter import Chapter
-from domain.document.model.section import Section
-from domain.norm_specification.model.norm import Norm
-from domain.norm_specification.model.verifier import Verifier
+from domain.norm_document.model import Chapter, Section, Norm, Verifier
 
 
 CH08S01 = Section(
     identifier="08.01",
-    title=u"TITLE",
-    text=u"text",
+    title="TITLE",
+    text="text",
     fragments=[
         
     ],
@@ -25,8 +16,8 @@ CH08S01 = Section(
 
 CH08S02 = Section(
     identifier="08.02",
-    title=u"TITLE",
-    text=u"text",
+    title="TITLE",
+    text="text",
     fragments=[
         
     ],
@@ -35,30 +26,30 @@ CH08S02 = Section(
 
 CH08S03 = Section(
     identifier="08.03",
-    title=u"TITLE",
-    text=u"text",
+    title="TITLE",
+    text="text",
     fragments=[
         Norm(
             identifier="08.03.01",
-            title=u"TITLE",
-            text=u"""
+            title="TITLE",
+            text="""
 Beheer van verwijderbare media;
-Voor het beheren van verwijderbare media behoren procedures te worden geïmplementeerd in overeenstemming met het classificatieschema dat door de organisatie is vastgesteld.
+Voor het beheren van verwijderbare media behoren procedures te worden geÃ¯mplementeerd in overeenstemming met het classificatieschema dat door de organisatie is vastgesteld.
             """,
             bbn=1,
             fragments=[
                 Verifier(
                     identifier="08.03.01/01",
-                    title=u"",
-                    text=u"""
-Er is een verwijderinstructie waarin is opgenomen dat van herbruikbare media die de organisatie verlaten de onnodige inhoud onherstelbaar verwijderd (ISO27002 – implementatierichtlijn 8.3.1.a).
+                    title="",
+                    text="""
+Er is een verwijderinstructie waarin is opgenomen dat van herbruikbare media die de organisatie verlaten de onnodige inhoud onherstelbaar verwijderd (ISO27002 â implementatierichtlijn 8.3.1.a).
                     """,
                     bbn=1,
                 ),
                 Verifier(
                     identifier="08.03.01/02",
-                    title=u"",
-                    text=u"""
+                    title="",
+                    text="""
 De wijze waarop vertrouwelijk of hoger geclassificeerde informatie is opgeslagen, voldoet aan de eisen van het NBV.
                     """,
                     bbn=2,
@@ -68,8 +59,8 @@ De wijze waarop vertrouwelijk of hoger geclassificeerde informatie is opgeslagen
 
         Norm(
             identifier="08.03.02",
-            title=u"TITLE",
-            text=u"""
+            title="TITLE",
+            text="""
 Verwijderen van media;
 Media behoren op een veilige en beveiligde manier te worden verwijderd als ze niet langer nodig zijn, overeenkomstig formele procedures.
             """,
@@ -77,18 +68,18 @@ Media behoren op een veilige en beveiligde manier te worden verwijderd als ze ni
             fragments=[
                 Verifier(
                     identifier="08.03.02/01",
-                    title=u"",
-                    text=u"""
-Media die vertrouwelijke informatie bevatten zijn opgeslagen op een plek die niet toegankelijk is voor onbevoegden. Verwijdering vindt plaats op een veilige manier, bijv. door verbranding of versnippering. Verwijdering van alleen gegevens is ook mogelijk door het wissen van de gegevens voordat de media worden gebruikt voor een andere toepassing in de organisatie (ISO27002 – implementatierichtlijn 8.3.2.a)
+                    title="",
+                    text="""
+Media die vertrouwelijke informatie bevatten zijn opgeslagen op een plek die niet toegankelijk is voor onbevoegden. Verwijdering vindt plaats op een veilige manier, bijv. door verbranding of versnippering. Verwijdering van alleen gegevens is ook mogelijk door het wissen van de gegevens voordat de media worden gebruikt voor een andere toepassing in de organisatie (ISO27002 â implementatierichtlijn 8.3.2.a)
                     """,
                     bbn=2,
                 ),
                 Verifier(
                     identifier="08.03.02/02",
-                    title=u"",
-                    text=u"""
+                    title="",
+                    text="""
 Voor het wissen van alle data op het medium, wordt de data onherstelbaar verwijderd,
-bijvoorbeeld door minimaal twee keer te overschrijven met vaste data en één keer
+bijvoorbeeld door minimaal twee keer te overschrijven met vaste data en Ã©Ã©n keer
 met random data. Er wordt gecontroleerd of alle data onherstelbaar verwijderd is.
                     """,
                     bbn=2,
@@ -98,8 +89,8 @@ met random data. Er wordt gecontroleerd of alle data onherstelbaar verwijderd is
 
         Norm(
             identifier="08.03.03",
-            title=u"TITLE",
-            text=u"""
+            title="TITLE",
+            text="""
 Media fysiek overdragen;
 Media die informatie bevatten, behoren te worden beschermd tegen onbevoegde toegang, misbruik of corruptie tijdens transport.
             """,
@@ -107,16 +98,16 @@ Media die informatie bevatten, behoren te worden beschermd tegen onbevoegde toeg
             fragments=[
                 Verifier(
                     identifier="08.03.03/01",
-                    title=u"",
-                    text=u"""
+                    title="",
+                    text="""
 Er is voor de gehele organisatie beleid voor het fysiek transport van media vastgesteld.
                     """,
                     bbn=2,
                 ),
                 Verifier(
                     identifier="08.03.03/02",
-                    title=u"",
-                    text=u"""
+                    title="",
+                    text="""
 Het gebruik van koeriers of transporteurs voor vertrouwelijk of hoger geclassificeerde informatie voldoet aan vooraf opgestelde betrouwbaarheidseisen.
                     """,
                     bbn=2,
@@ -129,7 +120,7 @@ Het gebruik van koeriers of transporteurs voor vertrouwelijk of hoger geclassifi
 
 CH08 = Chapter(
     identifier="08",
-    title=u"TITLE",
+    title="TITLE",
     fragments=[
         CH08S01,
         CH08S02,

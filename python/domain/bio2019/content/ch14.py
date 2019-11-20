@@ -1,22 +1,13 @@
-# -*- coding: latin-1 -*-
 """
     fragments - define text fragments in the document
 """
-
-from __future__ import absolute_import
-from __future__ import print_function
-
-
-from domain.document.model.chapter import Chapter
-from domain.document.model.section import Section
-from domain.norm_specification.model.norm import Norm
-from domain.norm_specification.model.verifier import Verifier
+from domain.norm_document.model import Chapter, Section, Norm, Verifier
 
 
 CH14S01 = Section(
     identifier="14.01",
-    title=u"TITLE",
-    text=u"text",
+    title="TITLE",
+    text="text",
     fragments=[
         
     ],
@@ -25,13 +16,13 @@ CH14S01 = Section(
 
 CH14S02 = Section(
     identifier="14.02",
-    title=u"TITLE",
-    text=u"text",
+    title="TITLE",
+    text="text",
     fragments=[
         Norm(
             identifier="14.02.01",
-            title=u"TITLE",
-            text=u"""
+            title="TITLE",
+            text="""
 Beleid voor beveiligd ontwikkelen;
 Voor het ontwikkelen van software en systemen behoren regels te worden vastgesteld en op ontwikkelactiviteiten binnen de organisatie te worden toegepast.
             """,
@@ -39,8 +30,8 @@ Voor het ontwikkelen van software en systemen behoren regels te worden vastgeste
             fragments=[
                 Verifier(
                     identifier="14.02.01/01",
-                    title=u"",
-                    text=u"""
+                    title="",
+                    text="""
 De gangbare principes rondom Security by design zijn uitgangspunt voor de ontwikkeling van software en systemen
                     """,
                     bbn=1,
@@ -50,8 +41,8 @@ De gangbare principes rondom Security by design zijn uitgangspunt voor de ontwik
 
         Norm(
             identifier="14.02.02",
-            title=u"TITLE",
-            text=u"""
+            title="TITLE",
+            text="""
 Procedures voor wijzigingsbeheer met betrekking tot systemen;
 Wijzigingen aan systemen binnen de levenscyclus van de ontwikkeling behoren te worden beheerst door het gebruik van formele procedures voor wijzigingsbeheer.
             """,
@@ -59,8 +50,8 @@ Wijzigingen aan systemen binnen de levenscyclus van de ontwikkeling behoren te w
             fragments=[
                 Verifier(
                     identifier="14.02.02/01",
-                    title=u"",
-                    text=u"""
+                    title="",
+                    text="""
 Voor het wijzigingsbeheer gelden de algemeen geaccepteerde beheerframeworks, zoals ITIL, ASL of BiSL.
                     """,
                     bbn=1,
@@ -70,8 +61,8 @@ Voor het wijzigingsbeheer gelden de algemeen geaccepteerde beheerframeworks, zoa
 
         Norm(
             identifier="14.02.05",
-            title=u"TITLE",
-            text=u"""
+            title="TITLE",
+            text="""
 Principes voor engineering van beveiligde systemen;
 Principes voor de engineering van beveiligde systemen behoren te worden vastgesteld, gedocumenteerd, onderhouden en toegepast voor alle verrichtingen betreffende het implementeren van informatiesystemen.
             """,
@@ -79,8 +70,8 @@ Principes voor de engineering van beveiligde systemen behoren te worden vastgest
             fragments=[
                 Verifier(
                     identifier="14.02.05/01",
-                    title=u"",
-                    text=u"""
+                    title="",
+                    text="""
 Zie overheidsmaatregel 14.2.1.1 
                     """,
                     bbn=1,
@@ -90,8 +81,8 @@ Zie overheidsmaatregel 14.2.1.1
 
         Norm(
             identifier="14.02.06",
-            title=u"TITLE",
-            text=u"""
+            title="TITLE",
+            text="""
 Beveiligde ontwikkelomgeving;
 Organisaties behoren beveiligde ontwikkelomgevingen vast te stellen en passend te beveiligen voor verrichtingen op het gebied van systeemontwikkeling en integratie, die betrekking hebben op de gehele levenscyclus van de systeemontwikkeling.
             """,
@@ -99,8 +90,8 @@ Organisaties behoren beveiligde ontwikkelomgevingen vast te stellen en passend t
             fragments=[
                 Verifier(
                     identifier="14.02.06/01",
-                    title=u"",
-                    text=u"""
+                    title="",
+                    text="""
 Uitgangspunt voor systeemontwikkeling trajecten is een expliciete risicoafweging.
 Deze heeft zowel de ontwikkelomgeving als ook het te ontwikkelen systeem in scope.
                     """,
@@ -111,8 +102,8 @@ Deze heeft zowel de ontwikkelomgeving als ook het te ontwikkelen systeem in scop
 
         Norm(
             identifier="14.02.07",
-            title=u"TITLE",
-            text=u"""
+            title="TITLE",
+            text="""
 Uitbestede softwareontwikkeling;
 Uitbestede systeemontwikkeling behoort onder supervisie te staan van en te worden gemonitord door de organisatie.
             """,
@@ -120,8 +111,8 @@ Uitbestede systeemontwikkeling behoort onder supervisie te staan van en te worde
             fragments=[
                 Verifier(
                     identifier="14.02.07/01",
-                    title=u"",
-                    text=u"""
+                    title="",
+                    text="""
 Een voorwaarde voor uitbestedingstrajecten is een expliciete risicoafweging. De noodzakelijke beveiligingsmaatregelen die daaruit volgen worden aan de leverancier opgelegd.
                     """,
                     bbn=1,
@@ -131,25 +122,25 @@ Een voorwaarde voor uitbestedingstrajecten is een expliciete risicoafweging. De 
 
         Norm(
             identifier="14.02.09",
-            title=u"TITLE",
-            text=u"""
+            title="TITLE",
+            text="""
 Systeemacceptatietests;
-Voor nieuwe informatiesystemen, upgrades en nieuwe versies behoren programma’s voor het uitvoeren van acceptatietests en gerelateerde criteria te worden vastgesteld.
+Voor nieuwe informatiesystemen, upgrades en nieuwe versies behoren programmaâs voor het uitvoeren van acceptatietests en gerelateerde criteria te worden vastgesteld.
             """,
             bbn=1,
             fragments=[
                 Verifier(
                     identifier="14.02.09/01",
-                    title=u"",
-                    text=u"""
+                    title="",
+                    text="""
 Voor acceptatietesten van systemen worden gestructureerde testmethodieken gebruikt. De testen worden bij voorkeur geautomatiseerd uitgevoerd.
                     """,
                     bbn=1,
                 ),
                 Verifier(
                     identifier="14.02.09/02",
-                    title=u"",
-                    text=u"""
+                    title="",
+                    text="""
 Van de resultaten van de testen wordt verslag gemaakt.
                     """,
                     bbn=1,
@@ -162,7 +153,7 @@ Van de resultaten van de testen wordt verslag gemaakt.
 
 CH14 = Chapter(
     identifier="14",
-    title=u"TITLE",
+    title="TITLE",
     fragments=[
         CH14S01,
         CH14S02

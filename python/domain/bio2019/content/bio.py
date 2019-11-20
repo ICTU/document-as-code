@@ -26,7 +26,7 @@ from domain import document
 
 BIO = document.Document(
     identifier="BIO2019",
-    title=u"Baseline Informatiebeveiliging Overheid - 2019",
+    title="Baseline Informatiebeveiliging Overheid - 2019",
     fragments=[
         ch05.CH05,
         ch06.CH06,

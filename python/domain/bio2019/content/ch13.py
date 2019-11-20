@@ -1,52 +1,43 @@
-# -*- coding: latin-1 -*-
 """
     fragments - define text fragments in the document
 """
-
-from __future__ import absolute_import
-from __future__ import print_function
-
-
-from domain.document.model.chapter import Chapter
-from domain.document.model.section import Section
-from domain.norm_specification.model.norm import Norm
-from domain.norm_specification.model.verifier import Verifier
+from domain.norm_document.model import Chapter, Section, Norm, Verifier
 
 
 CH13S01 = Section(
     identifier="13.01",
-    title=u"TITLE",
-    text=u"text",
+    title="TITLE",
+    text="text",
     fragments=[
         Norm(
             identifier="13.01.02",
-            title=u"TITLE",
-            text=u"""
+            title="TITLE",
+            text="""
 Beveiliging van netwerkdiensten;
-Beveiligingsmechanismen, dienstverleningsniveaus en beheer eisen voor alle netwerkdiensten behoren te worden geïdentificeerd en opgenomen in overeenkomsten betreffende netwerkdiensten. Dit geldt zowel voor diensten die intern worden geleverd als voor uitbestede diensten.
+Beveiligingsmechanismen, dienstverleningsniveaus en beheer eisen voor alle netwerkdiensten behoren te worden geÃ¯dentificeerd en opgenomen in overeenkomsten betreffende netwerkdiensten. Dit geldt zowel voor diensten die intern worden geleverd als voor uitbestede diensten.
             """,
             bbn=2,
             fragments=[
                 Verifier(
                     identifier="13.01.02/01",
-                    title=u"",
-                    text=u"""
+                    title="",
+                    text="""
 Het dataverkeer dat de organisatie binnenkomt of uitgaat wordt bewaakt / geanalyseerd op kwaadaardige elementen middels detectie-voorzieningen (zoals beschreven in de richtlijn voor implementatie van detectie-oplossingen), zoals het Nationaal Detectie Netwerk (alleen voor rijksoverheidsorganisaties) of GDI, die worden ingezet op basis van een risico-inschatting, mede aan de hand van de aard van de te beschermen gegevens en informatiesystemen.
                     """,
                     bbn=2,
                 ),
                 Verifier(
                     identifier="13.01.02/02",
-                    title=u"",
-                    text=u"""
+                    title="",
+                    text="""
 Bij ontdekte nieuwe dreigingen vanuit 13.1.2.1 worden deze, rekening houdend met de geldende juridische kaders, verplicht gedeeld binnen de overheid, waaronder met het NCSC (alleen voor rijksoverheidsorganisaties) of de sectorale CERT, bij voorkeur door geautomatiseerde mechanismen (threat intelligence sharing).
                     """,
                     bbn=2,
                 ),
                 Verifier(
                     identifier="13.01.02/03",
-                    title=u"",
-                    text=u"""
+                    title="",
+                    text="""
 Bij draadloze verbindingen zoals wifi en bij bedrade verbindingen buiten het gecontroleerd gebied, wordt gebruik gemaakt van encryptie middelen waarvoor het NBV een positief inzetadvies heeft afgegeven.
                     """,
                     bbn=2,
@@ -59,13 +50,13 @@ Bij draadloze verbindingen zoals wifi en bij bedrade verbindingen buiten het gec
 
 CH13S02 = Section(
     identifier="13.02",
-    title=u"TITLE",
-    text=u"text",
+    title="TITLE",
+    text="text",
     fragments=[
         Norm(
             identifier="13.02.03",
-            title=u"TITLE",
-            text=u"""
+            title="TITLE",
+            text="""
 Elektronische berichten;
 Informatie die is opgenomen in elektronische berichten behoord passend te zijn beschermd.
             """,
@@ -73,32 +64,32 @@ Informatie die is opgenomen in elektronische berichten behoord passend te zijn b
             fragments=[
                 Verifier(
                     identifier="13.02.03/01",
-                    title=u"",
-                    text=u"""
+                    title="",
+                    text="""
 Voor de beveiliging van elektronische berichten gelden de vastgestelde standaarden tegen phishing en afluisteren op pas-toe-of-leg-uit lijst van het forum standaardisatie.
                     """,
                     bbn=1,
                 ),
                 Verifier(
                     identifier="13.02.03/02",
-                    title=u"",
-                    text=u"""
+                    title="",
+                    text="""
 Voor veilige berichtenuitwisseling met basisregistraties, wordt conform de pastoe-of-leg-uit lijst, gebruik gemaakt van de actuele versie van Digikoppeling
                     """,
                     bbn=2,
                 ),
                 Verifier(
                     identifier="13.02.03/03",
-                    title=u"",
-                    text=u"""
+                    title="",
+                    text="""
 Maak gebruik van PKI-Overheid certificaten bij web- en mailverkeer van gevoelige gegevens. Gevoelige gegevens zijn o.a. digitale documenten binnen de overheid waar gebruikers rechten aan kunnen ontlenen.
                     """,
                     bbn=2,
                 ),
                 Verifier(
                     identifier="13.02.03/04",
-                    title=u"",
-                    text=u"""
+                    title="",
+                    text="""
 Om zekerheid te bieden over de integriteit van het elektronische bericht wordt voor elektronische handtekeningen gebruik gemaakt van de AdES Baseline Profile standaard of de of de ETSI TS 102 176-1.
                     """,
                     bbn=2,
@@ -111,7 +102,7 @@ Om zekerheid te bieden over de integriteit van het elektronische bericht wordt v
 
 CH13 = Chapter(
     identifier="13",
-    title=u"TITLE",
+    title="TITLE",
     fragments=[
         CH13S01,
         CH13S02
