@@ -7,10 +7,10 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 
-from domain.bio.model.norm import Norm
-from domain.bio.model.verifier import Verifier
 from domain.document.model.chapter import Chapter
 from domain.document.model.section import Section
+from domain.norm_specification.model.norm import Norm
+from domain.norm_specification.model.verifier import Verifier
 
 
 CH18S01 = Section(
