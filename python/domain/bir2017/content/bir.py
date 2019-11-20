@@ -26,7 +26,7 @@ from domain import document
 
 BIR = document.Document(
     identifier="BIR2017",
-    title=u"Baseline Informatiebeveiliging Rijksdienst - 2017",
+    title="Baseline Informatiebeveiliging Rijksdienst - 2017",
     fragments=[
         ch05.CH05,
         ch06.CH06,

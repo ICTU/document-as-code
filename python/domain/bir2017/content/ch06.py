@@ -2,54 +2,47 @@
 """
     fragments - define text fragments in the document
 """
-
-from __future__ import absolute_import
-from __future__ import print_function
-
-from domain.document.model.chapter import Chapter
-from domain.document.model.section import Section
-from domain.norm_document.model.norm import Norm
-from domain.norm_document.model.verifier import Verifier
+from domain.norm_document.model import Chapter, Section, Norm, Verifier
 
 
 S0601 = Section(
     identifier="06.01",
-    title=u"Interne organisatie",
-    text=u"Doelstelling: Een beheerkader vaststellen om de implementatie en uitvoering van de informatiebeveiliging "
-         u"binnen de organisatie te initiëren en te beheersen.",
+    title="Interne organisatie",
+    text="Doelstelling: Een beheerkader vaststellen om de implementatie en uitvoering van de informatiebeveiliging "
+         "binnen de organisatie te initiëren en te beheersen.",
     fragments=[
 
         Norm(
             identifier="06.01.01",
-            title=u"Rollen en verantwoordelijkheden bij informatiebeveiliging",
-            text=u"Alle verantwoordelijkheden bij informatiebeveiliging behoren te worden gedefinieerd en toegewezen.",
+            title="Rollen en verantwoordelijkheden bij informatiebeveiliging",
+            text="Alle verantwoordelijkheden bij informatiebeveiliging behoren te worden gedefinieerd en toegewezen.",
             bbn=1,
             fragments=[
                 Verifier(
                     identifier="06.01.01/01",
-                    title=u"",
-                    text=u"De leiding van de organisatie heeft vastgelegd wat de verantwoordelijkheden en rollen zijn "
-                         u"op het gebied van informatiebeveiliging binnen haar organisatie.",
+                    title="",
+                    text="De leiding van de organisatie heeft vastgelegd wat de verantwoordelijkheden en rollen zijn "
+                         "op het gebied van informatiebeveiliging binnen haar organisatie.",
                     bbn=1,
                 ),
                 Verifier(
                     identifier="06.01.01/02",
-                    title=u"",
-                    text=u"De verantwoordelijkheden en rollen ten aanzien van informatiebeveiliging zijn gebaseerd "
-                         u"op relevante voorschriften en wetten, zoals het VIR, VIR-BI, BVR en AVG.",
+                    title="",
+                    text="De verantwoordelijkheden en rollen ten aanzien van informatiebeveiliging zijn gebaseerd "
+                         "op relevante voorschriften en wetten, zoals het VIR, VIR-BI, BVR en AVG.",
                     bbn=1,
                 ),
                 Verifier(
                     identifier="06.01.01/03",
-                    title=u"",
-                    text=u"De rol en verantwoordelijkheden van de Chief Information Security Officer (CISO) zijn "
-                         u"in een CISO-functieprofiel vastgelegd.",
+                    title="",
+                    text="De rol en verantwoordelijkheden van de Chief Information Security Officer (CISO) zijn "
+                         "in een CISO-functieprofiel vastgelegd.",
                     bbn=1,
                 ),
                 Verifier(
                     identifier="06.01.01/04",
-                    title=u"",
-                    text=u"Er is een CISO aangesteld conform een vastgesteld CISO-functieprofiel.",
+                    title="",
+                    text="Er is een CISO aangesteld conform een vastgesteld CISO-functieprofiel.",
                     bbn=1,
                 ),
             ],
@@ -57,17 +50,17 @@ S0601 = Section(
 
         Norm(
             identifier="06.01.02",
-            title=u"Scheiding van taken",
-            text=u"Conflicterende taken en verantwoordelijkheden behoren te worden gescheiden om "
-                 u"de kans op onbevoegd of onbedoeld wijzigen of misbruik van de bedrijfsmiddelen van de organisatie "
-                 u"te verminderen.",
+            title="Scheiding van taken",
+            text="Conflicterende taken en verantwoordelijkheden behoren te worden gescheiden om "
+                 "de kans op onbevoegd of onbedoeld wijzigen of misbruik van de bedrijfsmiddelen van de organisatie "
+                 "te verminderen.",
             bbn=1,
             fragments=[
                 Verifier(
                     identifier="06.01.02/01",
-                    title=u"",
-                    text=u"Er zijn maatregelen getroffen die onbedoelde of ongeautoriseerde toegang tot "
-                         u"bedrijfsmiddelen waarnemen of voorkomen.",
+                    title="",
+                    text="Er zijn maatregelen getroffen die onbedoelde of ongeautoriseerde toegang tot "
+                         "bedrijfsmiddelen waarnemen of voorkomen.",
                     bbn=1,
                 ),
             ],
@@ -75,24 +68,24 @@ S0601 = Section(
 
         Norm(
             identifier="06.01.03",
-            title=u"Contact met overheidsinstanties",
-            text=u"Er behoren passende contacten met relevante overheidsinstanties "
-                 u"te worden onderhouden.",
+            title="Contact met overheidsinstanties",
+            text="Er behoren passende contacten met relevante overheidsinstanties "
+                 "te worden onderhouden.",
             bbn=2,
             fragments=[
                 Verifier(
                     identifier="06.01.03/01",
-                    title=u"",
-                    text=u"Er is door de organisatie uitgewerkt wie met welke (overheids)instanties en "
-                         u"toezichthouders contact heeft ten aanzien van informatiebeveiligingsaangelegenheden "
-                         u"(vergunningen/incidenten/calamiteiten) en welke eisen voor deze aangelegenheden relevant "
-                         u"zijn.",
+                    title="",
+                    text="Er is door de organisatie uitgewerkt wie met welke (overheids)instanties en "
+                         "toezichthouders contact heeft ten aanzien van informatiebeveiligingsaangelegenheden "
+                         "(vergunningen/incidenten/calamiteiten) en welke eisen voor deze aangelegenheden relevant "
+                         "zijn.",
                     bbn=2,
                 ),
                 Verifier(
                     identifier="06.01.03/02",
-                    title=u"",
-                    text=u"Het contactoverzicht wordt jaarlijks geactualiseerd.",
+                    title="",
+                    text="Het contactoverzicht wordt jaarlijks geactualiseerd.",
                     bbn=2,
                 ),
             ],
@@ -100,23 +93,23 @@ S0601 = Section(
 
         Norm(
             identifier="06.01.04",
-            title=u" ",
-            text=u"(Vervallen)",
+            title=" ",
+            text="(Vervallen)",
             fragments=[
             ],
         ),
 
         Norm(
             identifier="06.01.05",
-            title=u"Informatiebeveiliging in projectbeheer",
-            text=u"Informatiebeveiliging behoort aan de orde te komen in "
-                 u"projectbeheer, ongeacht het soort project.",
+            title="Informatiebeveiliging in projectbeheer",
+            text="Informatiebeveiliging behoort aan de orde te komen in "
+                 "projectbeheer, ongeacht het soort project.",
             bbn=2,
             fragments=[
                 Verifier(
                     identifier="06.01.05/01",
-                    title=u"",
-                    text=u"- conform norm -",
+                    title="",
+                    text="- conform norm -",
                     bbn=2,
                 ),
             ],
@@ -127,43 +120,43 @@ S0601 = Section(
 
 S0602 = Section(
     identifier="06.02",
-    title=u"Mobiele apparatuur en telewerken",
-    text=u"Doelstelling: Het waarborgen van de veiligheid van telewerken en het gebruik van mobiele apparatuur.",
+    title="Mobiele apparatuur en telewerken",
+    text="Doelstelling: Het waarborgen van de veiligheid van telewerken en het gebruik van mobiele apparatuur.",
     fragments=[
 
         Norm(
             identifier="06.02.01",
-            title=u"Beleid voor mobiele apparatuur",
-            text=u"Beleid en ondersteunende beveiligingsmaatregelen behoren te worden "
-                 u"vastgesteld om de risico?s die het gebruik van mobiele apparatuur met zich meebrengt te beheren.",
+            title="Beleid voor mobiele apparatuur",
+            text="Beleid en ondersteunende beveiligingsmaatregelen behoren te worden "
+                 "vastgesteld om de risico?s die het gebruik van mobiele apparatuur met zich meebrengt te beheren.",
             bbn=1,
             fragments=[
                 Verifier(
                     identifier="06.02.01/01",
-                    title=u"",
-                    text=u"Mobiele apparatuur is zo ingericht dat geen bedrijfsinformatie onbewust wordt opgeslagen "
-                         u"('zero footprint'). Als zero footprint (nog) niet realiseerbaar is, biedt een mobiel "
-                         u"apparaat (zoals een laptop, tablet en smartphone) de mogelijkheid om de toegang te "
-                         u"beschermen door middel van een toegangsbeveiligingsmechanisme en, indien vertrouwelijke "
-                         u"gegevens worden opgeslagen, versleuteling van die gegevens. In het geval van opslag van "
-                         u"vertrouwelijke informatie moet op deze mobiele apparatuur 'wissen op afstand' mogelijk "
-                         u"zijn.",
+                    title="",
+                    text="Mobiele apparatuur is zo ingericht dat geen bedrijfsinformatie onbewust wordt opgeslagen "
+                         "('zero footprint'). Als zero footprint (nog) niet realiseerbaar is, biedt een mobiel "
+                         "apparaat (zoals een laptop, tablet en smartphone) de mogelijkheid om de toegang te "
+                         "beschermen door middel van een toegangsbeveiligingsmechanisme en, indien vertrouwelijke "
+                         "gegevens worden opgeslagen, versleuteling van die gegevens. In het geval van opslag van "
+                         "vertrouwelijke informatie moet op deze mobiele apparatuur 'wissen op afstand' mogelijk "
+                         "zijn.",
                     bbn=2,
                 ),
                 Verifier(
                     identifier="06.02.01/02",
-                    title=u"",
-                    text=u"Bij de inzet van mobiele apparatuur zijn minimaal de volgende aspecten geïmplementeerd: "
-                         u"(a) in bewustwordingsprogramma?s komen gedragsaspecten van veilig mobiel werken aan de "
-                         u"orde;"
-                         u"(b) het device maakt onderdeel uit van patchmanagement en hardening;"
-                         u"(c) het device wordt waar mogelijk beheerd en beveiligd via een Mobile Device management "
-                         u"(MDM)-oplossing; "
-                         u"(d) gebruikers tekenen een gebruikersovereenkomst voor mobiel werken, waarmee zij verklaren "
-                         u"zich bewust te zijn van de gevaren van mobiel werken en verklaren dit veilig te zullen "
-                         u"doen. Deze verklaring heeft betrekking op alle mobiele apparatuur die de medewerker "
-                         u"zakelijk gebruikt;"
-                         u"(e) periodiek wordt getoetst of de punten in lid b), c) en d) worden nageleefd.",
+                    title="",
+                    text="Bij de inzet van mobiele apparatuur zijn minimaal de volgende aspecten geïmplementeerd: "
+                         "(a) in bewustwordingsprogramma?s komen gedragsaspecten van veilig mobiel werken aan de "
+                         "orde;"
+                         "(b) het device maakt onderdeel uit van patchmanagement en hardening;"
+                         "(c) het device wordt waar mogelijk beheerd en beveiligd via een Mobile Device management "
+                         "(MDM)-oplossing; "
+                         "(d) gebruikers tekenen een gebruikersovereenkomst voor mobiel werken, waarmee zij verklaren "
+                         "zich bewust te zijn van de gevaren van mobiel werken en verklaren dit veilig te zullen "
+                         "doen. Deze verklaring heeft betrekking op alle mobiele apparatuur die de medewerker "
+                         "zakelijk gebruikt;"
+                         "(e) periodiek wordt getoetst of de punten in lid b), c) en d) worden nageleefd.",
                     bbn=2,
                 ),
             ],
@@ -171,15 +164,15 @@ S0602 = Section(
 
         Norm(
             identifier="06.02.02",
-            title=u"Telewerken",
-            text=u"Beleid en ondersteunende beveiligingsmaatregelen behoren te worden geïmplementeerd ter "
-                 u"beveiliging van informatie die vanaf telewerklocaties wordt benaderd, verwerkt of opgeslagen.",
+            title="Telewerken",
+            text="Beleid en ondersteunende beveiligingsmaatregelen behoren te worden geïmplementeerd ter "
+                 "beveiliging van informatie die vanaf telewerklocaties wordt benaderd, verwerkt of opgeslagen.",
             bbn=2,
             fragments=[
                 Verifier(
                     identifier="06.02.02/01",
-                    title=u"",
-                    text=u"- conform norm -",
+                    title="",
+                    text="- conform norm -",
                     bbn=2,
                 ),
             ],
@@ -193,7 +186,7 @@ S0602 = Section(
 
 CH06 = Chapter(
     identifier="06",
-    title=u"Organiseren van informatiebeveiliging",
+    title="Organiseren van informatiebeveiliging",
     fragments=[
         S0601,
         S0602,

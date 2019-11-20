@@ -2,64 +2,56 @@
 """
     fragments - define text fragments in the document
 """
-
-from __future__ import absolute_import
-from __future__ import print_function
-
-
-from domain.document.model.chapter import Chapter
-from domain.document.model.section import Section
-from domain.norm_document.model.norm import Norm
-from domain.norm_document.model.verifier import Verifier
+from domain.norm_document.model import Chapter, Section, Norm, Verifier
 
 
 S1401 = Section(
     identifier="14.01",
-    title=u"Informatiebeveiligingsaspecten van bedrijfscontinuïteitsbeheer",
+    title="Informatiebeveiligingsaspecten van bedrijfscontinuïteitsbeheer",
     fragments=[
         Norm(
             identifier="14.01.01",
-            title=u"Informatiebeveiliging opnemen in het proces van bedrijfscontinuïteitsbeheer",
-            text=u"Er behoort een beheerd proces voor bedrijfscontinuïteit in de gehele organisatie te worden "
-                 u"ontwikkeld en bijgehouden, voor de naleving van eisen voor informatiebeveiliging die nodig "
-                 u"zijn voor de continuïteit van de bedrijfsvoering.",
+            title="Informatiebeveiliging opnemen in het proces van bedrijfscontinuïteitsbeheer",
+            text="Er behoort een beheerd proces voor bedrijfscontinuïteit in de gehele organisatie te worden "
+                 "ontwikkeld en bijgehouden, voor de naleving van eisen voor informatiebeveiliging die nodig "
+                 "zijn voor de continuïteit van de bedrijfsvoering.",
             fragments=[
                 Verifier(
                     identifier="14.01.01/01",
-                    title=u"",
-                    text=u"Calamiteitenplannen worden gebruikt in de jaarlijkse bewustwording-, training- en "
-                         u"testactiviteiten.",
+                    title="",
+                    text="Calamiteitenplannen worden gebruikt in de jaarlijkse bewustwording-, training- en "
+                         "testactiviteiten.",
                 ),
             ],
         ),
         Norm(
             identifier="14.01.02",
-            title=u"Bedrijfscontinuïteit en risicobeoordeling",
-            text=u"Gebeurtenissen die tot onderbreking van bedrijfsprocessen kunnen leiden, behoren te worden "
-                 u"geïdentificeerd, tezamen met de waarschijnlijkheid en de gevolgen van dergelijke onderbrekingen "
-                 u"en hun gevolgen voor informatiebeveiliging.",
+            title="Bedrijfscontinuïteit en risicobeoordeling",
+            text="Gebeurtenissen die tot onderbreking van bedrijfsprocessen kunnen leiden, behoren te worden "
+                 "geïdentificeerd, tezamen met de waarschijnlijkheid en de gevolgen van dergelijke onderbrekingen "
+                 "en hun gevolgen voor informatiebeveiliging.",
             fragments=[
                 Verifier(
                     identifier="14.01.02/01",
-                    title=u"",
-                    text=u"Er is een Business Impact Analyse (BIA) waarin de gebeurtenissen worden geïdentificeerd "
-                         u"die kunnen leiden tot discontinuïteit in het bedrijfsproces. Aan de hand van een "
-                         u"risicoanalyse zijn de waarschijnlijkheid en de gevolgen van de discontinuïteit in "
-                         u"kaart gebracht in termen van tijd, schade en herstelperiode.",
+                    title="",
+                    text="Er is een Business Impact Analyse (BIA) waarin de gebeurtenissen worden geïdentificeerd "
+                         "die kunnen leiden tot discontinuïteit in het bedrijfsproces. Aan de hand van een "
+                         "risicoanalyse zijn de waarschijnlijkheid en de gevolgen van de discontinuïteit in "
+                         "kaart gebracht in termen van tijd, schade en herstelperiode.",
                 ),
             ],
         ),
         Norm(
             identifier="14.01.03",
-            title=u"continuïteitsplannen ontwikkelen en implementeren waaronder informatiebeveiliging",
-            text=u"Er behoren plannen te worden ontwikkeld en geïmplementeerd om de bedrijfsactiviteiten te handhaven "
-                 u"of te herstellen en om de beschikbaarheid van informatie op het vereiste niveau en in de vereiste "
-                 u"tijdspanne te bewerkstelligen na onderbreking of uitval van kritische bedrijfsprocessen.",
+            title="continuïteitsplannen ontwikkelen en implementeren waaronder informatiebeveiliging",
+            text="Er behoren plannen te worden ontwikkeld en geïmplementeerd om de bedrijfsactiviteiten te handhaven "
+                 "of te herstellen en om de beschikbaarheid van informatie op het vereiste niveau en in de vereiste "
+                 "tijdspanne te bewerkstelligen na onderbreking of uitval van kritische bedrijfsprocessen.",
             fragments=[
                 Verifier(
                     identifier="14.01.03/01",
-                    title=u"",
-                    text=u"""In de continuïteitsplannen wordt minimaal aandacht besteed aan:
+                    title="",
+                    text="""In de continuïteitsplannen wordt minimaal aandacht besteed aan:
 <ul>
 <li>Identificatie van essentiële procedures voor bedrijfscontinuïteit.</li>
 <li>Veilig te stellen informatie (aanvaardbaarheid van verlies van informatie).</li>
@@ -72,31 +64,31 @@ S1401 = Section(
         ),
         Norm(
             identifier="14.01.04",
-            title=u"Kader voor de bedrijfscontinuïteitsplanning",
-            text=u"Er behoort een enkelvoudig kader voor bedrijfscontinuïteitsplannen te worden gehandhaafd om te "
-                 u"bewerkstelligen dat alle plannen consistent zijn, om eisen voor informatiebeveiliging op "
-                 u"consistente wijze te behandelen en om prioriteiten vast te stellen voor testen en onderhoud.",
+            title="Kader voor de bedrijfscontinuïteitsplanning",
+            text="Er behoort een enkelvoudig kader voor bedrijfscontinuïteitsplannen te worden gehandhaafd om te "
+                 "bewerkstelligen dat alle plannen consistent zijn, om eisen voor informatiebeveiliging op "
+                 "consistente wijze te behandelen en om prioriteiten vast te stellen voor testen en onderhoud.",
             fragments=[
                 Verifier(
                     identifier="14.01.04/01",
-                    title=u"",
-                    text=u"- conform norm -",
+                    title="",
+                    text="- conform norm -",
                 ),
             ],
         ),
         Norm(
             identifier="14.01.05",
-            title=u"Testen, onderhoud en herbeoordelen van bedrijfscontinuïteitsplannen",
-            text=u"Bedrijfscontinuïteitsplannen behoren regelmatig te worden getest en geüpdate, om te bewerkstelligen "
-                 u"dat ze actueel en doeltreffend blijven.",
+            title="Testen, onderhoud en herbeoordelen van bedrijfscontinuïteitsplannen",
+            text="Bedrijfscontinuïteitsplannen behoren regelmatig te worden getest en geüpdate, om te bewerkstelligen "
+                 "dat ze actueel en doeltreffend blijven.",
             fragments=[
                 Verifier(
                     identifier="14.01.05/01",
-                    title=u"",
-                    text=u"Er worden minimaal jaarlijks oefeningen en testen gehouden om de "
-                         u"bedrijfscontinuïteitsplannen en mate van readiness van de organisatie te toetsen "
-                         u"(opzet, bestaan en werking). Aan de hand van de resultaten worden de plannen bijgesteld "
-                         u"en wordt de organisatie bijgeschoold.",
+                    title="",
+                    text="Er worden minimaal jaarlijks oefeningen en testen gehouden om de "
+                         "bedrijfscontinuïteitsplannen en mate van readiness van de organisatie te toetsen "
+                         "(opzet, bestaan en werking). Aan de hand van de resultaten worden de plannen bijgesteld "
+                         "en wordt de organisatie bijgeschoold.",
                 ),
             ],
         ),
@@ -106,7 +98,7 @@ S1401 = Section(
 
 CH14 = Chapter(
     identifier="14",
-    title=u"Bedrijfscontinuïteitsbeheer",
+    title="Bedrijfscontinuïteitsbeheer",
     fragments=[
         S1401,
     ]
