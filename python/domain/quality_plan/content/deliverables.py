@@ -1,11 +1,6 @@
 """
     deliverables - define deliverables in the document
 """
-
-from __future__ import absolute_import
-from __future__ import print_function
-
-
 from ..model import Deliverable
 
 
@@ -22,5 +17,5 @@ D2 = Deliverable(
 D3 = Deliverable(
     identifier="D3",
     title="Deliverable 3. This deliverable is completed because the only measure that "
-        "affects it - measure 5 - has been marked completed.",
+          "affects it - measure 5 - has been marked completed.",
 )

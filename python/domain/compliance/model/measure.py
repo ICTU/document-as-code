@@ -1,11 +1,6 @@
 """
     BIO measure - defines and describes a measure for BIO compliance
 """
-
-from __future__ import absolute_import
-from __future__ import print_function
-
-
 from domain.base import Base
 
 
@@ -17,7 +12,7 @@ class Measure(Base):
 
     def __init__(self, identifier, description, identifiers, url=None, done=False):
 
-        super(Measure, self).__init__(identifier)
+        super().__init__(identifier)
 
         self.description = description
         self.identifiers = identifiers

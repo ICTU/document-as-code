@@ -1,10 +1,6 @@
 """
     produce the ISO 25010
 """
-from __future__ import absolute_import
-from __future__ import print_function
-
-
 from domain.iso25010 import model as iso
 
 # importing defines the content - no need to explicitly reference it further

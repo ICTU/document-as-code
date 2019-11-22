@@ -1,10 +1,6 @@
 """
     measures - define measures in the document
 """
-
-from __future__ import absolute_import
-from __future__ import print_function
-
 from ..model import Measure
 from .deliverables import D1, D2, D3
 from .requirements import R1, R2, R3

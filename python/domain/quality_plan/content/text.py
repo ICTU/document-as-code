@@ -1,11 +1,6 @@
 """
     text - text fragments for the document
 """
-
-from __future__ import absolute_import
-from __future__ import print_function
-
-
 import datetime
 
 project = "Document-as-code"

@@ -2,10 +2,6 @@
     requirement - defines and describes a requirement
 """
 
-from __future__ import absolute_import
-from __future__ import print_function
-
-
 from domain.base import Base
 
 
@@ -13,7 +9,7 @@ class Requirement(Base):
 
     def __init__(self, identifier, description, sources):
 
-        super(Requirement, self).__init__( identifier )
+        super().__init__(identifier)
 
         self.description = description
         self.sources = sources

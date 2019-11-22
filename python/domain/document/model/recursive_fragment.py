@@ -1,11 +1,6 @@
 """
     source - defines and describes a source
 """
-
-from __future__ import absolute_import
-from __future__ import print_function
-
-
 from domain.base import Base
 
 
@@ -18,7 +13,7 @@ class RecursiveFragment(Base):
 
     def __init__(self, identifier, title, lead=None, text=None, fragments=[]):
 
-        super(RecursiveFragment, self).__init__(identifier)
+        super().__init__(identifier)
 
         self.title = title
         self.lead = lead

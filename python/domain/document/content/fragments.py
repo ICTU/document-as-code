@@ -1,11 +1,6 @@
 """
     fragments - define text fragments in the document
 """
-
-from __future__ import absolute_import
-from __future__ import print_function
-
-
 from domain.document.model import recursive_fragment as rf
 from domain.quality_plan.content import text
 

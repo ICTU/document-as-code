@@ -1,11 +1,6 @@
 """
     fragments - define text fragments in the document
 """
-
-from __future__ import absolute_import
-from __future__ import print_function
-
-
 from . import ch05
 from . import ch06
 from . import ch07

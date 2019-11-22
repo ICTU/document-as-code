@@ -1,11 +1,6 @@
 """
     bootstrap - a HTML document with Bootstrap CSS and some helper methods
 """
-
-from __future__ import absolute_import
-from __future__ import print_function
-
-
 from yattag import Doc
 
 
@@ -14,7 +9,7 @@ class BootstrapDoc(Doc):
 
     def tagtext(self, with_doctype=True):
         """ Override to set the doctype. """
-        doc, tag, text = super(BootstrapDoc, self).tagtext()
+        doc, tag, text = super().tagtext()
         if with_doctype:
             doc.asis('<!DOCTYPE html>')
         return doc, tag, text
@@ -68,6 +63,7 @@ class BootstrapDoc(Doc):
         """ A h4 with an optional sub text. """
         return self.__header('h4', h4_text, h4_subtext, h4_bookmark)
 
+    # --- shared header utility ---
 
     def __header(self, header_tag, header_text, header_subtext=None, header_bookmark=None):
         """ Add a header with text and optional sub text. """
@@ -88,6 +84,7 @@ class BootstrapDoc(Doc):
                         doc.asis(header_subtext)
         return doc.getvalue()
 
+    # --- various document parts ---
 
     def table(self, headers, rows, caption=None, sort_rows=True, sort_cells=True, widths=None):
         """ Add a table with the headers and rows and an optional caption. The rows are sorted. If any cell contains
@@ -146,6 +143,8 @@ class BootstrapDoc(Doc):
         assert modifier in ('default', 'primary', 'success', 'info', 'warning', 'danger')
         kwargs['klass'] = "label label-{0}".format(modifier)
         return self.__tag_with_text('span', label_text, **kwargs)
+
+    # --- shared tag utility ---
 
     def __tag_with_text(self, tag_name, tag_text, **kwargs):
         """ Return a tag with the specified tag name and text. The optional kwargs are applied to the tag. """

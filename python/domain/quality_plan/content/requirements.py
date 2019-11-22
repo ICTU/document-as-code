@@ -1,10 +1,6 @@
 """
     requirements - define requirements in the document
 """
-
-from __future__ import absolute_import
-from __future__ import print_function
-
 from ..model import Requirement
 from .sources import S1, S2
 

@@ -1,8 +1,6 @@
 """
     Example: use an Excel file as data source
 """
-from __future__ import absolute_import
-from __future__ import print_function
 
 from yattag import indent
 
