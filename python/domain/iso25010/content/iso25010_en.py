@@ -12,10 +12,6 @@
     
     Taken from http://iso25000.com/index.php/en/iso-25000-standards/iso-25010 [ early November 2016 ]
 """
-from __future__ import absolute_import
-from __future__ import print_function
-
-
 from .. import model
 
 

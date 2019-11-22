@@ -1,10 +1,7 @@
 """
     example document - demonstrate how 'Document as Code' works
 """
-
-from __future__ import absolute_import
-from __future__ import print_function
-
+import pathlib
 
 from yattag import indent
 
@@ -95,4 +92,4 @@ with tag('html'):
                 ]
             )
 
-file('example_document.html', 'w').write(indent(doc.getvalue()))
+pathlib.Path('example_document.html').write_text(indent(doc.getvalue()))

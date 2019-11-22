@@ -9,7 +9,7 @@ import re
 from yattag import indent
 
 from format.bootstrap import BootstrapDoc
-from domain.bir.model.bir_measure import BirMeasure
+from domain.compliance.model.measure import Measure
 
 from .base_labeler import BaseLabeler
 
@@ -30,11 +30,11 @@ class DocumentRenderingContext(object):
 
         doc, _tag, _text = self.doc_tag_text
         content = indent(doc.getvalue())
-        with open(self.filepath, mode='w', encoding='ascii', errors='xmlcharrefreplace') as fout:
+        with open(self.filepath, mode='w', errors='xmlcharrefreplace') as fout:
             print(content, file=fout)
 
 
-class BirDocumentRenderer(object):
+class DocumentRenderer(object):
 
     STATE_NA = 'not_applicable'
     STATE_EXPLAINED = 'explained'
@@ -47,9 +47,9 @@ class BirDocumentRenderer(object):
 
     def __init__(self, labeler_class):
         super().__init__()
-        self.todo = BirMeasure("TODO", "Things left todo", identifiers=[])
-        self.explain = BirMeasure.explain()
-        self.not_applicable = BirMeasure.not_applicable()
+        self.todo = Measure("TODO", "Things left todo", identifiers=[])
+        self.explain = Measure.explain()
+        self.not_applicable = Measure.not_applicable()
         self.labeler_class = labeler_class
 
     def create_labeler(self, doc):
@@ -229,7 +229,7 @@ class BirDocumentRenderer(object):
                         self.doc.bookmark(verifier.identifier),
                         verifier.text,
                         ''.join(self.labeler.bbn_to_labels(verifier.bbn)),
-                        ''.join(self.labeler.measures_to_labels(verifier.bir_measures)),
+                        ''.join(self.labeler.measures_to_labels(verifier.measures)),
                     )
                     for verifier in norm.fragments
                 ],
@@ -296,7 +296,7 @@ class BirDocumentRenderer(object):
                         self.labeler.measures_to_labels(
                             [
                                 measure
-                                for measure in verifier.bir_measures
+                                for measure in verifier.measures
                                 # a verifier may appear in multiple measures
                                 # it may therefore also be mapped onto on of the special measures
                                 # this must be suppressed here
@@ -321,7 +321,7 @@ class BirDocumentRenderer(object):
         render measures, their description and state
         """
         specials = (self.todo, self.not_applicable, self.explain)
-        measures_to_report = set(measures if measures else BirMeasure.all) - set(specials)
+        measures_to_report = set(measures if measures else Measure.all) - set(specials)
 
         self.doc.h2("Maatregelen", self.doc.badge(len(measures_to_report)))
 
@@ -349,20 +349,20 @@ class BirDocumentRenderer(object):
         """
 
         # augment fragment with measures defined for it
-        fragment.bir_measures = set()
+        fragment.measures = set()
 
         # depth first collection of measures defined for subfragments
         for subfragment in fragment.fragments:
-            fragment.bir_measures.update(self.link_measures_to_fragments(subfragment))
+            fragment.measures.update(self.link_measures_to_fragments(subfragment))
 
         # post visit processing to add all measures defined for this fragment
-        fragment.bir_measures.update(BirMeasure.all_applicable_to_fragment(fragment.identifier))
+        fragment.measures.update(Measure.all_applicable_to_fragment(fragment.identifier))
 
         # no measures implicates we still have work to do
-        if not fragment.bir_measures:
-            fragment.bir_measures.add(self.todo)
+        if not fragment.measures:
+            fragment.measures.add(self.todo)
 
-        return fragment.bir_measures
+        return fragment.measures
 
     # ---
 
@@ -387,7 +387,7 @@ class BirDocumentRenderer(object):
 
                         # a verifier may appear in multiple measures
                         # so each measure must be mapped onto a state
-                        for measure in verifier.bir_measures:
+                        for measure in verifier.measures:
 
                             # special measures
 

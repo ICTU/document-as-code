@@ -1,23 +1,18 @@
 """
-    BIR measure - defines and describes a measure for BIR compliance
+    BIO measure - defines and describes a measure for BIO compliance
 """
-
-from __future__ import absolute_import
-from __future__ import print_function
-
-
 from domain.base import Base
 
 
-class BirMeasure(Base):
-    """ Measures that help to in BIR compliance. """
+class Measure(Base):
+    """ Measures that help to in BIO compliance. """
 
     _explain = None
     _not_applicable = None
 
     def __init__(self, identifier, description, identifiers, url=None, done=False):
 
-        super(BirMeasure, self).__init__(identifier)
+        super().__init__(identifier)
 
         self.description = description
         self.identifiers = identifiers
@@ -48,7 +43,7 @@ class BirMeasure(Base):
     @classmethod
     def register_explain(cls, explain):
         if not isinstance(explain, cls):
-            raise TypeError(f"explain should be {cls.__name__}, nor {explain.__class__.__name__}")
+            raise TypeError(f"explain should be {cls.__name__}, not {explain.__class__.__name__}")
         cls._explain = explain
 
     @classmethod
@@ -60,7 +55,7 @@ class BirMeasure(Base):
     @classmethod
     def register_not_applicable(cls, not_applicable):
         if not isinstance(not_applicable, cls):
-            raise TypeError(f"explain should be {cls.__name__}, nor {not_applicable.__class__.__name__}")
+            raise TypeError(f"not_applicable should be {cls.__name__}, not {not_applicable.__class__.__name__}")
         cls._not_applicable = not_applicable
 
     @classmethod

@@ -1,8 +1,8 @@
 """
     Example: use an Excel file as data source
 """
-from __future__ import absolute_import
-from __future__ import print_function
+import sys
+import pathlib
 
 from yattag import indent
 
@@ -28,18 +28,18 @@ with tag('html'):
     with tag('body'):
 
         doc.table(
-            map(str, table_source["A1:F1"][0]),
-            map(lambda r: map(str, r), table_source.iter_rows("A2:F7")),
+            list(map(str, table_source["A1:F1"][0])),
+            list(map(lambda r: map(str, r), table_source.iter_rows("A2:F7"))),
             sort_rows=False
-       )
+        )
 
 # --- produce the document ---
 
-import sys
+file_path = pathlib.Path(__file__).resolve()
+project_dir = file_path.resolve().parent.parent
+report_dir = project_dir / "report"
+report_file = report_dir / file_path.with_suffix(".html").name
 
-if sys.version_info < (3, 0):
-    with open('example_table_data_source.html', 'w') as fout:
-        fout.write(indent(doc.getvalue()).encode('ascii', errors='xmlcharrefreplace'))
-else:
-    with open('example_table_data_source.html', mode='w', encoding='ascii', errors='xmlcharrefreplace') as fout:
-        fout.write(indent(doc.getvalue()))
+report_file.write_text(indent(doc.getvalue()))
+
+print(f"Output in {report_file}")

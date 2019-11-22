@@ -1,15 +1,7 @@
 """
     Confluence URL - reference to a page within Confluence
 """
-from __future__ import absolute_import
-from __future__ import print_function
-
-import sys
-
-if sys.version_info < (3, 0):
-    from urllib import quote_plus
-else:
-    from urllib.parse import quote_plus
+from urllib.parse import quote_plus
 
 
 class ConfluenceUrl(object):
@@ -33,7 +25,6 @@ class ConfluenceUrl(object):
     _page_title = None
     _anchor_name = None
 
-
     def __init__(self, base_url, page_title=None, anchor_name=None):
         """
         :param base_url: base of all URLs, including the spacekey
@@ -44,17 +35,10 @@ class ConfluenceUrl(object):
         self._page_title = page_title
         self._anchor_name = anchor_name
 
-
     def __str__(self):
-        return "{cls.__name__}({b!r}, {p!r}, {a!r})".format(
-            cls=self.__class__,
-            b=self._base_url,
-            p=self._page_title,
-            a=self._anchor_name
-        )
+        return f"{self.__class__.__name__}({self._base_url!r}, {self._page_title!r}, {self._anchor_name!r})"
 
     __repr__ = __str__
-
 
     def page_title(self, page_title, anchor_name=None):
         """
@@ -64,7 +48,6 @@ class ConfluenceUrl(object):
         """
         return self.__class__(self._base_url, page_title, anchor_name if anchor_name else self._anchor_name)
 
-
     def anchor_name(self, anchor_name):
         """
         build on top of an existing base URL and page title
@@ -72,14 +55,12 @@ class ConfluenceUrl(object):
         """
         return self.__class__(self._base_url, self._page_title, anchor_name)
 
-
     @property
     def confluence_page_name(self):
         """
         page name conforming Confluence standard
         """
         return quote_plus(self._page_title)
-
 
     @property
     def confluence_anchor_name(self):
@@ -89,7 +70,6 @@ class ConfluenceUrl(object):
         page_in_anchor = self._page_title.replace(' ', '')
         anchor_name_in_anchor = self._anchor_name.replace(' ', '')
         return '-'.join((page_in_anchor, anchor_name_in_anchor))
-
 
     @property
     def url(self):

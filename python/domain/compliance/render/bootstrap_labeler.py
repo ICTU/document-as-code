@@ -6,7 +6,7 @@ from .base_labeler import BaseLabeler
 
 class BootstrapLabeler(BaseLabeler):
     """
-    create decorative labels for BirMeasures based on their status
+    create decorative labels for BioMeasures based on their status
     """
     BOOTSTRAP_LABEL_COLOR_GREY = "default"
     BOOTSTRAP_LABEL_COLOR_RED = "danger"

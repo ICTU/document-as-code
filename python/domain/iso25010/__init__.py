@@ -1,4 +1,4 @@
-'''
+"""
     ISO/IEC 25010:2011 defines:
     
     1. A quality in use model composed of five characteristics (some of which are further subdivided into subcharacteristics)
@@ -17,7 +17,4 @@
     are also relevant to wider systems and services.
 
     Taken from http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=35733 [ early November 2016 ]
-'''
-from __future__ import absolute_import
-from __future__ import print_function
-
+"""

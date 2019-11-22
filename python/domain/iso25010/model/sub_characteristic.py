@@ -1,10 +1,6 @@
 """
     Iso25010SubCharacteristic - ISO 25010 software quality sub characteristic
 """
-from __future__ import absolute_import
-from __future__ import print_function
-
-
 from . import characteristic_base as cb
 
 
@@ -15,18 +11,16 @@ class Iso25010SubCharacteristic(cb.Iso25010CharacteristicBase):
 
     _main_characteristic = None
 
-
     def __init__(self, identifier, name, description, part_of=None):
         """
         :param identifier: identifier for the characteristic
         :param name: name for the characteristic
         :param description: description for the characteristic
         """
-        super(Iso25010SubCharacteristic, self).__init__(identifier, name, description)
+        super().__init__(identifier, name, description)
 
         if part_of:
             self.part_of(part_of)
-
 
     def part_of(self, main_characteristic):
         """

@@ -5,7 +5,7 @@
 
 class BaseLabeler(object):
     """
-    create decorative labels for BirMeasures based on their status
+    create decorative labels for BioMeasures based on their status
     """
     LABEL_TODO = "todo"
     LABEL_EXPLAIN = "explain"
@@ -143,7 +143,7 @@ class BaseLabeler(object):
         :return: labels
         """
         bbn = self.bbn_to_labels(fragment.bbn) if hasattr(fragment, 'bbn') else None
-        labels = self.measures_to_labels(fragment.bir_measures)
+        labels = self.measures_to_labels(fragment.measures)
 
         if bbn:
             return bbn + [" &nbsp; "] + labels

@@ -1,11 +1,6 @@
 """
     fragments - define text fragments in the document
 """
-
-from __future__ import absolute_import
-from __future__ import print_function
-
-
 from . import ch05
 from . import ch06
 from . import ch07
@@ -26,7 +21,7 @@ from domain import document
 
 BIR = document.Document(
     identifier="BIR2017",
-    title=u"Baseline Informatiebeveiliging Rijksdienst - 2017",
+    title="Baseline Informatiebeveiliging Rijksdienst - 2017",
     fragments=[
         ch05.CH05,
         ch06.CH06,
