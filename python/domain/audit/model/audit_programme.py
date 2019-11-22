@@ -66,17 +66,15 @@ class AuditProgramme(base.Base):
         convert items to AuditItems and add them to the audit programme
         :param items: collection of AuditItems, AuditItem identifiers or AuditItem parameters
         """
-        identifier_maker = f"{self.identifier}_{{:04d}}"
-
         for nr, item in enumerate(items, len(self.items)+1):
             if isinstance(item, AuditItem):
                 converted = item
             elif isinstance(item, str):
                 converted = AuditItem.find_instance(item)
                 if converted is None:
-                    raise ValueError(f"no AuditItem with identifier '{identifier}'")
+                    raise ValueError(f"no AuditItem with identifier '{item}'")
             elif len(item) == 3:
-                identifier = identifier_maker.format(nr)
+                identifier = f"{self.identifier}_{nr:04d}"
                 converted = AuditItem(identifier, *item)
             else:
                 raise ValueError(f"unable to convert {item!r}")

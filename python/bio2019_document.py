@@ -37,14 +37,15 @@ Measure(
 
 if __name__ == "__main__":
 
-    file_path = pathlib.Path(__file__)
-    report_base_name = file_path.stem
+    file_path = pathlib.Path(__file__).resolve()
     project_dir = file_path.resolve().parent.parent
     report_dir = project_dir / "report"
+    report_file = report_dir / file_path.with_suffix(".html").name
+    report_pages = report_dir / f"{file_path.stem}_pages"
 
     renderer = DocumentRenderer(BootstrapLabeler)
     renderer.link_measures_to_fragments(BIO)
-    renderer.render_main_document_as_one(BIO, report_dir / f"{report_base_name}_document.html")
-    renderer.render_main_document_as_parts(BIO, report_dir / f"{report_base_name}_pages")
+    renderer.render_main_document_as_one(BIO, report_file)
+    renderer.render_main_document_as_parts(BIO, report_pages)
 
     print(f"Output in '{report_dir}'")

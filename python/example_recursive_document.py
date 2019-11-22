@@ -1,6 +1,7 @@
 """
     example document - demonstrate how 'Document as Code' works
 """
+import pathlib
 
 from yattag import indent
 
@@ -41,5 +42,12 @@ with tag('html'):
 
             show_recursive_fragments(headings, fragments.F0)
 
-with open('example_recursive_document.html', 'w') as fout:
-    fout.write(indent(doc.getvalue()))
+
+file_path = pathlib.Path(__file__).resolve()
+project_dir = file_path.resolve().parent.parent
+report_dir = project_dir / "report"
+report_file = report_dir / file_path.with_suffix(".html").name
+
+report_file.write_text(indent(doc.getvalue()))
+
+print(f"Ouput in {report_file}")

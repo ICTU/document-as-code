@@ -36,12 +36,7 @@ class ConfluenceUrl(object):
         self._anchor_name = anchor_name
 
     def __str__(self):
-        return "{cls.__name__}({b!r}, {p!r}, {a!r})".format(
-            cls=self.__class__,
-            b=self._base_url,
-            p=self._page_title,
-            a=self._anchor_name
-        )
+        return f"{self.__class__.__name__}({self._base_url!r}, {self._page_title!r}, {self._anchor_name!r})"
 
     __repr__ = __str__
 

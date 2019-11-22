@@ -130,18 +130,18 @@ class BootstrapDoc(Doc):
         if anchor is None:
             anchor = link_text
         if url is None:
-            url = "#{0}".format(anchor)
+            url = f"#{anchor}"
         return self.__tag_with_text('a', link_text, href=url)
 
     def badge(self, list_or_number):
         """ Return a badge. If the argument is a list, use the length of the list as number. """
         number = list_or_number if isinstance(list_or_number, int) else len(list_or_number)
-        return self.__tag_with_text('span', "{0!s}".format(number), klass="badge")
+        return self.__tag_with_text('span', f"{number}", klass="badge")
 
     def label(self, label_text, modifier='default', **kwargs):
         """ Return a label with the specified text and an optional modifier (color). """
         assert modifier in ('default', 'primary', 'success', 'info', 'warning', 'danger')
-        kwargs['klass'] = "label label-{0}".format(modifier)
+        kwargs['klass'] = f"label label-{modifier}"
         return self.__tag_with_text('span', label_text, **kwargs)
 
     # --- shared tag utility ---

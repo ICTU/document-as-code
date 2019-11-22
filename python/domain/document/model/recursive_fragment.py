@@ -27,4 +27,4 @@ class RecursiveFragment(Base):
         return self
 
     def get_title(self):
-        return u"{} - {}".format(self.identifier, self.title)
+        return f"{self.identifier} - {self.title}"

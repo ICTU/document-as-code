@@ -31,7 +31,7 @@ class ExcelTable(object):
         :param show_values: show values (i.e. computation results)[True,default] or formulae [False]
         """
         if not os.path.isfile(filepath):
-            raise ExcelTableError('no file {}'.format(filepath))
+            raise ExcelTableError(f"no file {filepath}")
 
         self.source_file = filepath
         self.work_book = openpyxl.load_workbook(filepath, read_only=True, data_only=show_values)
@@ -48,7 +48,7 @@ class ExcelTable(object):
         if sheet_name is None:
             sheet_name = self.work_book.sheetnames[0]
         elif sheet_name not in self.work_book.sheetnames:
-            raise ExcelTableError("no sheet named '{}' in {}".format(sheet_name, self.source_file))
+            raise ExcelTableError(f"no sheet named '{sheet_name}' in {self.source_file}")
 
         self.sheet_name = sheet_name
 
@@ -72,9 +72,9 @@ class ExcelTable(object):
         if not(ws.min_column <= min_col <= max_col <= ws.max_column) or\
                 not(ws.min_row <= min_row <= max_row <= ws.max_row):
             raise ExcelTableError(
-                "cell range ({},{})-({},{}) not valid for sheet '{}' in {}".format(
-                    min_col, min_row, max_col, max_row, self.sheet_name, self.source_file
-                )
+                f"cell range ({min_col},{min_row})-({max_col},{max_row})"
+                f" not valid for sheet '{self.sheet_name}'"
+                f" in {self.source_file}"
             )
 
         self.cell_range = self.components2cell_range(min_col, min_row, max_col, max_row)
@@ -128,7 +128,7 @@ class ExcelTable(object):
         if self.sheet_name is None:
             raise ExcelTableError('no sheet name set')
         elif self.sheet_name not in self.work_book.sheetnames:
-            raise ExcelTableError("no sheet named '{}' in {}".format(self.sheet_name, self.source_file))
+            raise ExcelTableError(f"no sheet named '{self.sheet_name}' in {self.source_file}")
 
         return self.work_book[self.sheet_name]
 

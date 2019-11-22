@@ -1,6 +1,8 @@
 """
     Example: use an Excel file as data source
 """
+import sys
+import pathlib
 
 from yattag import indent
 
@@ -33,11 +35,11 @@ with tag('html'):
 
 # --- produce the document ---
 
-import sys
+file_path = pathlib.Path(__file__).resolve()
+project_dir = file_path.resolve().parent.parent
+report_dir = project_dir / "report"
+report_file = report_dir / file_path.with_suffix(".html").name
 
-if sys.version_info < (3, 0):
-    with open('example_table_data_source.html', 'w') as fout:
-        fout.write(indent(doc.getvalue()).encode('ascii', errors='xmlcharrefreplace'))
-else:
-    with open('example_table_data_source.html', mode='w', encoding='ascii', errors='xmlcharrefreplace') as fout:
-        fout.write(indent(doc.getvalue()))
+report_file.write_text(indent(doc.getvalue()))
+
+print(f"Output in {report_file}")

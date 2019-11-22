@@ -104,17 +104,15 @@ class AuditEvidence(base.Base):
         :param key: kind of evidence
         :param items: collection of EvidenceElements, EvidenceElement identifiers or EvidenceElement parameters
         """
-        identifier_maker = f"{self.identifier}_{key}_{{:04d}}"
-
         for nr, item in enumerate(items, len(evidence_elements)+1):
             if isinstance(item, AuditEvidenceElement):
                 converted = item
             elif isinstance(item, str):
                 converted = AuditEvidenceElement.find_instance(item)
                 if converted is None:
-                    raise ValueError(f"no AuditItem with identifier '{identifier}'")
+                    raise ValueError(f"no AuditItem with identifier '{item}'")
             elif len(item) == 2:
-                identifier = identifier_maker.format(nr)
+                identifier = f"{self.identifier}_{key}_{nr:04d}"
                 converted = AuditEvidenceElement(identifier, *item)
             else:
                 raise ValueError(f"unable to convert {item!r}")

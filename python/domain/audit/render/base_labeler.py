@@ -89,4 +89,4 @@ class BaseLabeler(object):
         label = self.doc.label(text, level, style=self.STYLE_LABEL)
         if url is None:
             return label
-        return self.doc.link("{label}", url=url).format(label=label)
+        return self.doc.link(f"{label}", url=url)

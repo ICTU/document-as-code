@@ -26,4 +26,4 @@ class Person(base.Base):
         name by which the person is known
         :return: the name
         """
-        return "{} {}".format(self.given_name, self.surname)
+        return f"{self.given_name} {self.surname}"
