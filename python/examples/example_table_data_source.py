@@ -36,9 +36,11 @@ with tag('html'):
 # --- produce the document ---
 
 file_path = pathlib.Path(__file__).resolve()
-project_dir = file_path.resolve().parent.parent
-report_dir = project_dir / "report"
+project_home_dir = file_path.resolve().parent.parent.parent
+report_dir = project_home_dir / "report"
+report_dir.mkdir(parents=True, exist_ok=True)
 report_file = report_dir / file_path.with_suffix(".html").name
+report_pages = report_dir / f"{file_path.stem}_pages"
 
 report_file.write_text(indent(doc.getvalue()))
 

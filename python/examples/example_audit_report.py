@@ -89,15 +89,15 @@ if __name__ == "__main__":
     )
 
     # create it
-    path = pathlib.Path(__file__).resolve()
-    project_dir = path.parent.parent
-    report_dir = project_dir / "report"
-    report_name = path.with_suffix(".html").name
-    report_path = report_dir / report_name
+    file_path = pathlib.Path(__file__).resolve()
+    project_home_dir = file_path.resolve().parent.parent.parent
+    report_dir = project_home_dir / "report"
+    report_dir.mkdir(parents=True, exist_ok=True)
+    report_file = report_dir / file_path.with_suffix(".html").name
 
     renderer = audit_report_renderer.HtmlRenderer()
     audit_report_renderer.AuditReportRenderer(renderer).render_audit_report(ar)
     report = renderer.getvalue()
 
-    report_path.write_text(report)
-    print(f"Output in {report_path}")
+    report_file.write_text(report)
+    print(f"Output in {report_file}")
