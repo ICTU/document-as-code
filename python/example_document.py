@@ -92,4 +92,12 @@ with tag('html'):
                 ]
             )
 
-pathlib.Path('example_document.html').write_text(indent(doc.getvalue()))
+# create it
+path = pathlib.Path(__file__).resolve()
+project_dir = path.parent.parent
+report_dir = project_dir / "report"
+report_name = path.with_suffix(".html").name
+report_path = report_dir / report_name
+
+report_path.write_text(indent(doc.getvalue()))
+print(f"Output in {report_path}")
