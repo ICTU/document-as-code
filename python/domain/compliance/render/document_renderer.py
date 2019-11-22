@@ -30,7 +30,7 @@ class DocumentRenderingContext(object):
 
         doc, _tag, _text = self.doc_tag_text
         content = indent(doc.getvalue())
-        with open(self.filepath, mode='w', encoding='ascii', errors='xmlcharrefreplace') as fout:
+        with open(self.filepath, mode='w', errors='xmlcharrefreplace') as fout:
             print(content, file=fout)
 
 
@@ -229,7 +229,7 @@ class DocumentRenderer(object):
                         self.doc.bookmark(verifier.identifier),
                         verifier.text,
                         ''.join(self.labeler.bbn_to_labels(verifier.bbn)),
-                        ''.join(self.labeler.measures_to_labels(verifier.bio_measures)),
+                        ''.join(self.labeler.measures_to_labels(verifier.measures)),
                     )
                     for verifier in norm.fragments
                 ],
@@ -296,7 +296,7 @@ class DocumentRenderer(object):
                         self.labeler.measures_to_labels(
                             [
                                 measure
-                                for measure in verifier.bio_measures
+                                for measure in verifier.measures
                                 # a verifier may appear in multiple measures
                                 # it may therefore also be mapped onto on of the special measures
                                 # this must be suppressed here
@@ -349,20 +349,20 @@ class DocumentRenderer(object):
         """
 
         # augment fragment with measures defined for it
-        fragment.bio_measures = set()
+        fragment.measures = set()
 
         # depth first collection of measures defined for subfragments
         for subfragment in fragment.fragments:
-            fragment.bio_measures.update(self.link_measures_to_fragments(subfragment))
+            fragment.measures.update(self.link_measures_to_fragments(subfragment))
 
         # post visit processing to add all measures defined for this fragment
-        fragment.bio_measures.update(Measure.all_applicable_to_fragment(fragment.identifier))
+        fragment.measures.update(Measure.all_applicable_to_fragment(fragment.identifier))
 
         # no measures implicates we still have work to do
-        if not fragment.bio_measures:
-            fragment.bio_measures.add(self.todo)
+        if not fragment.measures:
+            fragment.measures.add(self.todo)
 
-        return fragment.bio_measures
+        return fragment.measures
 
     # ---
 
@@ -387,7 +387,7 @@ class DocumentRenderer(object):
 
                         # a verifier may appear in multiple measures
                         # so each measure must be mapped onto a state
-                        for measure in verifier.bio_measures:
+                        for measure in verifier.measures:
 
                             # special measures
 

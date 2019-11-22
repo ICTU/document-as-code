@@ -16,7 +16,6 @@ class RecursiveFragment(Base):
     text = None
     fragments = None
 
-
     def __init__(self, identifier, title, lead=None, text=None, fragments=[]):
 
         super(RecursiveFragment, self).__init__(identifier)
@@ -28,11 +27,9 @@ class RecursiveFragment(Base):
 
         self.add(*fragments)
 
-
     def add(self, *fragments):
         self.fragments.extend(fragments)
         return self
-
 
     def get_title(self):
         return u"{} - {}".format(self.identifier, self.title)

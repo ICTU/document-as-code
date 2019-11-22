@@ -143,7 +143,7 @@ class BaseLabeler(object):
         :return: labels
         """
         bbn = self.bbn_to_labels(fragment.bbn) if hasattr(fragment, 'bbn') else None
-        labels = self.measures_to_labels(fragment.bio_measures)
+        labels = self.measures_to_labels(fragment.measures)
 
         if bbn:
             return bbn + [" &nbsp; "] + labels
