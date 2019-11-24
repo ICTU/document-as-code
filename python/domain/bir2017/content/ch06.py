@@ -9,7 +9,7 @@ S0601 = Section(
     identifier="06.01",
     title="Interne organisatie",
     text="Doelstelling: Een beheerkader vaststellen om de implementatie en uitvoering van de informatiebeveiliging "
-         "binnen de organisatie te initiëren en te beheersen.",
+         "binnen de organisatie te initi&euml;ren en te beheersen.",
     fragments=[
 
         Norm(
@@ -118,6 +118,7 @@ S0601 = Section(
     ],
 )
 
+
 S0602 = Section(
     identifier="06.02",
     title="Mobiele apparatuur en telewerken",
@@ -128,7 +129,7 @@ S0602 = Section(
             identifier="06.02.01",
             title="Beleid voor mobiele apparatuur",
             text="Beleid en ondersteunende beveiligingsmaatregelen behoren te worden "
-                 "vastgesteld om de risico?s die het gebruik van mobiele apparatuur met zich meebrengt te beheren.",
+                 "vastgesteld om de risico's die het gebruik van mobiele apparatuur met zich meebrengt te beheren.",
             bbn=1,
             fragments=[
                 Verifier(
@@ -146,17 +147,19 @@ S0602 = Section(
                 Verifier(
                     identifier="06.02.01/02",
                     title="",
-                    text="Bij de inzet van mobiele apparatuur zijn minimaal de volgende aspecten geïmplementeerd: "
-                         "(a) in bewustwordingsprogramma?s komen gedragsaspecten van veilig mobiel werken aan de "
-                         "orde;"
-                         "(b) het device maakt onderdeel uit van patchmanagement en hardening;"
-                         "(c) het device wordt waar mogelijk beheerd en beveiligd via een Mobile Device management "
-                         "(MDM)-oplossing; "
-                         "(d) gebruikers tekenen een gebruikersovereenkomst voor mobiel werken, waarmee zij verklaren "
+                    text="Bij de inzet van mobiele apparatuur zijn minimaal de volgende aspecten ge&iuml;mplementeerd: "
+                         "<ol style='list-style-type: lower-alpha;'>"
+                         "<li>in bewustwordingsprogramma's komen gedragsaspecten van veilig mobiel werken aan de "
+                         "orde;</li>"
+                         "<li>het device maakt onderdeel uit van patchmanagement en hardening;</li>"
+                         "<li>het device wordt waar mogelijk beheerd en beveiligd via een MDM Mobile Device Management "
+                         "(MDM)-oplossing;</li>"
+                         "<li>gebruikers tekenen een gebruikersovereenkomst voor mobiel werken, waarmee zij verklaren "
                          "zich bewust te zijn van de gevaren van mobiel werken en verklaren dit veilig te zullen "
                          "doen. Deze verklaring heeft betrekking op alle mobiele apparatuur die de medewerker "
-                         "zakelijk gebruikt;"
-                         "(e) periodiek wordt getoetst of de punten in lid b), c) en d) worden nageleefd.",
+                         "zakelijk gebruikt;</li>"
+                         "<li>periodiek wordt getoetst of de punten in lid b, c en d worden nageleefd.</li>"
+                         "</ol>",
                     bbn=2,
                 ),
             ],
@@ -165,7 +168,7 @@ S0602 = Section(
         Norm(
             identifier="06.02.02",
             title="Telewerken",
-            text="Beleid en ondersteunende beveiligingsmaatregelen behoren te worden geïmplementeerd ter "
+            text="Beleid en ondersteunende beveiligingsmaatregelen behoren te worden ge&iuml;mplementeerd ter "
                  "beveiliging van informatie die vanaf telewerklocaties wordt benaderd, verwerkt of opgeslagen.",
             bbn=2,
             fragments=[
@@ -180,8 +183,6 @@ S0602 = Section(
 
     ],
 )
-
-# ---
 
 
 CH06 = Chapter(

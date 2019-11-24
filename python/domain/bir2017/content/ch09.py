@@ -65,11 +65,10 @@ S0902 = Section(
         Norm(
             identifier="09.02.01",
             title="Registratie en afmelden van gebruikers",
-            text="Een formele registratie- en afmeldingsprocedure behoort te worden geïmplementeerd om toewijzing "
+            text="Een formele registratie- en afmeldingsprocedure behoort te worden ge&iuml;mplementeerd om toewijzing "
                  "van toegangsrechten mogelijk te maken.",
             bbn=1,
             fragments=[
-
                 Verifier(
                     identifier="09.02.01/01",
                     title="",
@@ -77,7 +76,6 @@ S0902 = Section(
                          "gebruikersidentificaties.",
                     bbn=1,
                 ),
-
                 Verifier(
                     identifier="09.02.01/02",
                     title="",
@@ -91,7 +89,7 @@ S0902 = Section(
         Norm(
             identifier="09.02.02",
             title="Gebruikers toegang verlenen",
-            text="Een formele gebruikerstoegangsverleningsprocedure behoort te worden geïmplementeerd om "
+            text="Een formele gebruikerstoegangsverleningsprocedure behoort te worden ge&iuml;mplementeerd om "
                  "toegangsrechten voor alle typen gebruikers en voor alle systemen en diensten toe te wijzen of "
                  "in te trekken.",
             bbn=1,
@@ -182,7 +180,7 @@ S0902 = Section(
             identifier="09.02.06",
             title="Toegangsrechten intrekken of aanpassen",
             text="De toegangsrechten van alle medewerkers en externe gebruikers voor informatie en "
-                 "informatieverwerkende faciliteiten behoren bij beëindiging van hun dienstverband, contract of "
+                 "informatieverwerkende faciliteiten behoren bij be&euml;indiging van hun dienstverband, contract of "
                  "overeenkomst te worden verwijderd, en bij wijzigingen behoren ze te worden aangepast.",
             bbn=1,
             fragments=[
@@ -275,7 +273,7 @@ S0904 = Section(
                     title="",
                     text="Voor het verlenen van toegang tot het netwerk door externe leveranciers wordt vooraf een "
                          "risicoafweging gemaakt. De risicoafweging bepaalt onder welke voorwaarden de leveranciers "
-                         "toegang krijgen. Uit een registratie  blijkt hoe de rechten zijn toegekend.",
+                         "toegang krijgen. Uit een registratie blijkt hoe de rechten zijn toegekend.",
                     bbn=2,
                 ),
             ],
@@ -313,7 +311,7 @@ S0904 = Section(
                 Verifier(
                     identifier="09.04.03/04",
                     title="",
-                    text="Initiële wachtwoorden en wachtwoorden die gereset zijn, hebben een maximale geldigheidsduur "
+                    text="Initi&euml;le wachtwoorden en wachtwoorden die gereset zijn, hebben een maximale geldigheidsduur "
                          "van een werkdag en moeten bij het eerste gebruik worden gewijzigd.",
                     bbn=2,
                 ),

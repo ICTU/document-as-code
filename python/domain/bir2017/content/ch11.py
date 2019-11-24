@@ -16,17 +16,19 @@ S1101 = Section(
             identifier="11.01.01",
             title="Fysieke beveiligingszone",
             text="Beveiligingszones behoren te worden gedefinieerd en gebruikt om gebieden te beschermen die "
-                 "gevoelige of essentiële informatie en informatieverwerkende faciliteiten bevatten.",
+                 "gevoelige of essenti&euml;le informatie en informatieverwerkende faciliteiten bevatten.",
             bbn=1,
             fragments=[
                 Verifier(
                     identifier="11.01.01/01",
                     title="",
-                    text="Er wordt voor het inrichten van beveiligde zones gebruik gemaakt van de volgende "
-                         "voorschriften: "
-                         "(a) het Kader Rijkstoegangsbeleid (2010); "
-                         "(b) het Normenkader Beveiliging Rijkskantoren (NkBR 2015); "
-                         "(c) het Beveiligingsvoorschrift Rijk (BVR 2013).",
+                    text="Er wordt voor het inrichten van beveiligde zones gebruik gemaakt van "
+                         "de volgende voorschriften:"
+                         "<ol style='list-style-type: lower-alpha;'>"
+                         "<li>het Kader Rijkstoegangsbeleid (2010);</li>"
+                         "<li>het Normenkader Beveiliging Rijkskantoren (NkBR 2015);</li>"
+                         "<li>het Beveiligingsvoorschrift Rijk (BVR 2013).<li>"
+                         "</ol>",
                     bbn=1,
                 ),
             ],
@@ -42,8 +44,9 @@ S1101 = Section(
                 Verifier(
                     identifier="11.01.02/01",
                     title="",
-                    text="In geval van concrete beveiligingsrisico?s worden waarschuwingen, conform onderlinge "
-                         "afspraken, verzonden aan de relevante collega?s binnen het beveiligingsdomein van het Rijk.",
+                    text="In geval van concrete beveiligingsrisico's worden waarschuwingen, conform onderlinge "
+                         "afspraken, verzonden aan de relevante collega's binnen het beveiligingsdomein van "
+                         "het Rijk.",
                     bbn=2,
                 ),
             ],
@@ -59,7 +62,8 @@ S1101 = Section(
                 Verifier(
                     identifier="11.01.03/01",
                     title="",
-                    text="Sleutelbeheer is ingericht op basis van een sleutelplan (NkBR 5.4).",
+                    text="Sleutelbeheer is ingericht op basis van een sleutelplan "
+                         "(NkBR 5.4).",
                     bbn=1,
                 ),
             ],
@@ -75,7 +79,7 @@ S1101 = Section(
                 Verifier(
                     identifier="11.01.04/01",
                     title="",
-                    text="De organisatie heeft geïnventariseerd welke papieren archieven en apparatuur "
+                    text="De organisatie heeft ge&iuml;nventariseerd welke papieren archieven en apparatuur "
                          "bedrijfskritisch zijn. Tegen bedreigingen van buitenaf zijn beveiligingsmaatregelen "
                          "genomen op basis van een expliciete risicoafweging.",
                     bbn=1,
@@ -287,7 +291,7 @@ S1102 = Section(
                     title="",
                     text="Sessies op remote desktops worden op het remote platform vergrendeld na 15 minuten. Het "
                          "overnemen van sessies op remote desktops op een ander client apparaat is alleen mogelijk "
-                         "via dezelfde beveiligde loginprocedure als waarmee de sessie is gecreëerd.",
+                         "via dezelfde beveiligde loginprocedure als waarmee de sessie is gecre&euml;erd.",
                     bbn=2,
                 ),
                 Verifier(

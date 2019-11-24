@@ -73,7 +73,7 @@ S1401 = Section(
 S1402 = Section(
     identifier="14.02",
     title="Beveiliging in ontwikkelings- en ondersteunende processen",
-    text="Doelstelling: Bewerkstelligen dat informatiebeveiliging wordt ontworpen en geïmplementeerd binnen de "
+    text="Doelstelling: Bewerkstelligen dat informatiebeveiliging wordt ontworpen en ge&iuml;mplementeerd binnen de "
          "ontwikkelingslevenscyclus van informatiesystemen.",
     fragments=[
 
@@ -147,7 +147,9 @@ S1402 = Section(
                 Verifier(
                     identifier="14.02.05/01",
                     title="",
-                    text="Zie Rijksmaatregel 14.02.01/01",
+                    text="Zie "
+                         "Rijksmaatregel "
+                         "14.02.01/01",
                     bbn=1,
                 ),
             ],
@@ -164,7 +166,9 @@ S1402 = Section(
                 Verifier(
                     identifier="14.02.06/01",
                     title="",
-                    text="Uitgangspunt voor systeemontwikkeltrajecten is een expliciete risicoafweging. Deze heeft "
+                    text="Uitgangspunt voor "
+                         "systeemontwikkeltrajecten "
+                         "is een expliciete risicoafweging. Deze heeft "
                          "zowel de ontwikkelomgeving als ook het te ontwikkelen systeem in scope.",
                     bbn=1,
                 ),

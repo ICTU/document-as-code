@@ -32,16 +32,17 @@ S1501 = Section(
                     identifier="15.01.01/02",
                     title="",
                     text="Op basis van een expliciete risicoafweging worden de beheersmaatregelen met betrekking "
-                         "tot leverancierstoegang tot bedrijfsinformatie vastgesteld en er wordt voldaan aan het "
-                         "gestelde in het VIR-BI.",
+                         "tot leverancierstoegang tot bedrijfsinformatie vastgesteld "
+                         "en er wordt voldaan aan het gestelde in het VIR-BI.",
                     bbn=2,
                 ),
                 Verifier(
                     identifier="15.01.01/03",
                     title="",
-                    text="Met alle leveranciers die als bewerker voor of namens de organisatie persoonsgegevens "
-                         "verwerken, worden verwerkersovereenkomsten gesloten waarin alle wettelijk vereiste "
-                         "afspraken zijn vastgesteld.",
+                    text="Met alle leveranciers die als "
+                         "bewerker "
+                         "voor of namens de organisatie persoonsgegevens verwerken, worden verwerkersovereenkomsten "
+                         "gesloten waarin alle wettelijk vereiste afspraken zijn vastgesteld.",
                     bbn=2,
                 ),
             ],
@@ -81,8 +82,11 @@ S1501 = Section(
                 Verifier(
                     identifier="15.01.02/04",
                     title="",
-                    text="Ter waarborging van vertrouwelijkheid of geheimhouding worden bij IT-inkopen de algemene "
-                         "rijksvoorwaarden voor inkoop (ARBIT) gehanteerd.",
+                    text="Ter waarborging van vertrouwelijkheid of geheimhouding worden bij IT-inkopen "
+                         "de algemene rijksvoorwaarden "
+                         "voor inkoop "
+                         "(ARBIT) "
+                         "gehanteerd.",
                     bbn=1,
                 ),
                 Verifier(

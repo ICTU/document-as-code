@@ -18,7 +18,7 @@ S0701 = Section(
             text="Verificatie van de achtergrond van alle kandidaten voor een dienstverband behoort te "
                  "worden uitgevoerd in overeenstemming met relevante wet- en regelgeving en ethische overwegingen "
                  "en behoort in verhouding te staan tot de bedrijfseisen, de classificatie van de informatie waartoe "
-                 "toegang wordt verleend en de vastgestelde risico?s te zijn.",
+                 "toegang wordt verleend en de vastgestelde risico's te zijn.",
             bbn=1,
             fragments=[
                 Verifier(
@@ -138,17 +138,17 @@ S0702 = Section(
 
 S0703 = Section(
     identifier="07.03",
-    title="Beëindiging of wijziging van dienstverband",
+    title="Be&euml;indiging of wijziging van dienstverband",
     text="Doelstelling: Het beschermen van de belangen van de organisatie als onderdeel van de wijzigings- of "
-         "beëindigingsprocedure van het dienstverband.",
+         "be&euml;indigingsprocedure van het dienstverband.",
     fragments=[
 
         Norm(
             identifier="07.03.01",
-            title="Beëindiging of wijziging van verantwoordelijkheden van het dienstverband",
+            title="Be&euml;indiging of wijziging van verantwoordelijkheden van het dienstverband",
             text="Verantwoordelijkheden en "
-                 "taken met betrekking tot informatiebeveiliging die van kracht blijven na beëindiging of wijziging "
-                 "van het dienstverband behoren te worden gedefinieerd, gecommuniceerd aan de medewerker of "
+                 "taken met betrekking tot informatiebeveiliging die van kracht blijven na be&euml;indiging of "
+                 "wijziging van het dienstverband behoren te worden gedefinieerd, gecommuniceerd aan de medewerker of "
                  "contractant, en ten uitvoer gebracht.",
             bbn=1,
             fragments=[

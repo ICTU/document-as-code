@@ -32,7 +32,7 @@ S1301 = Section(
             identifier="13.01.02",
             title="Beveiliging van netwerkdiensten",
             text="Beveiligingsmechanismen, dienstverleningsniveaus en beheerseisen voor alle netwerkdiensten behoren "
-                 "te worden geïdentificeerd en opgenomen in overeenkomsten betreffende netwerkdiensten. Dit geldt "
+                 "te worden ge&iuml;dentificeerd en opgenomen in overeenkomsten betreffende netwerkdiensten. Dit geldt "
                  "zowel voor diensten die intern worden geleverd als voor uitbestede diensten.",
             bbn=1,
             fragments=[
@@ -41,16 +41,19 @@ S1301 = Section(
                     title="",
                     text="Het dataverkeer dat de organisatie binnenkomt of uitgaat wordt bewaakt / geanalyseerd op "
                          "kwaadaardige elementen middels detectie-voorzieningen (zoals beschreven in de richtlijn "
-                         "voor implementatie van detectie-oplossingen), zoals het Nationaal Detectie Netwerk, die "
-                         "worden ingezet op basis van een risico-inschatting, mede aan de hand van  de aard van de "
-                         "te beschermen gegevens en informatiesystemen.",
+                         "voor implementatie van detectie-oplossingen), zoals het "
+                         "Nationaal Detectie Netwerk, "
+                         "die worden ingezet op basis van een risico-inschatting, mede aan de hand van de aard van "
+                         "de te beschermen gegevens en informatiesystemen.",
                     bbn=2,
                 ),
                 Verifier(
                     identifier="13.01.02/02",
                     title="",
                     text="Bij ontdekte nieuwe dreigingen vanuit 13.01.02/01 worden deze, rekening houdend met "
-                         "de geldende juridische kaders, gedeeld binnen de overheid, waaronder met het NCSC, "
+                         "de geldende juridische kaders, "
+                         "gedeeld binnen de overheid, waaronder met het "
+                         "NCSC, "
                          "bij voorkeur door geautomatiseerde mechanismen (threat intelligence sharing).",
                     bbn=2,
                 ),
@@ -141,15 +144,16 @@ S1302 = Section(
                     identifier="13.02.03/02",
                     title="",
                     text="Voor veilige berichtenuitwisseling met basisregistraties, wordt conform "
-                         "de pas-toe-leg-uit-lijst, gebruik gemaakt van de actuele versie van Digikoppeling",
+                         "de pas-toe-of-leg-uit-lijst, gebruik gemaakt van de actuele versie van Digikoppeling.",
                     bbn=2,
                 ),
                 Verifier(
                     identifier="13.02.03/03",
                     title="",
                     text="Maak gebruik van PKI-Overheid certificaten bij web- en mailverkeer van gevoelige gegevens. "
-                         "Gevoelige gegevens zijn o.a. digitale documenten binnen de Rijksdienst waar gebruikers "
-                         "rechten aan kunnen ontlenen.",
+                         "Gevoelige gegevens zijn o.a. digitale documenten binnen de "
+                         "Rijksdienst "
+                         "waar gebruikers rechten aan kunnen ontlenen.",
                     bbn=2,
                 ),
                 Verifier(

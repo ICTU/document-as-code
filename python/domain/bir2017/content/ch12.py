@@ -38,9 +38,11 @@ S1201 = Section(
                     identifier="12.01.02/01",
                     title="",
                     text="In de procedure voor wijzigingenbeheer is minimaal aandacht besteed aan: "
-                         "(a) het administreren van wijzigingen; "
-                         "(b) risicoafweging van mogelijke gevolgen van de wijzigingen; "
-                         "(c) goedkeuringsprocedure voor wijzigingen.",
+                         "<ol style='list-style-type: lower-alpha;'>"
+                         "<li>het administreren van wijzigingen;</li>"
+                         "<li>risicoafweging van mogelijke gevolgen van de wijzigingen;</li>"
+                         "<li>goedkeuringsprocedure voor wijzigingen.</li>"
+                         "</ol>",
                     bbn=1,
                 ),
             ],
@@ -57,8 +59,9 @@ S1201 = Section(
                     identifier="12.01.03/01",
                     title="",
                     text="In koppelpunten met externe of onvertrouwde zones zijn maatregelen getroffen om mogelijke "
-                         "aanvallen die de beschikbaarheid van de informatievoorziening negatief beïnvloeden "
-                         "(bijv. DDoS attacks, Distributed Denial of Service) te signaleren en hierop te reageren.",
+                         "aanvallen die de beschikbaarheid van de informatievoorziening negatief be&iuml;nvloeden "
+                         "(bijv. DDoS attacks, Distributed Denial of Service) "
+                         "te signaleren en hierop te reageren.",
                     bbn=1,
                 ),
             ],
@@ -103,7 +106,7 @@ S1202 = Section(
             identifier="12.02.01",
             title="Beheersmaatregelen tegen malware",
             text="Ter bescherming tegen malware behoren beheersmaatregelen voor detectie, preventie en herstel te "
-                 "worden geïmplementeerd, in combinatie met een passend bewustzijn van gebruikers.",
+                 "worden ge&iuml;mplementeerd, in combinatie met een passend bewustzijn van gebruikers.",
             bbn=1,
             fragments=[
                 Verifier(
@@ -115,15 +118,15 @@ S1202 = Section(
                 Verifier(
                     identifier="12.02.01/02",
                     title="",
-                    text="Gebruikers zijn voorgelicht over de risico?s ten aanzien van surfgedrag en het klikken op "
+                    text="Gebruikers zijn voorgelicht over de risico's ten aanzien van surfgedrag en het klikken op "
                          "onbekende linken.",
                     bbn=1,
                 ),
                 Verifier(
                     identifier="12.02.01/03",
                     title="",
-                    text="Software en bijbehorende herstelsoftware die malware opspoort  zijn geïnstalleerd en "
-                         "worden regelmatig geüpdate.",
+                    text="Software en bijbehorende herstelsoftware die malware opspoort zijn ge&iuml;nstalleerd en "
+                         "worden regelmatig ge&uuml;pdatet.",
                     bbn=1,
                 ),
                 Verifier(
@@ -131,9 +134,11 @@ S1202 = Section(
                     title="",
                     text="Computers en media worden als voorzorgsmaatregel routinematig gescand. "
                          "De uitgevoerde scan behoort te omvatten: "
-                         "(a) alle bestanden die via netwerken of via elke vorm van opslagmedium zijn ontvangen, "
-                         "vóór gebruik op malware scannen; "
-                         "(b) bijlagen en downloads vóór gebruik.",
+                         "<ol style='list-style-type: lower-alpha;'>"
+                         "<li>alle bestanden die via netwerken of via elke vorm van opslagmedium zijn ontvangen, "
+                         "v&oacute;&oacute;r gebruik op malware scannen;</li>"
+                         "<li>bijlagen en downloads v&oacute;&oacute;r gebruik.</li>"
+                         "</ol>",
                     bbn=1,
                 ),
                 Verifier(
@@ -159,8 +164,8 @@ S1203 = Section(
         Norm(
             identifier="12.03.01",
             title="Back-up van informatie",
-            text="Regelmatig behoren back-upkopieën van informatie, software en systeemafbeeldingen te worden gemaakt "
-                 "en getest in overeenstemming met een overeengekomen back-upbeleid.",
+            text="Regelmatig behoren back-upkopie&euml;n van informatie, software en systeemafbeeldingen te worden "
+                 "gemaakt en getest in overeenstemming met een overeengekomen back-upbeleid.",
             bbn=1,
             fragments=[
                 Verifier(
@@ -181,9 +186,11 @@ S1203 = Section(
                     identifier="12.03.01/03",
                     title="",
                     text="In het back-up beleid staan minimaal de volgende eisen: "
-                         "(a) dataverlies bedraagt maximaal 28 uur; "
-                         "(b) hersteltijd in geval van incidenten is maximaal 16 werkuren "
-                         "(2 dagen van 8 uur) in 85% van de gevallen.",
+                         "<ol style='list-style-type: lower-alpha;'>"
+                         "<li>dataverlies bedraagt maximaal 28 uur;</li>"
+                         "<li>hersteltijd in geval van incidenten is maximaal 16 werkuren "
+                         "(2 dagen van 8 uur) in 85% van de gevallen.</li>"
+                         "</ol>",
                     bbn=2,
                 ),
                 Verifier(
@@ -241,18 +248,24 @@ S1204 = Section(
                 Verifier(
                     identifier="12.04.01/03",
                     title="",
-                    text="De informatieverwerkende omgeving wordt gemonitord door een SIEM  en/of SOC middels "
-                         "detectie-voorzieningen, zoals het Nationaal Detectie Netwerk, die worden ingezet op "
-                         "basis van een risico-inschatting, mede aan de hand van  en de aard van de te beschermen "
-                         "gegevens en informatiesystemen, zodat aanvallen kunnen worden gedetecteerd.",
+                    text="De informatieverwerkende omgeving wordt gemonitord door een SIEM en/of SOC middels "
+                         "detectie-voorzieningen, zoals het "
+                         "Nationaal Detectie Netwerk, "
+                         "die worden ingezet op basis van een risico-inschatting, mede aan de hand van en de aard "
+                         "van de te beschermen gegevens en informatiesystemen, zodat aanvallen kunnen worden "
+                         "gedetecteerd.",
                     bbn=2,
                 ),
                 Verifier(
                     identifier="12.04.01/04",
                     title="",
                     text="Bij ontdekte nieuwe dreigingen (aanvallen) via 12.04.01/03 worden deze binnen geldende "
-                         "juridische kaders gedeeld binnen de overheid, waaronder met het NCSC, "
-                         "middels (geautomatiseerde) threat intelligence sharing mechanismen.",
+                         "juridische kaders "
+                         "gedeeld binnen de overheid, "
+                         "waaronder met het NCSC, "
+                         "middels "
+                         "(geautomatiseerde) "
+                         "threat intelligence sharing mechanismen.",
                     bbn=2,
                 ),
                 Verifier(
@@ -289,7 +302,7 @@ S1204 = Section(
                 Verifier(
                     identifier="12.04.02/03",
                     title="",
-                    text="Er is een (onafhankelijke)  interne audit procedure die minimaal half jaarlijks toetst "
+                    text="Er is een (onafhankelijke) interne audit procedure die minimaal half jaarlijks toetst "
                          "op het ongewijzigd bestaan van logbestanden.",
                     bbn=2,
                 ),
@@ -324,7 +337,7 @@ S1204 = Section(
             identifier="12.04.04",
             title="Kloksynchronisatie",
             text="De klokken van alle relevante informatieverwerkende systemen binnen een organisatie of "
-                 "beveiligingsdomein behoren te worden gesynchroniseerd met één referentietijdbron.",
+                 "beveiligingsdomein behoren te worden gesynchroniseerd met &eacute;&eacute;n referentietijdbron.",
             bbn=1,
             fragments=[
                 Verifier(
@@ -350,7 +363,7 @@ S1205 = Section(
             identifier="12.05.01",
             title="Software installeren op operationele systemen",
             text="Om het op operationele systemen installeren van software te beheersen behoren procedures te worden "
-                 "geïmplementeerd.",
+                 "ge&iuml;mplementeerd.",
             bbn=1,
             fragments=[
                 Verifier(
@@ -384,8 +397,9 @@ S1206 = Section(
                 Verifier(
                     identifier="12.06.01/01",
                     title="",
-                    text="Als de kans op misbruik en de verwachte schade beide hoog zijn (NCSC classificatie), "
-                         "worden patches zo snel mogelijk, maar uiterlijk binnen een week geïnstalleerd. "
+                    text="Als de kans op misbruik en de verwachte schade beide hoog zijn "
+                         "(NCSC classificatie), "
+                         "worden patches zo snel mogelijk, maar uiterlijk binnen een week ge&iuml;nstalleerd. "
                          "In de tussentijd worden op basis van een expliciete risicoafweging mitigerende "
                          "maatregelen getroffen.",
                     bbn=1,
@@ -397,7 +411,7 @@ S1206 = Section(
             identifier="12.06.02",
             title="Beperkingen voor het installeren van software",
             text="Voor het door gebruikers installeren van software behoren regels te worden vastgesteld en te worden "
-                 "geïmplementeerd.",
+                 "ge&iuml;mplementeerd.",
             bbn=1,
             fragments=[
                 Verifier(

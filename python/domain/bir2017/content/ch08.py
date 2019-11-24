@@ -9,14 +9,14 @@ S0801 = Section(
     identifier="08.01",
     title="Verantwoordelijkheid voor bedrijfsmiddelen",
     text="Doelstelling: Bedrijfsmiddelen van de organisatie identifceren en passende verantwoordelijkheden "
-         "ter bescherming defniëren.",
+         "ter bescherming defini&euml;ren.",
     fragments=[
 
         Norm(
             identifier="08.01.01",
             title="Inventariseren van bedrijfsmiddelen",
             text="Informatie, andere bedrijfsmiddelen die samenhangen met "
-                 "informatie en informatieverwerkende faciliteiten behoren te worden geïdentificeerd, en van deze "
+                 "informatie en informatieverwerkende faciliteiten behoren te worden ge&iuml;dentificeerd, en van deze "
                  "bedrijfsmiddelen behoort een inventaris te worden opgesteld en onderhouden.",
             bbn=1,
             fragments=[
@@ -50,21 +50,23 @@ S0801 = Section(
             title="Aanvaardbaar gebruik van bedrijfsmiddelen",
             text="Voor het aanvaardbaar gebruik van informatie en van "
                  "bedrijfsmiddelen die samenhangen met informatie en informatieverwerkende faciliteiten behoren "
-                 "regels te worden geïdentificeerd, gedocumenteerd en geïmplementeerd.",
+                 "regels te worden ge&iuml;dentificeerd, gedocumenteerd en ge&iuml;mplementeerd.",
             bbn=1,
             fragments=[
                 Verifier(
                     identifier="08.01.03/01",
                     title="",
                     text="Alle medewerkers zijn aantoonbaar gewezen op de gedragsregels voor het gebruik van "
-                         "bedrijfsmiddelen en de Gedragsregeling voor de digitale werkomgeving",
+                         "bedrijfsmiddelen "
+                         "en de Gedragsregeling voor de digitale werkomgeving",
                     bbn=1,
                 ),
                 Verifier(
                     identifier="08.01.03/02",
                     title="",
                     text="De gedragsregels voor het gebruik van bedrijfsmiddelen zijn voor extern personeel in het "
-                         "contract vastgelegd overeenkomstig de Gedragsregeling voor de digitale werkomgeving.",
+                         "contract vastgelegd overeenkomstig de "
+                         "Gedragsregeling voor de digitale werkomgeving.",
                     bbn=1,
                 ),
             ],
@@ -74,7 +76,7 @@ S0801 = Section(
             identifier="08.01.04",
             title="Teruggeven van bedrijfsmiddelen",
             text="Alle medewerkers en externe gebruikers moeten alle "
-                 "bedrijfsmiddelen van de organisatie die ze in hun bezit hebben bij beëindiging van hun "
+                 "bedrijfsmiddelen van de organisatie die ze in hun bezit hebben bij be&euml;indiging van hun "
                  "dienstverband, contract of overeenkomst terug te geven.",
             bbn=1,
             fragments=[
@@ -119,7 +121,7 @@ S0802 = Section(
             identifier="08.02.02",
             title="Informatie labelen",
             text="Om informatie te labelen behoort een passende reeks procedures te worden "
-                 "ontwikkeld en geïmplementeerd in overeenstemming met het informatieclassificatieschema dat is "
+                 "ontwikkeld en ge&iuml;mplementeerd in overeenstemming met het informatieclassificatieschema dat is "
                  "vastgesteld door de organisatie.",
             bbn=1,
             fragments=[
@@ -136,8 +138,8 @@ S0802 = Section(
             identifier="08.02.03",
             title="Behandelen van bedrijfsmiddelen",
             text="Procedures voor het behandelen van bedrijfsmiddelen behoren te "
-                 "worden ontwikkeld en geïmplementeerd in overeenstemming met het informatieclassificatieschema dat "
-                 "is vastgesteld door de organisatie.",
+                 "worden ontwikkeld en ge&iuml;mplementeerd in overeenstemming met het informatieclassificatieschema "
+                 "dat is vastgesteld door de organisatie.",
             bbn=1,
             fragments=[
                 Verifier(
@@ -164,7 +166,7 @@ S0803 = Section(
             identifier="08.03.01",
             title="Beheer van verwijderbare media",
             text="Voor het beheren van verwijderbare media behoren procedures te "
-                 "worden geïmplementeerd in overeenstemming met het classificatieschema dat door de organisatie "
+                 "worden ge&iuml;mplementeerd in overeenstemming met het classificatieschema dat door de organisatie "
                  "is vastgesteld.",
             bbn=1,
             fragments=[
@@ -173,14 +175,17 @@ S0803 = Section(
                     title="",
                     text="Er is een verwijderinstructie waarin is opgenomen dat van herbruikbare media die de "
                          "organisatie verlaten de onnodige inhoud onherstelbaar verwijderd "
-                         "(ISO27002 ? implementatierichtlijn 8.3.1.a).",
+                         "(ISO27002 - implementatierichtlijn 8.3.1.a).",
                     bbn=1,
                 ),
                 Verifier(
                     identifier="08.03.01/02",
                     title="",
-                    text="De wijze waarop DepV informatie is opgeslagen, voldoet aan het gestelde in het VIR-BI: "
-                         "goedgekeurde producten NBV.",
+                    text="De wijze waarop "
+                         "DepV "
+                         "informatie is opgeslagen, voldoet aan "
+                         "het gestelde in het VIR-BI: goedgekeurde producten "
+                         "NBV.",
                     bbn=2,
                 ),
             ],
@@ -200,15 +205,15 @@ S0803 = Section(
                          "toegankelijk is voor onbevoegden. Verwijdering vindt plaats op een veilige manier, "
                          "bijv. door verbranding of versnippering. Verwijdering van alleen gegevens is ook mogelijk "
                          "door het wissen van de gegevens voordat de media worden gebruikt voor een andere toepassing "
-                         "in de organisatie (ISO27002 ? implementatierichtlijn 8.3.2.a).",
+                         "in de organisatie (ISO27002 - implementatierichtlijn 8.3.2.a).",
                     bbn=2,
                 ),
                 Verifier(
                     identifier="08.03.02/02",
                     title="",
                     text="Voor het wissen van alle data op het medium, wordt de data onherstelbaar verwijderd, "
-                         "bijvoorbeeld door minimaal twee keer te overschrijven met vaste data en één keer met "
-                         "random data. Er wordt gecontroleerd of alle data onherstelbaar verwijderd is.",
+                         "bijvoorbeeld door minimaal twee keer te overschrijven met vaste data en &eacute;&eacute;n "
+                         "keer met random data. Er wordt gecontroleerd of alle data onherstelbaar verwijderd is.",
                     bbn=2,
                 ),
             ],
@@ -221,19 +226,19 @@ S0803 = Section(
                  "onbevoegde toegang, misbruik of corruptie tijdens transport.",
             bbn=2,
             fragments=[
-
                 Verifier(
                     identifier="08.03.03/01",
                     title="",
                     text="Er is voor de gehele organisatie beleid voor het fysiek transport van media vastgesteld.",
                     bbn=2,
                 ),
-
                 Verifier(
                     identifier="08.03.03/02",
                     title="",
-                    text="Het gebruik van koeriers of transporteurs voor DepV of hoger geclassificeerde informatie "
-                         "voldoet aan het gestelde in het VIR-BI.",
+                    text="Het gebruik van koeriers of transporteurs voor "
+                         "DepV "
+                         "of hoger geclassificeerde informatie voldoet aan "
+                         "het gestelde in het VIR-BI.",
                     bbn=2,
                 ),
             ],

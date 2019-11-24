@@ -33,8 +33,8 @@ S1801 = Section(
             identifier="18.01.02",
             title="Intellectuele-eigendomsrechten",
             text="Om de naleving van wettelijke, regelgevende en contractuele eisen in verband met "
-                 "intellectueleeigendomsrechten en het gebruik van eigendomssoftwareproducten te waarborgen behoren "
-                 "passende procedures te worden geïmplementeerd.",
+                 "intellectuele-eigendomsrechten en het gebruik van eigendomssoftwareproducten te waarborgen behoren "
+                 "passende procedures te worden ge&iuml;mplementeerd.",
             bbn=1,
             fragments=[
                 Verifier(
@@ -112,8 +112,8 @@ S1801 = Section(
 S1802 = Section(
     identifier="18.02",
     title="Informatiebeveiligingsbeoordelingen",
-    text="Doelstelling: Verzekeren dat informatiebeveiliging wordt  geïmplementeerd en uitgevoerd in overeenstemming "
-         "met de beleidsregels en procedures van de organisatie.",
+    text="Doelstelling: Verzekeren dat informatiebeveiliging wordt  ge&iuml;mplementeerd en uitgevoerd in "
+         "overeenstemming met de beleidsregels en procedures van de organisatie.",
     fragments=[
 
         Norm(
@@ -173,8 +173,9 @@ S1802 = Section(
                     identifier="18.02.03/01",
                     title="",
                     text="Informatiesystemen worden jaarlijks gecontroleerd op technische naleving van "
-                         "beveiligingsnormen en risico?s ten aanzien van de feitelijke veiligheid. Dit kan bijv door "
-                         "(geautomatiseerde) kwetsbaarheidsanalyses of pentesten.",
+                         "beveiligingsnormen en risico's ten aanzien van de feitelijke veiligheid. Dit kan "
+                         "bijv "
+                         "door (geautomatiseerde) kwetsbaarheidsanalyses of pentesten.",
                     bbn=2,
                 ),
             ],
@@ -192,4 +193,3 @@ CH18 = Chapter(
         S1802,
     ]
 )
-

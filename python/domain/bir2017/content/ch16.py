@@ -89,8 +89,8 @@ S1601 = Section(
             identifier="16.01.03",
             title="Rapportage van zwakke plekken in de informatiebeveiliging",
             text="Van medewerkers en contractanten die gebruikmaken van de informatiesystemen en -diensten van de "
-                 "organisatie behoort te worden geëist dat zij de in systemen of diensten waargenomen of vermeende "
-                 "zwakke plekken in de informatiebeveiliging registreren en rapporteren.",
+                 "organisatie behoort te worden ge&euml;ist dat zij de in systemen of diensten waargenomen of "
+                 "vermeende zwakke plekken in de informatiebeveiliging registreren en rapporteren.",
             bbn=1,
             fragments=[
                 Verifier(
@@ -166,7 +166,7 @@ S1601 = Section(
         Norm(
             identifier="16.01.07",
             title="Verzamelen van bewijsmateriaal",
-            text="De organisatie behoort procedures te definiëren en toe te passen voor het identificeren, "
+            text="De organisatie behoort procedures te defini&euml;ren en toe te passen voor het identificeren, "
                  "verzamelen, verkrijgen en bewaren van informatie die als bewijs kan dienen.",
             bbn=2,
             fragments=[
@@ -191,4 +191,3 @@ CH16 = Chapter(
         S1601,
     ]
 )
-
