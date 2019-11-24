@@ -250,7 +250,7 @@ class DocumentRenderer(object):
         if fragment.lead:
             self.doc.p(fragment.lead, klass='lead')
         if fragment.text:
-            self.doc.p(fragment.text)
+            self.doc.asis(fragment.text)
         if sublevel_render:
             for subfragment in fragment.fragments:
                 sublevel_render(subfragment)
